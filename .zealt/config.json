@@ -1,0 +1,5 @@
+{
+  "title": "RWSDK Benchmark",
+  "description": "Performance results of AI coding models on RWSDK tasks, measuring success rate and execution time with high precision.",
+  "github_repo": "https://github.com/kweizh/rwsdk-benchmark"
+}
