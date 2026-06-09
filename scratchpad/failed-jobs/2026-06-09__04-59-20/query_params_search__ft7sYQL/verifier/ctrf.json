@@ -1,0 +1,79 @@
+{
+    "results": {
+        "tool": {
+            "name": "pytest",
+            "version": "7.4.4"
+        },
+        "summary": {
+            "tests": 6,
+            "passed": 6,
+            "failed": 0,
+            "skipped": 0,
+            "pending": 0,
+            "other": 0,
+            "start": 1780982330518,
+            "stop": 1780982331037
+        },
+        "environment": {
+            "buildName": "Pytest JSON CTRF Report",
+            "buildNumber": "000",
+            "buildUrl": "https://ctrf.io"
+        },
+        "tests": [
+            {
+                "name": "test_final_state.py::test_search_defaults",
+                "status": "passed",
+                "duration": 153,
+                "start": 1780982330730,
+                "stop": 1780982330883,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_search_full",
+                "status": "passed",
+                "duration": 33,
+                "start": 1780982330884,
+                "stop": 1780982330917,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_search_limit_upper_clamp",
+                "status": "passed",
+                "duration": 31,
+                "start": 1780982330918,
+                "stop": 1780982330949,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_search_limit_lower_clamp",
+                "status": "passed",
+                "duration": 23,
+                "start": 1780982330949,
+                "stop": 1780982330972,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_search_page_default",
+                "status": "passed",
+                "duration": 25,
+                "start": 1780982330973,
+                "stop": 1780982330998,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_echo_first_value",
+                "status": "passed",
+                "duration": 38,
+                "start": 1780982330998,
+                "stop": 1780982331036,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            }
+        ]
+    }
+}

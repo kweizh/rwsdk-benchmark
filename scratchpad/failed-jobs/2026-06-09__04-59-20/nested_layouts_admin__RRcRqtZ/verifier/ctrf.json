@@ -1,0 +1,70 @@
+{
+    "results": {
+        "tool": {
+            "name": "pytest",
+            "version": "7.4.4"
+        },
+        "summary": {
+            "tests": 5,
+            "passed": 5,
+            "failed": 0,
+            "skipped": 0,
+            "pending": 0,
+            "other": 0,
+            "start": 1780982008253,
+            "stop": 1780982008681
+        },
+        "environment": {
+            "buildName": "Pytest JSON CTRF Report",
+            "buildNumber": "000",
+            "buildUrl": "https://ctrf.io"
+        },
+        "tests": [
+            {
+                "name": "test_final_state.py::test_layout_files_exist",
+                "status": "passed",
+                "duration": 112,
+                "start": 1780982008430,
+                "stop": 1780982008542,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_public_home",
+                "status": "passed",
+                "duration": 39,
+                "start": 1780982008543,
+                "stop": 1780982008582,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_about",
+                "status": "passed",
+                "duration": 30,
+                "start": 1780982008582,
+                "stop": 1780982008612,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_admin_dashboard",
+                "status": "passed",
+                "duration": 30,
+                "start": 1780982008613,
+                "stop": 1780982008643,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_admin_users",
+                "status": "passed",
+                "duration": 36,
+                "start": 1780982008644,
+                "stop": 1780982008680,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            }
+        ]
+    }
+}

@@ -1,0 +1,61 @@
+{
+    "results": {
+        "tool": {
+            "name": "pytest",
+            "version": "7.4.4"
+        },
+        "summary": {
+            "tests": 4,
+            "passed": 4,
+            "failed": 0,
+            "skipped": 0,
+            "pending": 0,
+            "other": 0,
+            "start": 1780986025767,
+            "stop": 1780986026242
+        },
+        "environment": {
+            "buildName": "Pytest JSON CTRF Report",
+            "buildNumber": "000",
+            "buildUrl": "https://ctrf.io"
+        },
+        "tests": [
+            {
+                "name": "test_final_state.py::test_cached",
+                "status": "passed",
+                "duration": 163,
+                "start": 1780986025956,
+                "stop": 1780986026119,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_forbidden",
+                "status": "passed",
+                "duration": 39,
+                "start": 1780986026119,
+                "stop": 1780986026158,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_teapot",
+                "status": "passed",
+                "duration": 36,
+                "start": 1780986026159,
+                "stop": 1780986026195,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_redirect",
+                "status": "passed",
+                "duration": 45,
+                "start": 1780986026196,
+                "stop": 1780986026241,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            }
+        ]
+    }
+}

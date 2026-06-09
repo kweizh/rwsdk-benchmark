@@ -1,0 +1,79 @@
+{
+    "results": {
+        "tool": {
+            "name": "pytest",
+            "version": "7.4.4"
+        },
+        "summary": {
+            "tests": 6,
+            "passed": 6,
+            "failed": 0,
+            "skipped": 0,
+            "pending": 0,
+            "other": 0,
+            "start": 1780983727539,
+            "stop": 1780983727943
+        },
+        "environment": {
+            "buildName": "Pytest JSON CTRF Report",
+            "buildNumber": "000",
+            "buildUrl": "https://ctrf.io"
+        },
+        "tests": [
+            {
+                "name": "test_final_state.py::test_context_type_decl_exists",
+                "status": "passed",
+                "duration": 109,
+                "start": 1780983727683,
+                "stop": 1780983727792,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_me_anonymous",
+                "status": "passed",
+                "duration": 30,
+                "start": 1780983727793,
+                "stop": 1780983727823,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_me_admin",
+                "status": "passed",
+                "duration": 23,
+                "start": 1780983727824,
+                "stop": 1780983727847,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_me_default_guest",
+                "status": "passed",
+                "duration": 21,
+                "start": 1780983727847,
+                "stop": 1780983727868,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_me_member",
+                "status": "passed",
+                "duration": 22,
+                "start": 1780983727869,
+                "stop": 1780983727891,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_me_role_endpoint",
+                "status": "passed",
+                "duration": 50,
+                "start": 1780983727892,
+                "stop": 1780983727942,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            }
+        ]
+    }
+}

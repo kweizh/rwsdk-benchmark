@@ -1,0 +1,79 @@
+{
+    "results": {
+        "tool": {
+            "name": "pytest",
+            "version": "7.4.4"
+        },
+        "summary": {
+            "tests": 6,
+            "passed": 6,
+            "failed": 0,
+            "skipped": 0,
+            "pending": 0,
+            "other": 0,
+            "start": 1780983516632,
+            "stop": 1780983517032
+        },
+        "environment": {
+            "buildName": "Pytest JSON CTRF Report",
+            "buildNumber": "000",
+            "buildUrl": "https://ctrf.io"
+        },
+        "tests": [
+            {
+                "name": "test_final_state.py::test_public_route",
+                "status": "passed",
+                "duration": 137,
+                "start": 1780983516776,
+                "stop": 1780983516913,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_admin_dashboard_blocked_without_header",
+                "status": "passed",
+                "duration": 21,
+                "start": 1780983516913,
+                "stop": 1780983516934,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_admin_dashboard_blocked_with_bad_token",
+                "status": "passed",
+                "duration": 23,
+                "start": 1780983516935,
+                "stop": 1780983516958,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_admin_dashboard_passes_with_good_token",
+                "status": "passed",
+                "duration": 20,
+                "start": 1780983516959,
+                "stop": 1780983516979,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_admin_users_blocked_without_header",
+                "status": "passed",
+                "duration": 22,
+                "start": 1780983516980,
+                "stop": 1780983517002,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_admin_users_passes_with_good_token",
+                "status": "passed",
+                "duration": 29,
+                "start": 1780983517002,
+                "stop": 1780983517031,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            }
+        ]
+    }
+}

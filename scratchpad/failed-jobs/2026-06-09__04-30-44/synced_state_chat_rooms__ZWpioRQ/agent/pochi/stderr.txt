@@ -1,0 +1,2762 @@
+[37m2026-06-09 04:31:13.100[39m[0m[0m	[32m[1mDEBUG[22m[39m[0m[0m	[37mnative:1[39m[0m[0m[1m[37m	Pochi[39m[22m[0m[0m	pochi v0.6.12
+[37m2026-06-09 04:31:13.485[39m[0m[0m	[32m[1mDEBUG[22m[39m[0m[0m	[37m$bunfs/root/pochi:521107[39m[0m[0m[1m[37m	loadAgents[39m[22m[0m[0m	Loaded 6 custom agents (6 valid, 0 invalid)
+[37m2026-06-09 04:31:13.489[39m[0m[0m	[32m[1mDEBUG[22m[39m[0m[0m	[37m$bunfs/root/pochi:521108[39m[0m[0m[1m[37m	loadSkills[39m[22m[0m[0m	Loaded 2 skills (2 valid, 0 invalid)
+[37m2026-06-09 04:31:13.635[39m[0m[0m	[32m[1mDEBUG[22m[39m[0m[0m	[37m$bunfs/root/pochi:448506[39m[0m[0m[1m[37m	PochiVendor[39m[22m[0m[0m	JWT is expiring or missing, fetching a new one
+[37m2026-06-09 04:31:15.387[39m[0m[0m	[32m[1mDEBUG[22m[39m[0m[0m	[37m$bunfs/root/pochi:419064[39m[0m[0m[1m[37m	MCPHub[39m[22m[0m[0m	MCP servers configuration changed via signal:
+[37m2026-06-09 04:31:15.388[39m[0m[0m	[32m[1mDEBUG[22m[39m[0m[0m	[37m$bunfs/root/pochi:419176[39m[0m[0m[1m[37m	MCPHub[39m[22m[0m[0m	Build MCPHub Status
+[37m2026-06-09 04:31:15.513[39m[0m[0m	[32m[1mDEBUG[22m[39m[0m[0m	[37mnative:7[39m[0m[0m[1m[37m	Pochi[39m[22m[0m[0m	Starting task runner...
+[37m2026-06-09 04:31:15.726[39m[0m[0m	[32m[1mDEBUG[22m[39m[0m[0m	[37m$bunfs/root/pochi:511948[39m[0m[0m[1m[37m	generateTaskTitle[39m[22m[0m[0m	Generating task title, old: null, new: # RedwoodSDK: Multi-Room Realtime Chat
+[37m2026-06-09 04:31:31.647[39m[0m[0m	[32m[1mDEBUG[22m[39m[0m[0m	[37m$bunfs/root/pochi:478867[39m[0m[0m[1m[37m	FileStateCache[39m[22m[0m[0m	withReadFileCache: path="/home/user/myapp/wrangler.jsonc" resolvedPath="/home/user/myapp/wrangler.jsonc" isVirtual=false cacheExists=true shouldCache=true startLine=undefined endLine=undefined
+[37m2026-06-09 04:31:31.648[39m[0m[0m	[32m[1mDEBUG[22m[39m[0m[0m	[37m$bunfs/root/pochi:478867[39m[0m[0m[1m[37m	FileStateCache[39m[22m[0m[0m	withReadFileCache: existingState=undefined
+[37m2026-06-09 04:31:31.652[39m[0m[0m	[32m[1mDEBUG[22m[39m[0m[0m	[37m$bunfs/root/pochi:520162[39m[0m[0m[1m[37m	FileStateCache[39m[22m[0m[0m	withReadFileCache: populating cache for "/home/user/myapp/wrangler.jsonc" mtime=1780583220000 contentLen=568
+[37m2026-06-09 04:31:33.205[39m[0m[0m	[32m[1mDEBUG[22m[39m[0m[0m	[37m$bunfs/root/pochi:511948[39m[0m[0m[1m[37m	generateTaskTitle[39m[22m[0m[0m	Generating task title, old: # RedwoodSDK: Multi-Room Realtime Chat, new: Build a multi-room real-time chat application using RedwoodSDK
+[37m2026-06-09 04:31:40.671[39m[0m[0m	[32m[1mDEBUG[22m[39m[0m[0m	[37m$bunfs/root/pochi:478867[39m[0m[0m[1m[37m	FileStateCache[39m[22m[0m[0m	withReadFileCache: path="/home/user/myapp/src/worker.tsx" resolvedPath="/home/user/myapp/src/worker.tsx" isVirtual=false cacheExists=true shouldCache=true startLine=undefined endLine=undefined
+[37m2026-06-09 04:31:40.671[39m[0m[0m	[32m[1mDEBUG[22m[39m[0m[0m	[37m$bunfs/root/pochi:478867[39m[0m[0m[1m[37m	FileStateCache[39m[22m[0m[0m	withReadFileCache: existingState=undefined
+[37m2026-06-09 04:31:40.674[39m[0m[0m	[32m[1mDEBUG[22m[39m[0m[0m	[37m$bunfs/root/pochi:520162[39m[0m[0m[1m[37m	FileStateCache[39m[22m[0m[0m	withReadFileCache: populating cache for "/home/user/myapp/src/worker.tsx" mtime=1780583220000 contentLen=400
+[37m2026-06-09 04:32:57.829[39m[0m[0m	[31m[1mERROR[22m[39m[0m[0m	[37m$bunfs/root/pochi:437624[39m[0m[0m[1m[37m	LiveChatKit[39m[22m[0m[0m	onError
+
+[97m[101m[1m AI_APICallError [22m[49m[39m[0m[0m upstream error, AI_APICallError, , https://app.getpochi.com/api/chat/v6/stream, [object Object], 502, [object Object], , true, , 451435, 31, 451435, 31, /$bunfs/root/pochi[0m[0m
+error stack:
+  • [33mpochi[39m[0m[0m	<anonymous>[0m[0m
+	[37m$bunfs/root/pochi:451435[39m[0m[0m
+  • [33mnative[39m[0m[0m	processTicksAndRejections[0m[0m
+	[37mnative:7[39m[0m[0m[0m[0m
+[37m2026-06-09 04:32:57.873[39m[0m[0m	[31m[1mERROR[22m[39m[0m[0m	[37m$bunfs/root/pochi:520601[39m[0m[0m[1m[37m	TaskRunner[39m[22m[0m[0m	Task is failed, trying to resend last message to resume it. {
+  kind: [32m'APICallError'[39m,
+  isRetryable: [33mtrue[39m,
+  message: [32m'upstream error'[39m,
+  requestBodyValues: {
+    model: [32m'google/gemini-3.1-pro'[39m,
+    callOptions: {
+      prompt: [
+        {
+          role: [32m'system'[39m,
+          content: [32m'You are Pochi, a highly skilled software engineer with extensive knowledge in many programming languages, frameworks, design patterns, and best practices.\n'[39m +
+            [32m'\n'[39m +
+            [32m'IMPORTANT: You must NEVER generate or guess URLs for the user unless you are confident that the URLs are for helping the user with programming. You may use URLs provided by the user in their messages or local files.\n'[39m +
+            [32m'\n'[39m +
+            [32m'====\n'[39m +
+            [32m'\n'[39m +
+            [32m'TASK MANAGEMENT\n'[39m +
+            [32m'\n'[39m +
+            [32m'You have access to the todoWrite tool to help you manage and plan tasks. Use these tools VERY frequently to ensure that you are tracking your tasks and giving the user visibility into your progress.\n'[39m +
+            [32m'These tools are also EXTREMELY helpful for planning tasks, and for breaking down larger complex tasks into smaller steps. If you do not use this tool when planning, you may forget to do important tasks - and that is unacceptable.\n'[39m +
+            [32m'\n'[39m +
+            [32m'It is critical that you mark todos as completed as soon as you are done with a task. Do not batch up multiple tasks before marking them as completed.\n'[39m +
+            [32m'\n'[39m +
+            [32m'====\n'[39m +
+            [32m'\n'[39m +
+            [32m'RULES\n'[39m +
+            [32m'\n'[39m +
+            [32m"- User messages may include <system-reminder> tags. <system-reminder> tags contain useful information and reminders. They are NOT part of the user's provided input or the tool result. You shall pay close attention to information in these tags and use it to inform you actions.\n"[39m +
+            [32m"- For simple, directed codebase searches (project structure, specific files/classes/functions), use the listFiles tool. If you pass 'true' for the recursive parameter, it will list files recursively. Use globFiles when you need to match files by pattern.\n"[39m +
+            [32m'- For broader codebase exploration and deep research, use the newTask tool with agentType="explore". Use this only when simple, directed searches prove insufficient or when your task will clearly require more than three queries.\n'[39m +
+            [32m'- All file paths used by tools must be relative to current working directory, do not use the ~ character or $HOME to refer to the home directory in file paths used by tools.\n'[39m +
+            [32m"- You can use `pochi://` URI schema to access the Pochi virtual file system. This allows you to read and write files that are stored in Pochi's internal storage.\n"[39m +
+            [32m"- Be sure to consider the type of project (e.g. Python, JavaScript, web application) when determining the appropriate structure and files to include. Also consider what files may be most relevant to accomplishing the task, for example looking at a project's manifest file would help you understand the project's dependencies, which you could incorporate into any code you write.\n"[39m +
+            [32m"- Do not ask for more information than necessary. Use the tools provided to accomplish the user's request efficiently and effectively. When you've completed your task, you must use the attemptCompletion tool to present the result to the user. The user may provide feedback, which you can use to make improvements and try again.\n"[39m +
+            [32m'- You are only allowed to ask the user questions using the askFollowupQuestion tool. Use this tool only when you need additional details to complete a task, and be sure to use a clear and concise question that will help you move forward with the task. However if you can use the available tools to avoid having to ask the user questions, you should do so. For example, if the user mentions a file that may be in an outside directory like the Desktop, you should use the listFiles tool to list the files in the Desktop and check if the file they are talking about is there, rather than asking the user to provide the file path themselves.\n'[39m +
+            [32m`- You are STRICTLY FORBIDDEN from starting your messages with "Great", "Certainly", "Okay", "Sure". You should NOT be conversational in your responses, but rather direct and to the point. For example you should NOT say "Great, I've updated the CSS" but instead something like "I've updated the CSS". It is important you be clear and technical in your messages.\n`[39m +
+            [32m"- Once you've completed the user's task, you MUST use the attemptCompletion tool to present the result of the task to the user. It is STRICTLY FORBIDDEN to complete the task without using this tool.\n"[39m +
+            [32m'- When planning large-scale changes, create a high-level diagram using mermaid in Markdown. This helps explain your plan and allows you to gather user feedback before implementation.'[39m
+        },
+        {
+          role: [32m'user'[39m,
+          content: [
+            {
+              type: [32m'text'[39m,
+              text: [32m'<system-reminder># System Information\n'[39m +
+                [32m'\n'[39m +
+                [32m'Operating System: linux\n'[39m +
+                [32m'Default Shell: \n'[39m +
+                [32m'Home Directory: /root\n'[39m +
+                [32m'Current Working Directory: /\n'[39m +
+                [32m'Current Time: Tue Jun 09 2026 04:31:15 GMT+0000 (Coordinated Universal Time)\n'[39m +
+                [32m'\n'[39m +
+                [32m'# GIT STATUS\n'[39m +
+                [32m'Current branch: \n'[39m +
+                [32m'Main branch (you will usually use this for PRs): \n'[39m +
+                [32m'\n'[39m +
+                [32m'Recent commits:\n'[39m +
+                [32m'\n'[39m +
+                [32m'\n'[39m +
+                [32m'# TODOs\n'[39m +
+                [32m'No TODOs yet, if you are working on tasks that would benefit from a todo list please use the todoWrite tool to create one.</system-reminder>'[39m
+            },
+            {
+              type: [32m'text'[39m,
+              text: [32m'# RedwoodSDK: Multi-Room Realtime Chat\n'[39m +
+                [32m'\n'[39m +
+                [32m'## Background\n'[39m +
+                [32m'\n'[39m +
+                [32m'A RedwoodSDK project is pre-installed at `/home/user/myapp`. Build a chat application whose room IDs are taken from the URL path and whose chat messages are kept in real-time sync per room using `useSyncedState` with a room scope.\n'[39m +
+                [32m'\n'[39m +
+                [32m'## Requirements\n'[39m +
+                [32m'\n'[39m +
+                [32m'* Update `wrangler.jsonc` to register the `SyncedStateServer` Durable Object under the binding name `SYNCED_STATE_SERVER` (with the required SQLite migration including `"new_sqlite_classes": ["SyncedStateServer"]`).\n'[39m +
+                [32m'* In `src/worker.tsx`, re-export `SyncedStateServer` and register `syncedStateRoutes(() => env.SYNCED_STATE_SERVER)` inside `defineApp([...])`.\n'[39m +
+                [32m'* Create a client component at `src/app/components/ChatRoom.tsx` (`"use client"`) that accepts a `roomId` prop and calls `useSyncedState<string[]>([], "messages", roomId)`. It must render:\n'[39m +
+                [32m'  * A scrollable list where each message appears inside an element with attribute `data-testid="chat-message"`.\n'[39m +
+                [32m'  * An `<input data-testid="chat-input" type="text" />` for typing.\n'[39m +
+                [32m'  * A `<button data-testid="send-btn">Send</button>` button that appends the input\'s value to the synced array (and clears the input).\n'[39m +
+                [32m'  * A `<button data-testid="clear-btn">Clear</button>` button that resets messages to `[]`.\n'[39m +
+                [32m'* Implement `GET /chat/:roomId` as a server route that renders a page including `<h1>Room: <roomId></h1>` and the `ChatRoom` client component with the `roomId` parameter from the URL.\n'[39m +
+                [32m'\n'[39m +
+                [32m'## Acceptance Criteria\n'[39m +
+                [32m'\n'[39m +
+                [32m'* Project path: /home/user/myapp\n'[39m +
+                [32m'* Start command: npm run dev -- --host 0.0.0.0 --port 5173\n'[39m +
+                [32m'* Port: 5173\n'[39m +
+                [32m'* `wrangler.jsonc` contains the `SYNCED_STATE_SERVER` durable object binding and the `SyncedStateServer` SQLite migration.\n'[39m +
+                [32m'* `GET /chat/general` returns HTML containing `<h1>Room: general</h1>` and the visible label `Send`.\n'[39m +
+                [32m'* `GET /chat/redwood` returns HTML containing `<h1>Room: redwood</h1>`.\n'[39m +
+                [32m'* Browser verification on http://localhost:5173/chat/general: after clicking `Clear`, typing `hello redwood`, clicking `Send`, the message text `hello redwood` appears inside a `data-testid="chat-message"` element. Then on http://localhost:5173/chat/other, after clicking `Clear`, no chat message with text `hello redwood` is visible (state is room-scoped).'[39m
+            }
+          ]
+        },
+        {
+          role: [32m'assistant'[39m,
+          content: [
+            {
+              type: [32m'reasoning'[39m,
+              text: [32m'**Building Chat Application**\n'[39m +
+                [32m'\n'[39m +
+                [32m"I'm currently focused on configuring the `wrangler.jsonc` file for our RedwoodJS chat application, specifically ensuring the `SyncedStateServer` Durable Object is correctly registered under the `SYNCED_STATE_SERVER` binding.\n"[39m +
+                [32m'\n'[39m +
+                [32m''[39m
+            },
+            {
+              type: [32m'tool-call'[39m,
+              toolCallId: [32m'0r8GaOlT9RTnuSaV'[39m,
+              toolName: [32m'executeCommand'[39m,
+              input: {
+                command: [32m'cd /home/user/myapp && ls -la'[39m
+              },
+              providerOptions: {
+                vertex: {
+                  thoughtSignature: [32m'AY89a1+mWKT7IYGSyYM+Tes8i89bijL2vK/gF3+iTeQ/RUgxAc3cWbe8b5YJJIkA+lcwJkbaaHAeYWpAzZiUbxbPRV22XY1OBuZJY6q3ZNJ4i2dJ7OMLF+K3NVOKNiapxsM3O8KqZSGrv0vDPrZwsojkYPE5J8mDZm3Ry/y3lXDP8ZwOdJ5QhLjfKlzKUttjrzlRDEBmUtjRH8hiGKzE15DNnZI5LebL4MEHWhdvp2HvaXYFjeAps+iWOGJj0qnWo/pU+5sHByEc0+t5JCGLoyq+GBFhHv4uk6rsNjHnP+AUDAr3tG4SrNEJdi9xVi5h61lynhaB8/fy2xrHOG9s07TX5zERctg1sX3jE2jd65OgZcEyS6B1GycQtCT8+j7CUX7ckxHoMptuxXQC5vu0waNWP6LqrILZHxs+dv/iYnBNZm70evPHxJ+bnLURag0s3ZpX6YHYH0V1IJPjOCTiX1UP8iWrQgDuxt6d1kgqRkwaUvZ7X1yXTQTsiq3lT2uNufHWCsx+OdSk7kMd80jbXjaeELu/KyUriaQyLYxOom9fNl0dj4xeBt7mCBfJCyKTA9Y8xfsoJaUml0VoQce8ZhoC9MgmVWM2JbGPxK0Ux4Fhke6DpkAao3yMIPWVy/r0VrRXkv0jJ+//AOVkyAXpXJ9+93WRa90O4dzrsQeQByLrcAsvgxVh25u6vubKA0wTEDI9w74eGjvhKf1ZiRwJ1R3DKbX9+4UKXVaTG3sOyng6VjWtjepRTAK4BtdgDAHTg7f12sojnKQVKgOqbDyvNDNsWXRhUFy5tXxtO1hEY/C2C11ofeTdJfy94KPjhjlVypaaUFD9BHYlpHKRSZ4J3PqwoiD+Dw9FHUE9Vt/I7qw8GElRHYkFy+m4f5Mxekw3IxEtCcvh7p+XVao+SoLSSXIhTVByvrLrhIdg0S4eFzCgGpzRSYT5eX5o+EuOT41u1G/PibopTBe3NIWmDibRvTLCpsjsUFhPGRYKoT1iLx62a/LL1tCkKHtJ9b7xbn4ZtNtvjj72nLZW6WuDoxjVuQCLDezKjVGNd/dO9GslxEAw9W2UIgynNQNCHVO90GgUM41mujvpfMV287f21Nm1iNLzhglET+Rwzvgv1XySjAG4s8Puh/A/aHLUUNtxR8NEV/c80LP8GqM/S6TOCSkuWPtp0QMOChx4cPPrpHRdUh+hxrW/Jjv5tVziovhDo+E2zJE52wiZ4xV0yOvrqyqaniK8H5HfWftFg+Mg6JigZq+qwAQq594yBmJ8dgbHiy/wIfHnWp73y2hUl1agL7dS4LAwnhl8XMjn2ef4sXc5Qjs5HcfdD3yvuBRi/EWzttPiEeNuIya3hwf8OecDTp5jKuWM55cQ0s8ECG8RKmFTL9QLHBSCvKnXkBGAYb7ERwydziBj5kQ5nsGpqwO5kZxXiwX3vbsUeSNHiyKsaT73bW9ATkMnbB+RG7hihFGowJBX/6BJSA4UV9h+3XVAs8YKBVfYxjw64OFOn3Y8rCFMYoFatMvXVIzZ95LPQPUXGGdWFiw5KUKrsaEiR5AXQf/zLw7fylKwDa1NRAIq3ll5gasXDAApmJmRna7fnBFgTdd7u6tc4bjndvwc4cYd6XLyna0AQGHPUkVGjvzhpIH5aWJdq982vu/lc0L/6iYyZsJU7FHjyBglDu1GeEAwqLLkZVdnKiror+FHQnfNJrhAbp5FNyoU2mIAQK7PvpXZMLHAOIWSdElAoqQfH6kFeA7nKKmhAufCCmnI6flBm+d4F/8kI4PWK9BXZ4Y8sF/21VyxDQYTkVKu/hBA+G/xAdBTK+Ns5EiVDrSGN4aOWg4elG84Pc9xRyxhPsCr6/Ubutx2L2g4bljHpgTdpnQAvIdFAyGkfcW4pGJ9PUgrRNSYUW153VCUOHk/N0pcR9bQdhZDmlaOmXzSJDMUg2OJDI74oLpvccOet1fNfsylhyBdyDJ3tSJ0vOpndVPG3W7M/KaJEjp9zc9+f99S60DOjcRGvC6WrM/jMVb8d13vbruOXvKdkCNfu7EnlyEQR0VpykcMBKXNkYGWbP+451b2qA437B+6YN+rfpDv1sZTHzW8pRu9Iow76AYFrYBN3P5pQm7fjhMySeMqWKEOnCouRL2XWWpyqZdreVv0jMVjVU9Jmp9AQhqrgNSOXhj08o9t4+tzYEWNpE4c7Xq0XCPoHA=='[39m
+                }
+              }
+            }
+          ]
+        },
+        {
+          role: [32m'tool'[39m,
+          content: [
+            {
+              type: [32m'tool-result'[39m,
+              toolCallId: [32m'0r8GaOlT9RTnuSaV'[39m,
+              toolName: [32m'executeCommand'[39m,
+              output: {
+                type: [32m'json'[39m,
+                value: {
+                  output: [32m'total 368\r\n'[39m +
+                    [32m'drwxr-xr-x   7 root root   4096 Jun  9 04:01 .\r\n'[39m +
+                    [32m'drwxr-xr-x   1 root root   4096 Jun  9 04:00 ..\r\n'[39m +
+                    [32m'-rw-r--r--   1 root root    733 Jun  4 14:27 .gitignore\r\n'[39m +
+                    [32m'drwxr-xr-x   2 root root   4096 Jun  9 04:00 .vscode\r\n'[39m +
+                    [32m'-rw-r--r--   1 root root    611 Jun  4 14:27 README.md\r\n'[39m +
+                    [32m'drwxr-xr-x 397 root root  20480 Jun  9 04:01 node_modules\r\n'[39m +
+                    [32m'-rw-r--r--   1 root root 301080 Jun  9 04:01 package-lock.json\r\n'[39m +
+                    [32m'-rw-r--r--   1 root root   1271 Jun  4 14:27 package.json\r\n'[39m +
+                    [32m'drwxr-xr-x   2 root root   4096 Jun  9 04:00 public\r\n'[39m +
+                    [32m'drwxr-xr-x   3 root root   4096 Jun  9 04:00 src\r\n'[39m +
+                    [32m'-rw-r--r--   1 root root   1710 Jun  4 14:27 tsconfig.json\r\n'[39m +
+                    [32m'drwxr-xr-x   2 root root   4096 Jun  9 04:00 types\r\n'[39m +
+                    [32m'-rw-r--r--   1 root root    265 Jun  4 14:27 vite.config.mts\r\n'[39m +
+                    [32m'-rw-r--r--   1 root root    324 Jun  4 14:27 worker-configuration.d.ts\r\n'[39m +
+                    [32m'-rw-r--r--   1 root root    568 Jun  4 14:27 wrangler.jsonc\r\n'[39m +
+                    [32m''[39m,
+                  isTruncated: [33mfalse[39m
+                }
+              },
+              providerOptions: {
+                vertex: {
+                  thoughtSignature: [32m'AY89a1+mWKT7IYGSyYM+Tes8i89bijL2vK/gF3+iTeQ/RUgxAc3cWbe8b5YJJIkA+lcwJkbaaHAeYWpAzZiUbxbPRV22XY1OBuZJY6q3ZNJ4i2dJ7OMLF+K3NVOKNiapxsM3O8KqZSGrv0vDPrZwsojkYPE5J8mDZm3Ry/y3lXDP8ZwOdJ5QhLjfKlzKUttjrzlRDEBmUtjRH8hiGKzE15DNnZI5LebL4MEHWhdvp2HvaXYFjeAps+iWOGJj0qnWo/pU+5sHByEc0+t5JCGLoyq+GBFhHv4uk6rsNjHnP+AUDAr3tG4SrNEJdi9xVi5h61lynhaB8/fy2xrHOG9s07TX5zERctg1sX3jE2jd65OgZcEyS6B1GycQtCT8+j7CUX7ckxHoMptuxXQC5vu0waNWP6LqrILZHxs+dv/iYnBNZm70evPHxJ+bnLURag0s3ZpX6YHYH0V1IJPjOCTiX1UP8iWrQgDuxt6d1kgqRkwaUvZ7X1yXTQTsiq3lT2uNufHWCsx+OdSk7kMd80jbXjaeELu/KyUriaQyLYxOom9fNl0dj4xeBt7mCBfJCyKTA9Y8xfsoJaUml0VoQce8ZhoC9MgmVWM2JbGPxK0Ux4Fhke6DpkAao3yMIPWVy/r0VrRXkv0jJ+//AOVkyAXpXJ9+93WRa90O4dzrsQeQByLrcAsvgxVh25u6vubKA0wTEDI9w74eGjvhKf1ZiRwJ1R3DKbX9+4UKXVaTG3sOyng6VjWtjepRTAK4BtdgDAHTg7f12sojnKQVKgOqbDyvNDNsWXRhUFy5tXxtO1hEY/C2C11ofeTdJfy94KPjhjlVypaaUFD9BHYlpHKRSZ4J3PqwoiD+Dw9FHUE9Vt/I7qw8GElRHYkFy+m4f5Mxekw3IxEtCcvh7p+XVao+SoLSSXIhTVByvrLrhIdg0S4eFzCgGpzRSYT5eX5o+EuOT41u1G/PibopTBe3NIWmDibRvTLCpsjsUFhPGRYKoT1iLx62a/LL1tCkKHtJ9b7xbn4ZtNtvjj72nLZW6WuDoxjVuQCLDezKjVGNd/dO9GslxEAw9W2UIgynNQNCHVO90GgUM41mujvpfMV287f21Nm1iNLzhglET+Rwzvgv1XySjAG4s8Puh/A/aHLUUNtxR8NEV/c80LP8GqM/S6TOCSkuWPtp0QMOChx4cPPrpHRdUh+hxrW/Jjv5tVziovhDo+E2zJE52wiZ4xV0yOvrqyqaniK8H5HfWftFg+Mg6JigZq+qwAQq594yBmJ8dgbHiy/wIfHnWp73y2hUl1agL7dS4LAwnhl8XMjn2ef4sXc5Qjs5HcfdD3yvuBRi/EWzttPiEeNuIya3hwf8OecDTp5jKuWM55cQ0s8ECG8RKmFTL9QLHBSCvKnXkBGAYb7ERwydziBj5kQ5nsGpqwO5kZxXiwX3vbsUeSNHiyKsaT73bW9ATkMnbB+RG7hihFGowJBX/6BJSA4UV9h+3XVAs8YKBVfYxjw64OFOn3Y8rCFMYoFatMvXVIzZ95LPQPUXGGdWFiw5KUKrsaEiR5AXQf/zLw7fylKwDa1NRAIq3ll5gasXDAApmJmRna7fnBFgTdd7u6tc4bjndvwc4cYd6XLyna0AQGHPUkVGjvzhpIH5aWJdq982vu/lc0L/6iYyZsJU7FHjyBglDu1GeEAwqLLkZVdnKiror+FHQnfNJrhAbp5FNyoU2mIAQK7PvpXZMLHAOIWSdElAoqQfH6kFeA7nKKmhAufCCmnI6flBm+d4F/8kI4PWK9BXZ4Y8sF/21VyxDQYTkVKu/hBA+G/xAdBTK+Ns5EiVDrSGN4aOWg4elG84Pc9xRyxhPsCr6/Ubutx2L2g4bljHpgTdpnQAvIdFAyGkfcW4pGJ9PUgrRNSYUW153VCUOHk/N0pcR9bQdhZDmlaOmXzSJDMUg2OJDI74oLpvccOet1fNfsylhyBdyDJ3tSJ0vOpndVPG3W7M/KaJEjp9zc9+f99S60DOjcRGvC6WrM/jMVb8d13vbruOXvKdkCNfu7EnlyEQR0VpykcMBKXNkYGWbP+451b2qA437B+6YN+rfpDv1sZTHzW8pRu9Iow76AYFrYBN3P5pQm7fjhMySeMqWKEOnCouRL2XWWpyqZdreVv0jMVjVU9Jmp9AQhqrgNSOXhj08o9t4+tzYEWNpE4c7Xq0XCPoHA=='[39m
+                }
+              }
+            }
+          ]
+        },
+        {
+          role: [32m'assistant'[39m,
+          content: [
+            {
+              type: [32m'reasoning'[39m,
+              text: [32m'**Exploring Wrangler.jsonc**\n'[39m +
+                [32m'\n'[39m +
+                [32m"I'm currently examining the `wrangler.jsonc` file. My focus is on understanding its structure and contents to inform subsequent steps in the process.\n"[39m +
+                [32m'\n'[39m +
+                [32m''[39m
+            },
+            {
+              type: [32m'tool-call'[39m,
+              toolCallId: [32m'Zthc6MM81yCLP1tc'[39m,
+              toolName: [32m'readFile'[39m,
+              input: {
+                path: [32m'/home/user/myapp/wrangler.jsonc'[39m
+              },
+              providerOptions: {
+                vertex: {
+                  thoughtSignature: [32m'CjwBjz1rX81rYXbZaYJ4eMQZQgRRugtgdhj+h7UqtuqsfWiQVGzP5zawW00va94iQ9fATpX4Bdc2gtyLc8I='[39m
+                }
+              }
+            }
+          ]
+        },
+        {
+          role: [32m'tool'[39m,
+          content: [
+            {
+              type: [32m'tool-result'[39m,
+              toolCallId: [32m'Zthc6MM81yCLP1tc'[39m,
+              toolName: [32m'readFile'[39m,
+              output: {
+                type: [32m'json'[39m,
+                value: {
+                  content: [32m'{\n'[39m +
+                    [32m'  // Schema reference for wrangler configuration\n'[39m +
+                    [32m'  "$schema": "node_modules/wrangler/config-schema.json",\n'[39m +
+                    [32m'\n'[39m +
+                    [32m'  // Name of your worker\n'[39m +
+                    [32m'  "name": "__change_me__",\n'[39m +
+                    [32m'\n'[39m +
+                    [32m'  // Entry point for your worker\n'[39m +
+                    [32m'  "main": "src/worker.tsx",\n'[39m +
+                    [32m'\n'[39m +
+                    [32m'  // Compatibility settings\n'[39m +
+                    [32m'  "compatibility_date": "2025-08-21",\n'[39m +
+                    [32m'  "compatibility_flags": ["nodejs_compat"],\n'[39m +
+                    [32m'\n'[39m +
+                    [32m'  // Assets configuration\n'[39m +
+                    [32m'  "assets": {\n'[39m +
+                    [32m'    "binding": "ASSETS"\n'[39m +
+                    [32m'  },\n'[39m +
+                    [32m'\n'[39m +
+                    [32m'  // Observability settings\n'[39m +
+                    [32m'  "observability": {\n'[39m +
+                    [32m'    "enabled": true\n'[39m +
+                    [32m'  },\n'[39m +
+                    [32m'\n'[39m +
+                    [32m'  // Environment variables\n'[39m +
+                    [32m'  "vars": {\n'[39m +
+                    [32m'    // Add your environment variables here\n'[39m +
+                    [32m'  }\n'[39m +
+                    [32m'}\n'[39m +
+                    [32m''[39m,
+                  isTruncated: [33mfalse[39m
+                }
+              },
+              providerOptions: {
+                vertex: {
+                  thoughtSignature: [32m'CjwBjz1rX81rYXbZaYJ4eMQZQgRRugtgdhj+h7UqtuqsfWiQVGzP5zawW00va94iQ9fATpX4Bdc2gtyLc8I='[39m
+                }
+              }
+            }
+          ]
+        },
+        {
+          role: [32m'assistant'[39m,
+          content: [
+            {
+              type: [32m'reasoning'[39m,
+              text: [32m'**Integrating Durable Objects**\n'[39m +
+                [32m'\n'[39m +
+                [32m"I'm currently focused on integrating durable objects and SQLite migrations into the `wrangler.jsonc` configuration. This involves defining bindings for services like `SYNCED_STATE_SERVER` and ensuring seamless database schema evolution.\n"[39m +
+                [32m'\n'[39m +
+                [32m'**Configuring Durable Objects**\n'[39m +
+                [32m'\n'[39m +
+                [32m"I'm in the process of modifying `wrangler.jsonc` to incorporate durable objects and SQLite migrations. Specifically, I'm setting up bindings for `SYNCED_STATE_SERVER` and defining initial migration tags to manage the database schema.\n"[39m +
+                [32m'\n'[39m +
+                [32m''[39m
+            },
+            {
+              type: [32m'tool-call'[39m,
+              toolCallId: [32m'QYEBMP17vEwWWM9p'[39m,
+              toolName: [32m'applyDiff'[39m,
+              input: {
+                path: [32m'/home/user/myapp/wrangler.jsonc'[39m,
+                searchContent: [32m'  // Environment variables\n'[39m +
+                  [32m'  "vars": {\n'[39m +
+                  [32m'    // Add your environment variables here\n'[39m +
+                  [32m'  }\n'[39m +
+                  [32m'}\n'[39m +
+                  [32m''[39m,
+                replaceContent: [32m'  // Environment variables\n'[39m +
+                  [32m'  "vars": {\n'[39m +
+                  [32m'    // Add your environment variables here\n'[39m +
+                  [32m'  },\n'[39m +
+                  [32m'\n'[39m +
+                  [32m'  "durable_objects": {\n'[39m +
+                  [32m'    "bindings": [\n'[39m +
+                  [32m'      {\n'[39m +
+                  [32m'        "name": "SYNCED_STATE_SERVER",\n'[39m +
+                  [32m'        "class_name": "SyncedStateServer"\n'[39m +
+                  [32m'      }\n'[39m +
+                  [32m'    ]\n'[39m +
+                  [32m'  },\n'[39m +
+                  [32m'  "migrations": [\n'[39m +
+                  [32m'    {\n'[39m +
+                  [32m'      "tag": "v1",\n'[39m +
+                  [32m'      "new_sqlite_classes": ["SyncedStateServer"]\n'[39m +
+                  [32m'    }\n'[39m +
+                  [32m'  ]\n'[39m +
+                  [32m'}\n'[39m +
+                  [32m''[39m,
+                expectedReplacements: [33m1[39m
+              },
+              providerOptions: {
+                vertex: {
+                  thoughtSignature: [32m'CmIBjz1rX6hES7gQrHoyJ6BhbIam+fUrm6sKCoFXu6MmYNDbGEW48cBIoDBIY3tCp7DhkZSriy9Rala1PSt1Ys8gO3Gxa1bWgQxvyCjPpcXpRWcECedxjaWktB7o0Tt36J0xuApkAY89a1+SvFuLuHb4C89aEEyZ5SuRMUoL+k/g4yNeFb4XJsqZeLVwWZgH62GSRI7XITHMZ83hK3fkBbNqh2gOd/4/6hDF0yobmtpC0KrZETJ83zLmC5U+hfVZxuLfNw2Z+uSArwpxAY89a1+1RfJvWrutEJRUu8PYsok/Z+Toy+onl+J3byKDHx+awR0sjF69k/whV88/0g361ex9Dv/Dslvc87OI37p8UG35tP8AcU+aqvondf0NSbC6KHWKCe96tqUzf1McYVOM5tScmP2tWbcsCNHKRKEKWwGPPWtfWKNryr8qHGTO5gEvmIBIEFWvWjyyduHQZQy7rD9WNpjbdHsOFa+5W52YRAsw7wJGk9XyGggAqgjpc4il2vVS/gKVGcXLfGh+/rZ6E7vS0vwN3PeVrOQKYwGPPWtfaUNTjV10ZqlhS9f7A5ZGDL1F6Dbc8d7C0ivcVEB2i0H5yZ2yNJlijuac2H1B6HFlryCNX99gHuQMXe6U9ms8EMe4bsWHwApRZz+I9CUlu+2bM0Ns0VpSZnGwT+CXqQpEAY89a1/r0uM8RjoAJWdNGapJTLKOJHlGnBwpg0CzGegS63xzGR9WuzeNNP3ybLjShLF5AEGqiLW50GmWVQQZkS+tdyQ='[39m
+                }
+              }
+            }
+          ]
+        },
+        {
+          role: [32m'tool'[39m,
+          content: [
+            {
+              type: [32m'tool-result'[39m,
+              toolCallId: [32m'QYEBMP17vEwWWM9p'[39m,
+              toolName: [32m'applyDiff'[39m,
+              output: {
+                type: [32m'json'[39m,
+                value: {
+                  success: [33mtrue[39m
+                }
+              },
+              providerOptions: {
+                vertex: {
+                  thoughtSignature: [32m'CmIBjz1rX6hES7gQrHoyJ6BhbIam+fUrm6sKCoFXu6MmYNDbGEW48cBIoDBIY3tCp7DhkZSriy9Rala1PSt1Ys8gO3Gxa1bWgQxvyCjPpcXpRWcECedxjaWktB7o0Tt36J0xuApkAY89a1+SvFuLuHb4C89aEEyZ5SuRMUoL+k/g4yNeFb4XJsqZeLVwWZgH62GSRI7XITHMZ83hK3fkBbNqh2gOd/4/6hDF0yobmtpC0KrZETJ83zLmC5U+hfVZxuLfNw2Z+uSArwpxAY89a1+1RfJvWrutEJRUu8PYsok/Z+Toy+onl+J3byKDHx+awR0sjF69k/whV88/0g361ex9Dv/Dslvc87OI37p8UG35tP8AcU+aqvondf0NSbC6KHWKCe96tqUzf1McYVOM5tScmP2tWbcsCNHKRKEKWwGPPWtfWKNryr8qHGTO5gEvmIBIEFWvWjyyduHQZQy7rD9WNpjbdHsOFa+5W52YRAsw7wJGk9XyGggAqgjpc4il2vVS/gKVGcXLfGh+/rZ6E7vS0vwN3PeVrOQKYwGPPWtfaUNTjV10ZqlhS9f7A5ZGDL1F6Dbc8d7C0ivcVEB2i0H5yZ2yNJlijuac2H1B6HFlryCNX99gHuQMXe6U9ms8EMe4bsWHwApRZz+I9CUlu+2bM0Ns0VpSZnGwT+CXqQpEAY89a1/r0uM8RjoAJWdNGapJTLKOJHlGnBwpg0CzGegS63xzGR9WuzeNNP3ybLjShLF5AEGqiLW50GmWVQQZkS+tdyQ='[39m
+                }
+              }
+            }
+          ]
+        },
+        {
+          role: [32m'assistant'[39m,
+          content: [
+            {
+              type: [32m'reasoning'[39m,
+              text: [32m'**Modifying Worker Logic**\n'[39m +
+                [32m'\n'[39m +
+                [32m"I'm currently focused on updating the `src/worker.tsx` file. My immediate goal is to refine its internal operations.\n"[39m +
+                [32m'\n'[39m +
+                [32m''[39m
+            },
+            {
+              type: [32m'tool-call'[39m,
+              toolCallId: [32m'4N9wtpBji4JiccKb'[39m,
+              toolName: [32m'readFile'[39m,
+              input: {
+                path: [32m'/home/user/myapp/src/worker.tsx'[39m
+              },
+              providerOptions: {
+                vertex: {
+                  thoughtSignature: [32m'Cj8Bjz1rXyU1I0Sl2tTz2goSRVWbvucrnRC1tYWwagvE9K9bc44w/bRYHMEff6lDg+qhDNoWTKYvNNdstuckbNs='[39m
+                }
+              }
+            }
+          ]
+        },
+        {
+          role: [32m'tool'[39m,
+          content: [
+            {
+              type: [32m'tool-result'[39m,
+              toolCallId: [32m'4N9wtpBji4JiccKb'[39m,
+              toolName: [32m'readFile'[39m,
+              output: {
+                type: [32m'json'[39m,
+                value: {
+                  content: [32m'import { render, route } from "rwsdk/router";\n'[39m +
+                    [32m'import { defineApp } from "rwsdk/worker";\n'[39m +
+                    [32m'\n'[39m +
+                    [32m'import { Document } from "@/app/document";\n'[39m +
+                    [32m'import { setCommonHeaders } from "@/app/headers";\n'[39m +
+                    [32m'import { Home } from "@/app/pages/home";\n'[39m +
+                    [32m'\n'[39m +
+                    [32m'export type AppContext = {};\n'[39m +
+                    [32m'\n'[39m +
+                    [32m'export default defineApp([\n'[39m +
+                    [32m'  setCommonHeaders(),\n'[39m +
+                    [32m'  ({ ctx }) => {\n'[39m +
+                    [32m'    // setup ctx here\n'[39m +
+                    [32m'    ctx;\n'[39m +
+                    [32m'  },\n'[39m +
+                    [32m'  render(Document, [route("/", Home)]),\n'[39m +
+                    [32m']);\n'[39m +
+                    [32m''[39m,
+                  isTruncated: [33mfalse[39m
+                }
+              },
+              providerOptions: {
+                vertex: {
+                  thoughtSignature: [32m'Cj8Bjz1rXyU1I0Sl2tTz2goSRVWbvucrnRC1tYWwagvE9K9bc44w/bRYHMEff6lDg+qhDNoWTKYvNNdstuckbNs='[39m
+                }
+              }
+            }
+          ]
+        },
+        {
+          role: [32m'assistant'[39m,
+          content: [
+            {
+              type: [32m'reasoning'[39m,
+              text: [32m'**Re-exporting SyncedStateServer**\n'[39m +
+                [32m'\n'[39m +
+                [32m"I'm currently focused on re-exporting `SyncedStateServer` from `@redwoodjs/sdk` within `src/worker.tsx`. Following that, the plan is to register `syncedStateRoutes` which will leverage the `env.SYNCED_STATE` variable for its configuration.\n"[39m +
+                [32m'\n'[39m +
+                [32m''[39m
+            },
+            {
+              type: [32m'tool-call'[39m,
+              toolCallId: [32m'ktokrrevDzYmWfxY'[39m,
+              toolName: [32m'executeCommand'[39m,
+              input: {
+                command: [32m'cd /home/user/myapp && cat package.json'[39m
+              },
+              providerOptions: {
+                vertex: {
+                  thoughtSignature: [32m'AY89a1+71Qg+0IuTxOeMRDzB2ifMvWZlUjFmzNAyvDk97wAUwMmqYY8vn1+AK2qvUOKPTkkQzbEqHrOKLAZMyGgm35C9wO3QcEkGGjKGIsMprAfIagVsuWiWcyuSXZlpvRKvFxQPbUe72qya4kJ3y/TElUsRZ3i2AOln5vU8dWHlZEnooNvxqkwOPN+20c/JkQs5S5WBvF5Nt4FQWFLIyIfNkrNNPVtfLtoqLrWTcvS1dIcOmMbIIseVesaPLmBn1wikawsxlCgxsvBxOLXK1AgFn4Iogn/pvPuF5LsTvpy49XVglYyGOr3s0F4Be+mXHSU5UWSmeWb0R2cUpV6NPYynYH6BECbY5vKsbmWEjhEc8w77sdiXO2TtJyhr+5urR9L9PgGz6WUL8NMY45NktvhJF32/F37HHQ5Jp+PGbtyaBmZF+HmnD7leT+qjrto0yVbyILlyytgxTFMJTq/tRvXHVwQAJwjxiALufcKpp2YwDyzPwHUsfWZjV59kevMSfDa7sLM+ph3pTDUUTXu+UPicrTOxPCrcl05HSNgislEZJaU3M5HY4LeDmtqMRGdYX/1GleVC+efH2yTzkWYEiQrEvARCaZqbsg=='[39m
+                }
+              }
+            }
+          ]
+        },
+        {
+          role: [32m'tool'[39m,
+          content: [
+            {
+              type: [32m'tool-result'[39m,
+              toolCallId: [32m'ktokrrevDzYmWfxY'[39m,
+              toolName: [32m'executeCommand'[39m,
+              output: {
+                type: [32m'json'[39m,
+                value: {
+                  output: [32m'{\r\n'[39m +
+                    [32m'  "name": "@redwoodjs/starter",\r\n'[39m +
+                    [32m'  "version": "1.0.0",\r\n'[39m +
+                    [32m'  "description": "A bare-bones RedwoodSDK starter",\r\n'[39m +
+                    [32m'  "main": "index.js",\r\n'[39m +
+                    [32m'  "type": "module",\r\n'[39m +
+                    [32m'  "keywords": [],\r\n'[39m +
+                    [32m'  "author": "",\r\n'[39m +
+                    [32m'  "license": "MIT",\r\n'[39m +
+                    [32m'  "private": true,\r\n'[39m +
+                    [32m'  "scripts": {\r\n'[39m +
+                    [32m'    "build": "vite build",\r\n'[39m +
+                    [32m'    "dev": "vite dev",\r\n'[39m +
+                    [32m'    "dev:init": "rw-scripts dev-init",\r\n'[39m +
+                    [32m'    "preview": "vite preview",\r\n'[39m +
+                    [32m'    "worker:run": "rw-scripts worker-run",\r\n'[39m +
+                    [32m'    "clean": "npm run clean:vite",\r\n'[39m +
+                    [32m'    "clean:vite": "rm -rf ./node_modules/.vite",\r\n'[39m +
+                    [32m'    "release": "rw-scripts ensure-deploy-env && npm run clean && npm run build && wrangler deploy",\r\n'[39m +
+                    [32m'    "generate": "rw-scripts ensure-env && wrangler types --include-runtime false",\r\n'[39m +
+                    [32m'    "check": "npm run generate && npm run types",\r\n'[39m +
+                    [32m'    "types": "tsc"\r\n'[39m +
+                    [32m'  },\r\n'[39m +
+                    [32m'  "dependencies": {\r\n'[39m +
+                    [32m'    "react": "19.2.6",\r\n'[39m +
+                    [32m'    "react-dom": "19.2.6",\r\n'[39m +
+                    [32m'    "react-server-dom-webpack": "19.2.6",\r\n'[39m +
+                    [32m'    "rwsdk": "1.2.11"\r\n'[39m +
+                    [32m'  },\r\n'[39m +
+                    [32m'  "devDependencies": {\r\n'[39m +
+                    [32m'    "@cloudflare/vite-plugin": "1.33.2",\r\n'[39m +
+                    [32m'    "@cloudflare/workers-types": "4.20260426.1",\r\n'[39m +
+                    [32m'    "@types/node": "~25.6.0",\r\n'[39m +
+                    [32m'    "@types/react": "19.2.14",\r\n'[39m +
+                    [32m'    "@types/react-dom": "19.2.3",\r\n'[39m +
+                    [32m'    "typescript": "6.0.3",\r\n'[39m +
+                    [32m'    "vite": "~7.3.2",\r\n'[39m +
+                    [32m'    "wrangler": "4.85.0"\r\n'[39m +
+                    [32m'  },\r\n'[39m +
+                    [32m'  "pnpm": {\r\n'[39m +
+                    [32m'    "onlyBuiltDependencies": [\r\n'[39m +
+                    [32m'      "esbuild",\r\n'[39m +
+                    [32m'      "sharp",\r\n'[39m +
+                    [32m'      "workerd"\r\n'[39m +
+                    [32m'    ]\r\n'[39m +
+                    [32m'  }\r\n'[39m +
+                    [32m'}\r\n'[39m +
+                    [32m''[39m,
+                  isTruncated: [33mfalse[39m
+                }
+              },
+              providerOptions: {
+                vertex: {
+                  thoughtSignature: [32m'AY89a1+71Qg+0IuTxOeMRDzB2ifMvWZlUjFmzNAyvDk97wAUwMmqYY8vn1+AK2qvUOKPTkkQzbEqHrOKLAZMyGgm35C9wO3QcEkGGjKGIsMprAfIagVsuWiWcyuSXZlpvRKvFxQPbUe72qya4kJ3y/TElUsRZ3i2AOln5vU8dWHlZEnooNvxqkwOPN+20c/JkQs5S5WBvF5Nt4FQWFLIyIfNkrNNPVtfLtoqLrWTcvS1dIcOmMbIIseVesaPLmBn1wikawsxlCgxsvBxOLXK1AgFn4Iogn/pvPuF5LsTvpy49XVglYyGOr3s0F4Be+mXHSU5UWSmeWb0R2cUpV6NPYynYH6BECbY5vKsbmWEjhEc8w77sdiXO2TtJyhr+5urR9L9PgGz6WUL8NMY45NktvhJF32/F37HHQ5Jp+PGbtyaBmZF+HmnD7leT+qjrto0yVbyILlyytgxTFMJTq/tRvXHVwQAJwjxiALufcKpp2YwDyzPwHUsfWZjV59kevMSfDa7sLM+ph3pTDUUTXu+UPicrTOxPCrcl05HSNgislEZJaU3M5HY4LeDmtqMRGdYX/1GleVC+efH2yTzkWYEiQrEvARCaZqbsg=='[39m
+                }
+              }
+            }
+          ]
+        },
+        {
+          role: [32m'assistant'[39m,
+          content: [
+            {
+              type: [32m'reasoning'[39m,
+              text: [32m'**Exploring rwsdk Exports**\n'[39m +
+                [32m'\n'[39m +
+                [32m"I'm currently examining the exported components from the `rwsdk` package, a crucial step in understanding its structure and potential integrations.\n"[39m +
+                [32m'\n'[39m +
+                [32m''[39m
+            },
+            {
+              type: [32m'tool-call'[39m,
+              toolCallId: [32m'L9d2ulUAVki05lrd'[39m,
+              toolName: [32m'executeCommand'[39m,
+              input: {
+                command: [32m'cd /home/user/myapp && ls node_modules/rwsdk'[39m
+              },
+              providerOptions: {
+                vertex: {
+                  thoughtSignature: [32m'CksBjz1rX2QjYCsrvmNCf1jh4lIAs+a9dUBU76wCdJXEWrCIHlFLNIa2gfVCAsKqQeDW0X+jfTvYLAWGHUjPpvdwrD54nZYSkkcyOKUKKwGPPWtfjal2FBwUgkNZdTxyl//a31GFNg8VjkPe3P9mspwu1d4oIzbGjSk='[39m
+                }
+              }
+            }
+          ]
+        },
+        {
+          role: [32m'tool'[39m,
+          content: [
+            {
+              type: [32m'tool-result'[39m,
+              toolCallId: [32m'L9d2ulUAVki05lrd'[39m,
+              toolName: [32m'executeCommand'[39m,
+              output: {
+                type: [32m'json'[39m,
+                value: {
+                  output: [32m'README.md\r\nbin\r\ndist\r\npackage.json\r\n'[39m,
+                  isTruncated: [33mfalse[39m
+                }
+              },
+              providerOptions: {
+                vertex: {
+                  thoughtSignature: [32m'CksBjz1rX2QjYCsrvmNCf1jh4lIAs+a9dUBU76wCdJXEWrCIHlFLNIa2gfVCAsKqQeDW0X+jfTvYLAWGHUjPpvdwrD54nZYSkkcyOKUKKwGPPWtfjal2FBwUgkNZdTxyl//a31GFNg8VjkPe3P9mspwu1d4oIzbGjSk='[39m
+                }
+              }
+            }
+          ]
+        },
+        {
+          role: [32m'assistant'[39m,
+          content: [
+            {
+              type: [32m'tool-call'[39m,
+              toolCallId: [32m'lCFGauy8AW9CrYKp'[39m,
+              toolName: [32m'executeCommand'[39m,
+              input: {
+                command: [32m'cd /home/user/myapp && grep -r "SyncedStateServer" node_modules/rwsdk/dist/'[39m
+              },
+              providerOptions: {
+                vertex: {
+                  thoughtSignature: [32m'AY89a1+p41a3SjQzx16fe6H9vc9ZSmasWC6+4INfWWMyZ7tV1y+nEXFY+MW6ZWA7+LZ564zzlTH0oj2upsXqSHsl9Mop/IsC5kBMGOdhh3McPw7BS8ZrFHh8a7l3McVsmSOl4hRrwgI8wPiUtdPvMpu5e0i6pDw74mLRShvJ5Y5y2hKghQsrAHKiozsOYYmnv9wAOL67lEaRFPevJl/gZoijIbqHB1U='[39m
+                }
+              }
+            }
+          ]
+        },
+        {
+          role: [32m'tool'[39m,
+          content: [
+            {
+              type: [32m'tool-result'[39m,
+              toolCallId: [32m'lCFGauy8AW9CrYKp'[39m,
+              toolName: [32m'executeCommand'[39m,
+              output: {
+                type: [32m'json'[39m,
+                value: {
+                  output: [32m'node_modules/rwsdk/dist/use-synced-state/worker.d.mts:import { SyncedStateServer } from "./SyncedStateServer.mjs";\r\n'[39m +
+                    [32m'node_modules/rwsdk/dist/use-synced-state/worker.d.mts:export { SyncedStateServer };\r\n'[39m +
+                    [32m'node_modules/rwsdk/dist/use-synced-state/worker.d.mts:export declare const syncedStateRoutes: (getNamespace: (env: Cloudflare.Env) => DurableObjectNamespace<SyncedStateServer>, options?: SyncedStateRouteOptions) => import("../runtime/lib/router.js").RouteDefinition<`/${string}`, RequestInfo<any, import("../runtime/requestInfo/types").DefaultAppContext>>[];\r\n'[39m +
+                    [32m'node_modules/rwsdk/dist/use-synced-state/worker.mjs:import { SyncedStateServer, } from "./SyncedStateServer.mjs";\r\n'[39m +
+                    [32m'node_modules/rwsdk/dist/use-synced-state/worker.mjs:export { SyncedStateServer };\r\n'[39m +
+                    [32m'node_modules/rwsdk/dist/use-synced-state/worker.mjs:                    const subscribeHandler = SyncedStateServer.getSubscribeHandler();\r\n'[39m +
+                    [32m'node_modules/rwsdk/dist/use-synced-state/worker.mjs:                    const unsubscribeHandler = SyncedStateServer.getUnsubscribeHandler();\r\n'[39m +
+                    [32m'node_modules/rwsdk/dist/use-synced-state/worker.mjs:        SyncedStateServer.registerNamespace(namespace, durableObjectName);\r\n'[39m +
+                    [32m'node_modules/rwsdk/dist/use-synced-state/worker.mjs:        const keyHandler = SyncedStateServer.getKeyHandler();\r\n'[39m +
+                    [32m'node_modules/rwsdk/dist/use-synced-state/worker.mjs:        const roomHandler = SyncedStateServer.getRoomHandler();\r\n'[39m +
+                    [32m'node_modules/rwsdk/dist/use-synced-state/__tests__/worker.test.mjs:import { syncedStateRoutes, SyncedStateServer } from "../worker.mjs";\r\n'[39m +
+                    [32m'node_modules/rwsdk/dist/use-synced-state/__tests__/worker.test.mjs:        mockCoordinator = new SyncedStateServer({}, {});\r\n'[39m +
+                    [32m'node_modules/rwsdk/dist/use-synced-state/__tests__/worker.test.mjs:        SyncedStateServer.registerKeyHandler(async (key, stub) => key);\r\n'[39m +
+                    [32m'node_modules/rwsdk/dist/use-synced-state/__tests__/worker.test.mjs:        SyncedStateServer.registerKeyHandler(handler);\r\n'[39m +
+                    [32m'node_modules/rwsdk/dist/use-synced-state/__tests__/worker.test.mjs:        SyncedStateServer.registerKeyHandler(async (key, stub) => key);\r\n'[39m +
+                    [32m'node_modules/rwsdk/dist/use-synced-state/__tests__/worker.test.mjs:        const handler = SyncedStateServer.getKeyHandler();\r\n'[39m +
+                    [32m'node_modules/rwsdk/dist/use-synced-state/__tests__/worker.test.mjs:        SyncedStateServer.registerKeyHandler(handler);\r\n'[39m +
+                    [32m'node_modules/rwsdk/dist/use-synced-state/__tests__/worker.test.mjs:        SyncedStateServer.registerKeyHandler(handler);\r\n'[39m +
+                    [32m'node_modules/rwsdk/dist/use-synced-state/__tests__/worker.test.mjs:        SyncedStateServer.registerKeyHandler(handler);\r\n'[39m +
+                    [32m'node_modules/rwsdk/dist/use-synced-state/__tests__/worker.test.mjs:        SyncedStateServer.registerKeyHandler(async (key) => key);\r\n'[39m +
+                    [32m'node_modules/rwsdk/dist/use-synced-state/__tests__/worker.test.mjs:        SyncedStateServer.registerKeyHandler(handler);\r\n'[39m +
+                    [32m'node_modules/rwsdk/dist/use-synced-state/__tests__/SyncStateServer.test.mjs:import { SyncedStateServer } from "../SyncedStateServer.mjs";\r\n'[39m +
+                    [32m'node_modules/rwsdk/dist/use-synced-state/__tests__/SyncStateServer.test.mjs:describe("SyncedStateServer", () => {\r\n'[39m +
+                    [32m'node_modules/rwsdk/dist/use-synced-state/__tests__/SyncStateServer.test.mjs:        const coordinator = new SyncedStateServer({}, {});\r\n'[39m +
+                    [32m'node_modules/rwsdk/dist/use-synced-state/__tests__/SyncStateServer.test.mjs:        const coordinator = new SyncedStateServer({}, {});\r\n'[39m +
+                    [32m'node_modules/rwsdk/dist/use-synced-state/__tests__/SyncStateServer.test.mjs:        const coordinator = new SyncedStateServer({}, {});\r\n'[39m +
+                    [32m'node_modules/rwsdk/dist/use-synced-state/__tests__/SyncStateServer.test.mjs:        const coordinator = new SyncedStateServer({}, {});\r\n'[39m +
+                    [32m'node_modules/rwsdk/dist/use-synced-state/__tests__/SyncStateServer.test.mjs:        SyncedStateServer.registerSetStateHandler((key, value, stub) => {\r\n'[39m +
+                    [32m'node_modules/rwsdk/dist/use-synced-state/__tests__/SyncStateServer.test.mjs:        SyncedStateServer.registerSetStateHandler(null);\r\n'[39m +
+                    [32m'node_modules/rwsdk/dist/use-synced-state/__tests__/SyncStateServer.test.mjs:        const coordinator = new SyncedStateServer({}, {});\r\n'[39m +
+                    [32m'node_modules/rwsdk/dist/use-synced-state/__tests__/SyncStateServer.test.mjs:        SyncedStateServer.registerGetStateHandler((key, value, stub) => {\r\n'[39m +
+                    [32m'node_modules/rwsdk/dist/use-synced-state/__tests__/SyncStateServer.test.mjs:        SyncedStateServer.registerGetStateHandler(null);\r\n'[39m +
+                    [32m'node_modules/rwsdk/dist/use-synced-state/__tests__/SyncStateServer.test.mjs:            SyncedStateServer.registerKeyHandler(async (key, stub) => key);\r\n'[39m +
+                    [32m'node_modules/rwsdk/dist/use-synced-state/__tests__/SyncStateServer.test.mjs:            SyncedStateServer.registerKeyHandler(handler);\r\n'[39m +
+                    [32m'node_modules/rwsdk/dist/use-synced-state/__tests__/SyncStateServer.test.mjs:            const retrievedHandler = SyncedStateServer.getKeyHandler();\r\n'[39m +
+                    [32m'node_modules/rwsdk/dist/use-synced-state/__tests__/SyncStateServer.test.mjs:            SyncedStateServer.registerKeyHandler(handler);\r\n'[39m +
+                    [32m'node_modules/rwsdk/dist/use-synced-state/__tests__/SyncStateServer.test.mjs:            SyncedStateServer.registerKeyHandler(async (key, stub) => key);\r\n'[39m +
+                    [32m'node_modules/rwsdk/dist/use-synced-state/__tests__/SyncStateServer.test.mjs:            const handler = SyncedStateServer.getKeyHandler();\r\n'[39m +
+                    [32m'node_modules/rwsdk/dist/use-synced-state/__tests__/SyncStateServer.test.mjs:            SyncedStateServer.registerKeyHandler(handler);\r\n'[39m +
+                    [32m'node_modules/rwsdk/dist/use-synced-state/__tests__/SyncStateServer.test.mjs:            SyncedStateServer.registerKeyHandler(handler);\r\n'[39m +
+                    [32m'node_modules/rwsdk/dist/use-synced-state/SyncedStateServer.mjs:var _SyncedStateServer_instances, _a, _SyncedStateServer_keyHandler, _SyncedStateServer_roomHandler, _SyncedStateServer_setStateHandler, _SyncedStateServer_getStateHandler, _SyncedStateServer_subscribeHandler, _SyncedStateServer_unsubscribeHandler, _SyncedStateServer_namespace, _SyncedStateServer_durableObjectName, _SyncedStateServer_stub, _SyncedStateServer_stateStore, _SyncedStateServer_subscriptions, _SyncedStateServer_subscriptionRefs, _SyncedStateServer_getStubForHandlers;\r\n'[39m +
+                    [32m'node_modules/rwsdk/dist/use-synced-state/SyncedStateServer.mjs:export class SyncedStateServer extends DurableObject {\r\n'[39m +
+                    [32m'node_modules/rwsdk/dist/use-synced-state/SyncedStateServer.mjs:        _SyncedStateServer_instances.add(this);\r\n'[39m +
+                    [32m'node_modules/rwsdk/dist/use-synced-state/SyncedStateServer.mjs:        _SyncedStateServer_stub.set(this, null);\r\n'[39m +
+                    [32m'node_modules/rwsdk/dist/use-synced-state/SyncedStateServer.mjs:        _SyncedStateServer_stateStore.set(this, new Map());\r\n'[39m +
+                    [32m'node_modules/rwsdk/dist/use-synced-state/SyncedStateServer.mjs:        _SyncedStateServer_subscriptions.set(this, new Map());\r\n'[39m +
+                    [32m'node_modules/rwsdk/dist/use-synced-state/SyncedStateServer.mjs:        _SyncedStateServer_subscriptionRefs.set(this, new Map());\r\n'[39m +
+                    [32m'node_modules/rwsdk/dist/use-synced-state/SyncedStateServer.mjs:        __classPrivateFieldSet(_a, _a, handler, "f", _SyncedStateServer_keyHandler);\r\n'[39m +
+                    [32m'node_modules/rwsdk/dist/use-synced-state/SyncedStateServer.mjs:        return __classPrivateFieldGet(_a, _a, "f", _SyncedStateServer_keyHandler);\r\n'[39m +
+                    [32m'node_modules/rwsdk/dist/use-synced-state/SyncedStateServer.mjs:        __classPrivateFieldSet(_a, _a, handler, "f", _SyncedStateServer_roomHandler);\r\n'[39m +
+                    [32m'node_modules/rwsdk/dist/use-synced-state/SyncedStateServer.mjs:        return __classPrivateFieldGet(_a, _a, "f", _SyncedStateServer_roomHandler);\r\n'[39m +
+                    [32m'node_modules/rwsdk/dist/use-synced-state/SyncedStateServer.mjs:        __classPrivateFieldSet(_a, _a, namespace, "f", _SyncedStateServer_namespace);\r\n'[39m +
+                    [32m'node_modules/rwsdk/dist/use-synced-state/SyncedStateServer.mjs:            __classPrivateFieldSet(_a, _a, durableObjectName, "f", _SyncedStateServer_durableObjectName);\r\n'[39m +
+                    [32m'node_modules/rwsdk/dist/use-synced-state/SyncedStateServer.mjs:        return __classPrivateFieldGet(_a, _a, "f", _SyncedStateServer_namespace);\r\n'[39m +
+                    [32m'node_modules/rwsdk/dist/use-synced-state/SyncedStateServer.mjs:        return __classPrivateFieldGet(_a, _a, "f", _SyncedStateServer_durableObjectName);\r\n'[39m +
+                    [32m'node_modules/rwsdk/dist/use-synced-state/SyncedStateServer.mjs:        __classPrivateFieldSet(this, _SyncedStateServer_stub, stub, "f");\r\n'[39m +
+                    [32m'node_modules/rwsdk/dist/use-synced-state/SyncedStateServer.mjs:        __classPrivateFieldSet(_a, _a, handler, "f", _SyncedStateServer_setStateHandler);\r\n'[39m +
+                    [32m'node_modules/rwsdk/dist/use-synced-state/SyncedStateServer.mjs:        __classPrivateFieldSet(_a, _a, handler, "f", _SyncedStateServer_getStateHandler);\r\n'[39m +
+                    [32m'node_modules/rwsdk/dist/use-synced-state/SyncedStateServer.mjs:        __classPrivateFieldSet(_a, _a, handler, "f", _SyncedStateServer_subscribeHandler);\r\n'[39m +
+                    [32m'node_modules/rwsdk/dist/use-synced-state/SyncedStateServer.mjs:        __classPrivateFieldSet(_a, _a, handler, "f", _SyncedStateServer_unsubscribeHandler);\r\n'[39m +
+                    [32m'node_modules/rwsdk/dist/use-synced-state/SyncedStateServer.mjs:        return __classPrivateFieldGet(_a, _a, "f", _SyncedStateServer_subscribeHandler);\r\n'[39m +
+                    [32m'node_modules/rwsdk/dist/use-synced-state/SyncedStateServer.mjs:        return __classPrivateFieldGet(_a, _a, "f", _SyncedStateServer_unsubscribeHandler);\r\n'[39m +
+                    [32m'node_modules/rwsdk/dist/use-synced-state/SyncedStateServer.mjs:        const value = __classPrivateFieldGet(this, _SyncedStateServer_stateStore, "f").get(key);\r\n'[39m +
+                    [32m'node_modules/rwsdk/dist/use-synced-state/SyncedStateServer.mjs:        if (__classPrivateFieldGet(_a, _a, "f", _SyncedStateServer_getStateHandler)) {\r\n'[39m +
+                    [32m'node_modules/rwsdk/dist/use-synced-state/SyncedStateServer.mjs:            const stub = __classPrivateFieldGet(this, _SyncedStateServer_instances, "m", _SyncedStateServer_getStubForHandlers).call(this);\r\n'[39m +
+                    [32m'node_modules/rwsdk/dist/use-synced-state/SyncedStateServer.mjs:                __classPrivateFieldGet(_a, _a, "f", _SyncedStateServer_getStateHandler).call(_a, key, value, stub);\r\n'[39m +
+                    [32m'node_modules/rwsdk/dist/use-synced-state/SyncedStateServer.mjs:        __classPrivateFieldGet(this, _SyncedStateServer_stateStore, "f").set(key, value);\r\n'[39m +
+                    [32m'node_modules/rwsdk/dist/use-synced-state/SyncedStateServer.mjs:        if (__classPrivateFieldGet(_a, _a, "f", _SyncedStateServer_setSt'[39m... 6130 more characters,
+                  isTruncated: [33mfalse[39m
+                }
+              },
+              providerOptions: {
+                vertex: {
+                  thoughtSignature: [32m'AY89a1+p41a3SjQzx16fe6H9vc9ZSmasWC6+4INfWWMyZ7tV1y+nEXFY+MW6ZWA7+LZ564zzlTH0oj2upsXqSHsl9Mop/IsC5kBMGOdhh3McPw7BS8ZrFHh8a7l3McVsmSOl4hRrwgI8wPiUtdPvMpu5e0i6pDw74mLRShvJ5Y5y2hKghQsrAHKiozsOYYmnv9wAOL67lEaRFPevJl/gZoijIbqHB1U='[39m
+                }
+              }
+            }
+          ]
+        },
+        {
+          role: [32m'assistant'[39m,
+          content: [
+            {
+              type: [32m'reasoning'[39m,
+              text: [32m'**Exploring SDK Exports**\n'[39m +
+                [32m'\n'[39m +
+                [32m"I'm currently investigating the export path for `SyncedStateServer` and `syncedStateRoutes` within the `rwsdk`. My focus is on pinpointing their exact location by examining the `package.json` file in the `node_modules/rwsdk` directory.\n"[39m +
+                [32m'\n'[39m +
+                [32m''[39m
+            },
+            {
+              type: [32m'tool-call'[39m,
+              toolCallId: [32m'vyYcyYZ17FUcRzYt'[39m,
+              toolName: [32m'executeCommand'[39m,
+              input: {
+                command: [32m'cd /home/user/myapp && cat node_modules/rwsdk/package.json'[39m
+              },
+              providerOptions: {
+                vertex: {
+                  thoughtSignature: [32m'Cl0Bjz1rX+1vPvVMiAHEKq3mDjC6Yl6d2tAKujmYKpffcm9ptXwTMp7MOoINdrhXn7bbWWiHoPI6KeGbVYG12iiBqIJvw3NwDDKhS7BCWGhMwb6BSvfd5I5R/wBcyIEKaQGPPWtfVHtwYKwIkndL+oRdivhucJt9rv6JMLhMA+OE8WNTaGkfJ/H62Qd3nwCsthXAqjk9lFXLuYVuHNxzJ/YAANMg+i/oxtuFOP3G4Xpb8h7S0k5KBC71FA1U6G9yAFrM0aIJHafAyApPAY89a1+FttTxz5thEN/rke/4oXi7hFZ1JZEDwUCNICelOqXHeKPFQdo3uwK4+fOXPugQfAviYQPKqKSZhaR+ogeTqKpBv/3sAM+q8dxtfQ=='[39m
+                }
+              }
+            }
+          ]
+        },
+        {
+          role: [32m'tool'[39m,
+          content: [
+            {
+              type: [32m'tool-result'[39m,
+              toolCallId: [32m'vyYcyYZ17FUcRzYt'[39m,
+              toolName: [32m'executeCommand'[39m,
+              output: {
+                type: [32m'json'[39m,
+                value: {
+                  output: [32m'{\r\n'[39m +
+                    [32m'  "name": "rwsdk",\r\n'[39m +
+                    [32m'  "version": "1.2.11",\r\n'[39m +
+                    [32m'  "description": "Build fast, server-driven webapps on Cloudflare with SSR, RSC, and realtime",\r\n'[39m +
+                    [32m'  "type": "module",\r\n'[39m +
+                    [32m'  "bin": {\r\n'[39m +
+                    [32m'    "rw-scripts": "./bin/rw-scripts.mjs",\r\n'[39m +
+                    [32m'    "rwsdk": "./bin/rw-scripts.mjs",\r\n'[39m +
+                    [32m'    "rwsync": "./bin/rwsync"\r\n'[39m +
+                    [32m'  },\r\n'[39m +
+                    [32m'  "files": [\r\n'[39m +
+                    [32m'    "./README.md",\r\n'[39m +
+                    [32m'    "./dist",\r\n'[39m +
+                    [32m'    "./bin"\r\n'[39m +
+                    [32m'  ],\r\n'[39m +
+                    [32m'  "scripts": {\r\n'[39m +
+                    [32m'    "build": "tsc --build --clean && tsc",\r\n'[39m +
+                    [32m'    "build:watch": "npm run build -- --watch",\r\n'[39m +
+                    [32m'    "release": "./scripts/release.sh",\r\n'[39m +
+                    [32m'    "test": "vitest --run",\r\n'[39m +
+                    [32m'    "bench": "vitest bench --run",\r\n'[39m +
+                    [32m'    "bench:baseline": "vitest bench --run --outputJson=benchmarks/router-bench-baseline.json",\r\n'[39m +
+                    [32m'    "bench:compare": "vitest bench --run --compare=benchmarks/router-bench-baseline.json",\r\n'[39m +
+                    [32m'    "test:e2e": "node scripts/test-e2e.mjs",\r\n'[39m +
+                    [32m'    "setup:e2e": "pnpm setup:wrangler",\r\n'[39m +
+                    [32m'    "setup:wrangler": "../../scripts/setup-wrangler-auth.sh",\r\n'[39m +
+                    [32m'    "debug:sync": "tsx ./src/scripts/debug-sync.mts",\r\n'[39m +
+                    [32m'    "smoke-test": "tsx ./src/scripts/smoke-test.mts"\r\n'[39m +
+                    [32m'  },\r\n'[39m +
+                    [32m'  "exports": {\r\n'[39m +
+                    [32m'    "./vite": {\r\n'[39m +
+                    [32m'      "types": "./dist/vite/index.d.mts",\r\n'[39m +
+                    [32m'      "default": "./dist/vite/index.mjs"\r\n'[39m +
+                    [32m'    },\r\n'[39m +
+                    [32m'    "./worker": {\r\n'[39m +
+                    [32m'      "react-server": "./dist/runtime/entries/worker.js",\r\n'[39m +
+                    [32m'      "types": "./dist/runtime/entries/worker.d.ts",\r\n'[39m +
+                    [32m'      "default": "./dist/runtime/entries/react-server-only.js"\r\n'[39m +
+                    [32m'    },\r\n'[39m +
+                    [32m'    "./client": {\r\n'[39m +
+                    [32m'      "react-server": "./dist/runtime/entries/no-react-server.js",\r\n'[39m +
+                    [32m'      "workerd": "./dist/runtime/entries/clientSSR.js",\r\n'[39m +
+                    [32m'      "types": "./dist/runtime/entries/client.d.ts",\r\n'[39m +
+                    [32m'      "default": "./dist/runtime/entries/client.js"\r\n'[39m +
+                    [32m'    },\r\n'[39m +
+                    [32m'    "./__state": {\r\n'[39m +
+                    [32m'      "types": "./dist/runtime/state.d.ts",\r\n'[39m +
+                    [32m'      "default": "./dist/runtime/state.js"\r\n'[39m +
+                    [32m'    },\r\n'[39m +
+                    [32m'    "./__ssr": {\r\n'[39m +
+                    [32m'      "react-server": "./dist/runtime/entries/no-react-server.js",\r\n'[39m +
+                    [32m'      "types": "./dist/runtime/entries/ssr.d.ts",\r\n'[39m +
+                    [32m'      "default": "./dist/runtime/entries/ssr.js"\r\n'[39m +
+                    [32m'    },\r\n'[39m +
+                    [32m'    "./__ssr_bridge": {\r\n'[39m +
+                    [32m'      "react-server": "./dist/runtime/entries/no-react-server.js",\r\n'[39m +
+                    [32m'      "types": "./dist/runtime/ssrBridge.d.ts",\r\n'[39m +
+                    [32m'      "default": "./dist/runtime/ssrBridge.js"\r\n'[39m +
+                    [32m'    },\r\n'[39m +
+                    [32m'    "./__vendor_client_barrel": {\r\n'[39m +
+                    [32m'      "default": "./dist/__intermediate_builds/rwsdk-vendor-client-barrel.js"\r\n'[39m +
+                    [32m'    },\r\n'[39m +
+                    [32m'    "./__vendor_server_barrel": {\r\n'[39m +
+                    [32m'      "default": "./dist/__intermediate_builds/rwsdk-vendor-server-barrel.js"\r\n'[39m +
+                    [32m'    },\r\n'[39m +
+                    [32m'    "./router": {\r\n'[39m +
+                    [32m'      "types": "./dist/runtime/entries/router.d.ts",\r\n'[39m +
+                    [32m'      "workerd": "./dist/runtime/entries/router.js",\r\n'[39m +
+                    [32m'      "default": "./dist/runtime/entries/routerClient.js"\r\n'[39m +
+                    [32m'    },\r\n'[39m +
+                    [32m'    "./auth": {\r\n'[39m +
+                    [32m'      "types": "./dist/runtime/entries/auth.d.ts",\r\n'[39m +
+                    [32m'      "default": "./dist/runtime/entries/auth.js"\r\n'[39m +
+                    [32m'    },\r\n'[39m +
+                    [32m'    "./e2e": {\r\n'[39m +
+                    [32m'      "types": "./dist/lib/e2e/index.d.mts",\r\n'[39m +
+                    [32m'      "default": "./dist/lib/e2e/index.mjs"\r\n'[39m +
+                    [32m'    },\r\n'[39m +
+                    [32m'    "./e2e/setup": {\r\n'[39m +
+                    [32m'      "types": "./dist/lib/e2e/setup.d.mts",\r\n'[39m +
+                    [32m'      "default": "./dist/lib/e2e/setup.mjs"\r\n'[39m +
+                    [32m'    },\r\n'[39m +
+                    [32m'    "./db": {\r\n'[39m +
+                    [32m'      "types": "./dist/runtime/lib/db/index.d.ts",\r\n'[39m +
+                    [32m'      "default": "./dist/runtime/lib/db/index.js"\r\n'[39m +
+                    [32m'    },\r\n'[39m +
+                    [32m'    "./debug": {\r\n'[39m +
+                    [32m'      "types": "./dist/runtime/lib/debug.d.ts",\r\n'[39m +
+                    [32m'      "default": "./dist/runtime/lib/debug.js"\r\n'[39m +
+                    [32m'    },\r\n'[39m +
+                    [32m'    "./constants": {\r\n'[39m +
+                    [32m'      "types": "./dist/runtime/constants.d.ts",\r\n'[39m +
+                    [32m'      "default": "./dist/runtime/constants.js"\r\n'[39m +
+                    [32m'    },\r\n'[39m +
+                    [32m'    "./turnstile": {\r\n'[39m +
+                    [32m'      "types": "./dist/runtime/lib/turnstile/turnstile.d.ts",\r\n'[39m +
+                    [32m'      "default": "./dist/runtime/lib/turnstile/turnstile.js"\r\n'[39m +
+                    [32m'    },\r\n'[39m +
+                    [32m'    "./llms": {\r\n'[39m +
+                    [32m'      "types": "./dist/llms/index.d.ts",\r\n'[39m +
+                    [32m'      "default": "./dist/llms/index.js"\r\n'[39m +
+                    [32m'    },\r\n'[39m +
+                    [32m'    "./realtime/worker": {\r\n'[39m +
+                    [32m'      "types": "./dist/runtime/lib/realtime/worker.d.ts",\r\n'[39m +
+                    [32m'      "default": "./dist/runtime/lib/realtime/worker.js"\r\n'[39m +
+                    [32m'    },\r\n'[39m +
+                    [32m'    "./realtime/client": {\r\n'[39m +
+                    [32m'      "types": "./dist/runtime/lib/realtime/client.d.ts",\r\n'[39m +
+                    [32m'      "default": "./dist/runtime/lib/realtime/client.js"\r\n'[39m +
+                    [32m'    },\r\n'[39m +
+                    [32m'    "./realtime/durableObject": {\r\n'[39m +
+                    [32m'      "types": "./dist/runtime/lib/realtime/durableObject.d.ts",\r\n'[39m +
+                    [32m'      "default": "./dist/runtime/lib/realtime/durableObject.js"\r\n'[39m +
+                    [32m'    },\r\n'[39m +
+                    [32m'    "./use-synced-state/client": {\r\n'[39m +
+                    [32m'      "types": "./dist/use-synced-state/client.d.ts",\r\n'[39m +
+                    [32m'      "default": "./dist/use-synced-state/client.js"\r\n'[39m +
+                    [32m'    },\r\n'[39m +
+                    [32m'    "./use-synced-state/worker": {\r\n'[39m +
+                    [32m'      "types": "./dist/use-synced-state/worker.d.mts",\r\n'[39m +
+                    [32m'      "workerd": "./dist/use-synced-state/worker.mjs"\r\n'[39m +
+                    [32m'    }\r\n'[39m +
+                    [32m'  },\r\n'[39m +
+                    [32m'  "keywords": [\r\n'[39m +
+                    [32m'    "rwsdk",\r\n'[39m +
+                    [32m'    "redwoodsdk",\r\n'[39m +
+                    [32m'    "redwoodjs",\r\n'[39m +
+                    [32m'    "redwood",\r\n'[39m +
+                    [32m'    "react",\r\n'[39m +
+                    [32m'    "server components",\r\n'[39m +
+                    [32m'    "sdk",\r\n'[39m +
+                    [32m'    "toolkit",\r\n'[39m +
+                    [32m'    "starter-kit",\r\n'[39m +
+                    [32m'    "typescript",\r\n'[39m +
+                    [32m'    "vite",\r\n'[39m +
+                    [32m'    "react",\r\n'[39m +
+                    [32m'    "jsx",\r\n'[39m +
+                    [32m'    "react-server-components",\r\n'[39m +
+                    [32m'    "rsc",\r\n'[39m +
+                    [32m'    "cloudflare",\r\n'[39m +
+                    [32m'    "cloudflare-workers",\r\n'[39m +
+                    [32m'    "durable-objects",\r\n'[39m +
+                    [32m'    "edge",\r\n'[39m +
+                    [32m'    "serverless",\r\n'[39m +
+                    [32m'    "webapp",\r\n'[39m +
+                    [32m'    "fullstack"\r\n'[39m +
+                    [32m'  ],\r\n'[39m +
+                    [32m'  "repository": {\r\n'[39m +
+                    [32m'    "type": "git",\r\n'[39m +
+                    [32m'    "url": "https://github.com/redwoodjs/sdk",\r\n'[39m +
+                    [32m'    "directory": "sdk"\r\n'[39m +
+                    [32m'  },\r\n'[39m +
+                    [32m'  "author": "RedwoodSDK <peter@redwoodjs.com>",\r\n'[39m +
+                    [32m'  "license": "MIT",\r\n'[39m +
+                    [32m'  "dependencies": {\r\n'[39m +
+                    [32m'    "@ast-grep/napi": "~0.42.1",\r\n'[39m +
+                    [32m'    "@cloudflare/workers-types": "~4.20260426.1",\r\n'[39m +
+                    [32m'    "@mdx-js/mdx": "~3.1.1",\r\n'[39m +
+                    [32m'    "@puppeteer/browsers": "~2.13.0",\r\n'[39m +
+                    [32m'    "@types/decompress": "~4.2.7",\r\n'[39m +
+                    [32m'    "@types/fs-extra": "~11.0.4",\r\n'[39m +
+                    [32m'    "@types/glob": "^9.0.0",\r\n'[39m +
+                    [32m'    "@types/react": "~19.2.14",\r\n'[39m +
+                    [32m'    "@types/react-dom": "~19.2.3",\r\n'[39m +
+                    [32m'    "@types/react-is": "~19.2.0",\r\n'[39m +
+                    [32m'    "@vitejs/plugin-react": "~5.1.4",\r\n'[39m +
+                    [32m'    "chokidar": "~5.0.0",\r\n'[39m +
+                    [32m'    "debug": "~4.4.3",\r\n'[39m +
+                    [32m'    "decompress": "~4.2.1",\r\n'[39m +
+                    [32m'    "enhanced-resolve": "~5.21.0",\r\n'[39m +
+                    [32m'    "eventsource-parser": "~3.0.8",\r\n'[39m +
+                    [32m'    "execa": "~9.6.1",\r\n'[39m +
+                    [32m'    "find-up": "~8.0.0",\r\n'[39m +
+                    [32m'    "fs-extra": "~11.3.4",\r\n'[39m +
+                    [32m'    "get-port": "^7.2.0",\r\n'[39m +
+                    [32m'    "glob": "~13.0.6",\r\n'[39m +
+                    [32m'    "ignore": "~7.0.5",\r\n'[39m +
+                    [32m'    "jsonc-parser": "~3.3.1",\r\n'[39m +
+                    [32m'    "kysely": "~0.28.17",\r\n'[39m +
+                    [32m'    "kysely-do": "~0.0.1-rc.1",\r\n'[39m +
+                    [32m'    "lodash": "~4.18.1",\r\n'[39m +
+                    [32m'    "magic-string": "~0.30.21",\r\n'[39m +
+                    [32m'    "picocolors": "~1.1.1",\r\n'[39m +
+                    [32m'    "proper-lockfile": "~4.1.2",\r\n'[39m +
+                    [32m'    "playwright-core": "1.60.0",\r\n'[39m +
+                    [32m'    "puppeteer-core": "~24.42.0",\r\n'[39m +
+                    [32m'    "react-is": "~19.2.6",\r\n'[39m +
+                    [32m'    "rsc-html-stream": "~0.0.7",\r\n'[39m +
+                    [32m'    "server-only": "^0.0.1",\r\n'[39m +
+                    [32m'    "tmp-promise": "~3.0.3",\r\n'[39m +
+                    [32m'    "ts-morph": "~28.0.0",\r\n'[39m +
+                    [32m'    "unique-names-generator": "~4.7.1",\r\n'[39m +
+                    [32m'    "vibe-rules": "~0.3.91",\r\n'[39m +
+                    [32m'    "vite-tsconfig-paths": "~6.1.1"\r\n'[39m +
+                    [32m'  },\r\n'[39m +
+                    [32m'  "peerDependencies": {\r\n'[39m +
+                    [32m'    "@cloudflare/vite-plugin": "^1.26.1",\r\n'[39m +
+                    [32m'    "capnweb": "~0.5.0",\r\n'[39m +
+                    [32m'    "react": ">=19.2.0-0 <19.3.0 || >=19.3.0-0 <20.0.0",\r\n'[39m +
+                    [32m'    "react-dom": ">=19.2.0-0 <19.3.0 || >=19.3.0-0 <20.0.0",\r\n'[39m +
+                    [32m'    "react-server-dom-webpack": ">=19.2.0-0 <19.3.0 || >=19.3.0-0 <20.0.0",\r\n'[39m +
+                    [32m'    "vite": "^6.2.6 || 7.x",\r\n'[39m +
+                    [32m'    "wrangler": "^4.77.0"\r\n'[39m +
+                    [32m'  },\r\n'[39m +
+                    [32m'  "peerDependenciesMeta": {\r\n'[39m +
+                    [32m'    "capnweb": {\r\n'[39m +
+                    [32m'      "optional": true\r\n'[39m +
+                    [32m'    }\r\n'[39m +
+                    [32m'  },\r\n'[39m +
+                    [32m'  "packageManager": "pnpm@10.31.0",\r\n'[39m +
+                    [32m'  "devDependencies": {\r\n'[39m +
+                    [32m'    "@cloudflare/vite-plugin": "1.33.2",\r\n'[39m +
+                    [32m'    "wrangler": "^4.85.0",\r\n'[39m +
+                    [32m'    "capnweb": "~0.5.0",\r\n'[39m +
+                    [32m'    "@types/debug": "~4.1.13",\r\n'[39m +
+                    [32m'    "@types/lodash": "~4.17.24",\r\n'[39m +
+                    [32m'    "@types/node": "~25.6.0",\r\n'[39m +
+                    [32m'    "@types/proper-lockfile": "~4.1.4",\r\n'[39m +
+                    [32m'    "semver": "~7.7.4",\r\n'[39m +
+                    [32m'    "tsx": "~4.21.0",\r\n'[39m +
+                    [32m'    "typescript": "~6.0.3",\r\n'[39m +
+                    [32m'    "vite": "~7.3.2",\r\n'[39m +
+                    [32m'    "vitest": "~4.1.5"\r\n'[39m +
+                    [32m'  }\r\n'[39m +
+                    [32m'}\r\n'[39m +
+                    [32m''[39m,
+                  isTruncated: [33mfalse[39m
+                }
+              },
+              providerOptions: {
+                vertex: {
+                  thoughtSignature: [32m'Cl0Bjz1rX+1vPvVMiAHEKq3mDjC6Yl6d2tAKujmYKpffcm9ptXwTMp7MOoINdrhXn7bbWWiHoPI6KeGbVYG12iiBqIJvw3NwDDKhS7BCWGhMwb6BSvfd5I5R/wBcyIEKaQGPPWtfVHtwYKwIkndL+oRdivhucJt9rv6JMLhMA+OE8WNTaGkfJ/H62Qd3nwCsthXAqjk9lFXLuYVuHNxzJ/YAANMg+i/oxtuFOP3G4Xpb8h7S0k5KBC71FA1U6G9yAFrM0aIJHafAyApPAY89a1+FttTxz5thEN/rke/4oXi7hFZ1JZEDwUCNICelOqXHeKPFQdo3uwK4+fOXPugQfAviYQPKqKSZhaR+ogeTqKpBv/3sAM+q8dxtfQ=='[39m
+                }
+              }
+            }
+          ]
+        },
+        {
+          role: [32m'assistant'[39m,
+          content: [
+            {
+              type: [32m'tool-call'[39m,
+              toolCallId: [32m'fZFkkoB3iQeGjEtK'[39m,
+              toolName: [32m'applyDiff'[39m,
+              input: {
+                path: [32m'/home/user/myapp/src/worker.tsx'[39m,
+                searchContent: [32m'import { render, route } from "rwsdk/router";\n'[39m +
+                  [32m'import { defineApp } from "rwsdk/worker";\n'[39m +
+                  [32m'\n'[39m +
+                  [32m'import { Document } from "@/app/document";\n'[39m +
+                  [32m'import { setCommonHeaders } from "@/app/headers";\n'[39m +
+                  [32m'import { Home } from "@/app/pages/home";\n'[39m +
+                  [32m'\n'[39m +
+                  [32m'export type AppContext = {};\n'[39m +
+                  [32m'\n'[39m +
+                  [32m'export default defineApp([\n'[39m +
+                  [32m'  setCommonHeaders(),\n'[39m +
+                  [32m'  ({ ctx }) => {\n'[39m +
+                  [32m'    // setup ctx here\n'[39m +
+                  [32m'    ctx;\n'[39m +
+                  [32m'  },\n'[39m +
+                  [32m'  render(Document, [route("/", Home)]),\n'[39m +
+                  [32m']);\n'[39m +
+                  [32m''[39m,
+                replaceContent: [32m'import { render, route } from "rwsdk/router";\n'[39m +
+                  [32m'import { defineApp } from "rwsdk/worker";\n'[39m +
+                  [32m'import { syncedStateRoutes, SyncedStateServer } from "rwsdk/use-synced-state/worker";\n'[39m +
+                  [32m'\n'[39m +
+                  [32m'import { Document } from "@/app/document";\n'[39m +
+                  [32m'import { setCommonHeaders } from "@/app/headers";\n'[39m +
+                  [32m'import { Home } from "@/app/pages/home";\n'[39m +
+                  [32m'import { ChatRoomPage } from "@/app/pages/chatRoom";\n'[39m +
+                  [32m'\n'[39m +
+                  [32m'export type AppContext = {};\n'[39m +
+                  [32m'\n'[39m +
+                  [32m'export { SyncedStateServer };\n'[39m +
+                  [32m'\n'[39m +
+                  [32m'export default defineApp([\n'[39m +
+                  [32m'  setCommonHeaders(),\n'[39m +
+                  [32m'  ({ ctx }) => {\n'[39m +
+                  [32m'    // setup ctx here\n'[39m +
+                  [32m'    ctx;\n'[39m +
+                  [32m'  },\n'[39m +
+                  [32m'  syncedStateRoutes((env: any) => env.SYNCED_STATE_SERVER),\n'[39m +
+                  [32m'  render(Document, [\n'[39m +
+                  [32m'    route("/", Home),\n'[39m +
+                  [32m'    route("/chat/:roomId", ChatRoomPage)\n'[39m +
+                  [32m'  ]),\n'[39m +
+                  [32m']);\n'[39m +
+                  [32m''[39m,
+                expectedReplacements: [33m1[39m
+              },
+              providerOptions: {
+                vertex: {
+                  thoughtSignature: [32m'AY89a18WuBAAQtZPR/ZfztHZySdQdv9H2j1OjY6jJL6b4ptJG0CnmgP/CcBZYgDQUBI5mkdr8rzU0nBEHhxFHp+mYflt/f8p1pmRzWh3xPDko9MNBarwaBK6r5Mq4HQw58/bgpefG4qOimSPSWOZioRrHrdqv49TYkdwq5sTNh8uPrLDGkYODivraT5JwXnPNYStLhHdFvdIQBPfnDnYRahN5oT/UM0DCgLcaw9iI+mL9JVW/RtETMEip1ZX8vueyKYKDVWD38+6DpdfJqVQ1e6gUFo='[39m
+                }
+              }
+            }
+          ]
+        },
+        {
+          role: [32m'tool'[39m,
+          content: [
+            {
+              type: [32m'tool-result'[39m,
+              toolCallId: [32m'fZFkkoB3iQeGjEtK'[39m,
+              toolName: [32m'applyDiff'[39m,
+              output: {
+                type: [32m'json'[39m,
+                value: {
+                  success: [33mtrue[39m
+                }
+              },
+              providerOptions: {
+                vertex: {
+                  thoughtSignature: [32m'AY89a18WuBAAQtZPR/ZfztHZySdQdv9H2j1OjY6jJL6b4ptJG0CnmgP/CcBZYgDQUBI5mkdr8rzU0nBEHhxFHp+mYflt/f8p1pmRzWh3xPDko9MNBarwaBK6r5Mq4HQw58/bgpefG4qOimSPSWOZioRrHrdqv49TYkdwq5sTNh8uPrLDGkYODivraT5JwXnPNYStLhHdFvdIQBPfnDnYRahN5oT/UM0DCgLcaw9iI+mL9JVW/RtETMEip1ZX8vueyKYKDVWD38+6DpdfJqVQ1e6gUFo='[39m
+                }
+              }
+            }
+          ]
+        },
+        {
+          role: [32m'assistant'[39m,
+          content: [
+            {
+              type: [32m'reasoning'[39m,
+              text: [32m'**Building Chat Room Component**\n'[39m +
+                [32m'\n'[39m +
+                [32m"I'm now focusing on the rendering aspect, specifically creating the `src/app/pages/chatRoom.tsx` file to bring the chat room page to life.\n"[39m +
+                [32m'\n'[39m +
+                [32m''[39m
+            },
+            {
+              type: [32m'tool-call'[39m,
+              toolCallId: [32m'HaFSxgQj4RpkyNdN'[39m,
+              toolName: [32m'writeToFile'[39m,
+              input: {
+                path: [32m'/home/user/myapp/src/app/pages/chatRoom.tsx'[39m,
+                content: [32m'import React from "react";\n'[39m +
+                  [32m'import { ChatRoom } from "../components/ChatRoom";\n'[39m +
+                  [32m'\n'[39m +
+                  [32m'export const ChatRoomPage = ({ params }: { params: { roomId: string } }) => {\n'[39m +
+                  [32m'  return (\n'[39m +
+                  [32m'    <div>\n'[39m +
+                  [32m'      <h1>Room: {params.roomId}</h1>\n'[39m +
+                  [32m'      <ChatRoom roomId={params.roomId} />\n'[39m +
+                  [32m'    </div>\n'[39m +
+                  [32m'  );\n'[39m +
+                  [32m'};\n'[39m +
+                  [32m''[39m
+              },
+              providerOptions: {
+                vertex: {
+                  thoughtSignature: [32m'CkkBjz1rXzNRQro2YpJlu5bMj1CPPWdXGnxWX6zkQvpGb2qmINjxNmE65EWH+SUmTOfttBYFRMdvsx+OBtZXywvDSCixd323t3VFCkIBjz1rX94ABbLZP3fepQbuZ5gZ1VI1d0986kHfrc3CzjFAVKytDqqkXBeclUtS6uOd7yRuM7Zp/erJZk4HUx+looQ='[39m
+                }
+              }
+            }
+          ]
+        },
+        {
+          role: [32m'tool'[39m,
+          content: [
+            {
+              type: [32m'tool-result'[39m,
+              toolCallId: [32m'HaFSxgQj4RpkyNdN'[39m,
+              toolName: [32m'writeToFile'[39m,
+              output: {
+                type: [32m'json'[39m,
+                value: {
+                  success: [33mtrue[39m
+                }
+              },
+              providerOptions: {
+                vertex: {
+                  thoughtSignature: [32m'CkkBjz1rXzNRQro2YpJlu5bMj1CPPWdXGnxWX6zkQvpGb2qmINjxNmE65EWH+SUmTOfttBYFRMdvsx+OBtZXywvDSCixd323t3VFCkIBjz1rX94ABbLZP3fepQbuZ5gZ1VI1d0986kHfrc3CzjFAVKytDqqkXBeclUtS6uOd7yRuM7Zp/erJZk4HUx+looQ='[39m
+                }
+              }
+            }
+          ]
+        },
+        {
+          role: [32m'assistant'[39m,
+          content: [
+            {
+              type: [32m'reasoning'[39m,
+              text: [32m'**Developing Chat Room Component**\n'[39m +
+                [32m'\n'[39m +
+                [32m"I'm now focused on creating the `src/app/components/ChatRoom.tsx` file. This will be a key part of the application's interface.\n"[39m +
+                [32m'\n'[39m +
+                [32m''[39m
+            },
+            {
+              type: [32m'tool-call'[39m,
+              toolCallId: [32m'AOVu4GkI5WEPsyPL'[39m,
+              toolName: [32m'writeToFile'[39m,
+              input: {
+                path: [32m'/home/user/myapp/src/app/components/ChatRoom.tsx'[39m,
+                content: [32m'"use client";\n'[39m +
+                  [32m'\n'[39m +
+                  [32m'import React, { useState } from "react";\n'[39m +
+                  [32m'import { useSyncedState } from "rwsdk/use-synced-state/client";\n'[39m +
+                  [32m'\n'[39m +
+                  [32m'export const ChatRoom = ({ roomId }: { roomId: string }) => {\n'[39m +
+                  [32m'  const [messages, setMessages] = useSyncedState<string[]>([], "messages", roomId);\n'[39m +
+                  [32m'  const [inputValue, setInputValue] = useState("");\n'[39m +
+                  [32m'\n'[39m +
+                  [32m'  const handleSend = () => {\n'[39m +
+                  [32m'    if (inputValue.trim()) {\n'[39m +
+                  [32m'      setMessages((prev) => [...(prev || []), inputValue]);\n'[39m +
+                  [32m'      setInputValue("");\n'[39m +
+                  [32m'    }\n'[39m +
+                  [32m'  };\n'[39m +
+                  [32m'\n'[39m +
+                  [32m'  const handleClear = () => {\n'[39m +
+                  [32m'    setMessages([]);\n'[39m +
+                  [32m'  };\n'[39m +
+                  [32m'\n'[39m +
+                  [32m'  return (\n'[39m +
+                  [32m'    <div>\n'[39m +
+                  [32m'      <div style={{ maxHeight: "300px", overflowY: "auto" }}>\n'[39m +
+                  [32m'        {messages?.map((msg, idx) => (\n'[39m +
+                  [32m'          <div key={idx} data-testid="chat-message">\n'[39m +
+                  [32m'            {msg}\n'[39m +
+                  [32m'          </div>\n'[39m +
+                  [32m'        ))}\n'[39m +
+                  [32m'      </div>\n'[39m +
+                  [32m'      <input\n'[39m +
+                  [32m'        data-testid="chat-input"\n'[39m +
+                  [32m'        type="text"\n'[39m +
+                  [32m'        value={inputValue}\n'[39m +
+                  [32m'        onChange={(e) => setInputValue(e.target.value)}\n'[39m +
+                  [32m'      />\n'[39m +
+                  [32m'      <button data-testid="send-btn" onClick={handleSend}>\n'[39m +
+                  [32m'        Send\n'[39m +
+                  [32m'      </button>\n'[39m +
+                  [32m'      <button data-testid="clear-btn" onClick={handleClear}>\n'[39m +
+                  [32m'        Clear\n'[39m +
+                  [32m'      </button>\n'[39m +
+                  [32m'    </div>\n'[39m +
+                  [32m'  );\n'[39m +
+                  [32m'};\n'[39m +
+                  [32m''[39m
+              },
+              providerOptions: {
+                vertex: {
+                  thoughtSignature: [32m'Ck4Bjz1rX3BcM39YIeyJJVdhEChvQnx6GfCLN0AwnCDIwwdNw8rCM09nmELbTGizGajs0kXEaV5zsFRtb1RCoRDEHyKUtrKOg4AwSDNDsKMKJwGPPWtfB3qZ8ibgCcSgLxWGzbQ3McAG6yoETI/AO/HQ32twYVnxew=='[39m
+                }
+              }
+            }
+          ]
+        },
+        {
+          role: [32m'tool'[39m,
+          content: [
+            {
+              type: [32m'tool-result'[39m,
+              toolCallId: [32m'AOVu4GkI5WEPsyPL'[39m,
+              toolName: [32m'writeToFile'[39m,
+              output: {
+                type: [32m'json'[39m,
+                value: {
+                  success: [33mtrue[39m
+                }
+              },
+              providerOptions: {
+                vertex: {
+                  thoughtSignature: [32m'Ck4Bjz1rX3BcM39YIeyJJVdhEChvQnx6GfCLN0AwnCDIwwdNw8rCM09nmELbTGizGajs0kXEaV5zsFRtb1RCoRDEHyKUtrKOg4AwSDNDsKMKJwGPPWtfB3qZ8ibgCcSgLxWGzbQ3McAG6yoETI/AO/HQ32twYVnxew=='[39m
+                }
+              }
+            }
+          ]
+        },
+        {
+          role: [32m'assistant'[39m,
+          content: [
+            {
+              type: [32m'tool-call'[39m,
+              toolCallId: [32m'rw5zmZEJsx42vERX'[39m,
+              toolName: [32m'executeCommand'[39m,
+              input: {
+                command: [32m'cd /home/user/myapp && cat node_modules/rwsdk/dist/use-synced-state/client.d.ts'[39m
+              },
+              providerOptions: {
+                vertex: {
+                  thoughtSignature: [32m'AY89a1/Ayrb3kgEVuuWaaOqMyDPq8Cl2dTEl9UjlgjG/MtocBo5XoA/OtF8+W9vtcm/O9nTvw4GThA/ZkPLXds6vi1HIQr+gQ+l4rd7HaRd41WdylKvi8YsDzqvyLVmyfwjkozP22LPlvZrJlf4='[39m
+                }
+              }
+            }
+          ]
+        },
+        {
+          role: [32m'tool'[39m,
+          content: [
+            {
+              type: [32m'tool-result'[39m,
+              toolCallId: [32m'rw5zmZEJsx42vERX'[39m,
+              toolName: [32m'executeCommand'[39m,
+              output: {
+                type: [32m'json'[39m,
+                value: {
+                  output: [32m'export { getSyncedStateClient, initSyncedStateClient, setSyncedStateClientForTesting, } from "./client-core.js";\r\n'[39m +
+                    [32m'export type { SyncedStateClient, SyncedStateStatus, StatusChangeCallback, } from "./client-core.js";\r\n'[39m +
+                    [32m'export { useSyncedState, createSyncedStateHook } from "./useSyncedState.js";\r\n'[39m +
+                    [32m''[39m,
+                  isTruncated: [33mfalse[39m
+                }
+              },
+              providerOptions: {
+                vertex: {
+                  thoughtSignature: [32m'AY89a1/Ayrb3kgEVuuWaaOqMyDPq8Cl2dTEl9UjlgjG/MtocBo5XoA/OtF8+W9vtcm/O9nTvw4GThA/ZkPLXds6vi1HIQr+gQ+l4rd7HaRd41WdylKvi8YsDzqvyLVmyfwjkozP22LPlvZrJlf4='[39m
+                }
+              }
+            }
+          ]
+        },
+        {
+          role: [32m'assistant'[39m,
+          content: [
+            {
+              type: [32m'reasoning'[39m,
+              text: [32m'**Exploring SDK Implementation**\n'[39m +
+                [32m'\n'[39m +
+                [32m"I'm currently examining the `useSyncedState.d.ts` file, specifically within the `node_modules/rwsdk/dist/use-synced-state` directory, to understand its internal workings and potential applications.\n"[39m +
+                [32m'\n'[39m +
+                [32m''[39m
+            },
+            {
+              type: [32m'tool-call'[39m,
+              toolCallId: [32m'lDHouyW19avCMVZS'[39m,
+              toolName: [32m'executeCommand'[39m,
+              input: {
+                command: [32m'cd /home/user/myapp && cat node_modules/rwsdk/dist/use-synced-state/useSyncedState.d.ts'[39m
+              },
+              providerOptions: {
+                vertex: {
+                  thoughtSignature: [32m'CkcBjz1rX9YerhlNlugcAKjvjh5adXFS0TM2T1lgQbI1AOj6/tapWW1gWxmvTS4Ij8LRgT8kNPSMHE7q5kvsigw/bss4ENIEbgpNAY89a19JVOwgiJF+8lYiBLkw3bcxujKb22KeOJjAY32tZVsBDswShsxdAuW6NkoHap0/XEpXxxTT5qQyL3oTnmx+XS7/IKEf63XZKmo='[39m
+                }
+              }
+            }
+          ]
+        },
+        {
+          role: [32m'tool'[39m,
+          content: [
+            {
+              type: [32m'tool-result'[39m,
+              toolCallId: [32m'lDHouyW19avCMVZS'[39m,
+              toolName: [32m'executeCommand'[39m,
+              output: {
+                type: [32m'json'[39m,
+                value: {
+                  output: [32m'import React from "react";\r\n'[39m +
+                    [32m'import { type StatusChangeCallback } from "./client-core.js";\r\n'[39m +
+                    [32m'type HookDeps = {\r\n'[39m +
+                    [32m'    useState: typeof React.useState;\r\n'[39m +
+                    [32m'    useEffect: typeof React.useEffect;\r\n'[39m +
+                    [32m'    useRef: typeof React.useRef;\r\n'[39m +
+                    [32m'    useCallback: typeof React.useCallback;\r\n'[39m +
+                    [32m'};\r\n'[39m +
+                    [32m'type Setter<T> = (value: T | ((previous: T) => T)) => void;\r\n'[39m +
+                    [32m'export type CreateSyncedStateHookOptions = {\r\n'[39m +
+                    [32m'    url?: string;\r\n'[39m +
+                    [32m'    roomId?: string;\r\n'[39m +
+                    [32m'    hooks?: HookDeps;\r\n'[39m +
+                    [32m'    onStatusChange?: StatusChangeCallback;\r\n'[39m +
+                    [32m'};\r\n'[39m +
+                    [32m'/**\r\n'[39m +
+                    [32m' * Builds a `useSyncedState` hook configured with optional endpoint and hook overrides.\r\n'[39m +
+                    [32m' * @param options Optional overrides for endpoint and React primitives.\r\n'[39m +
+                    [32m' * @returns Hook that syncs state through the sync state service.\r\n'[39m +
+                    [32m' */\r\n'[39m +
+                    [32m'export declare const createSyncedStateHook: (options?: CreateSyncedStateHookOptions) => <T>(initialValue: T, key: string, roomId?: string | undefined) => [T, Setter<T>];\r\n'[39m +
+                    [32m'export declare const useSyncedState: <T>(initialValue: T, key: string, roomId?: string | undefined) => [T, Setter<T>];\r\n'[39m +
+                    [32m'export {};\r\n'[39m +
+                    [32m''[39m,
+                  isTruncated: [33mfalse[39m
+                }
+              },
+              providerOptions: {
+                vertex: {
+                  thoughtSignature: [32m'CkcBjz1rX9YerhlNlugcAKjvjh5adXFS0TM2T1lgQbI1AOj6/tapWW1gWxmvTS4Ij8LRgT8kNPSMHE7q5kvsigw/bss4ENIEbgpNAY89a19JVOwgiJF+8lYiBLkw3bcxujKb22KeOJjAY32tZVsBDswShsxdAuW6NkoHap0/XEpXxxTT5qQyL3oTnmx+XS7/IKEf63XZKmo='[39m
+                }
+              }
+            }
+          ]
+        },
+        {
+          role: [32m'assistant'[39m,
+          content: [
+            {
+              type: [32m'reasoning'[39m,
+              text: [32m'**Revising Worker Export**\n'[39m +
+                [32m'\n'[39m +
+                [32m"I've confirmed the signature for `useSyncedState` and am now focusing on the `worker.tsx` re-export requirement. My current thought is that `export { SyncedStateServer };` is the correct implementation for this.\n"[39m +
+                [32m'\n'[39m +
+                [32m'**Verifying SyncedState Export**\n'[39m +
+                [32m'\n'[39m +
+                [32m"My current focus is on ensuring `SyncedStateServer` is correctly re-exported from `worker.tsx`. I believe `export { SyncedStateServer };` achieves this. Next, I'll build and test to confirm project functionality.\n"[39m +
+                [32m'\n'[39m +
+                [32m''[39m
+            },
+            {
+              type: [32m'tool-call'[39m,
+              toolCallId: [32m'VrVkKferHKsx6S4o'[39m,
+              toolName: [32m'executeCommand'[39m,
+              input: {
+                command: [32m'cd /home/user/myapp && npm run build'[39m
+              },
+              providerOptions: {
+                vertex: {
+                  thoughtSignature: [32m'CksBjz1rX57lXOKzy/kh8SYSuu7ZKPtIPHUCqCP28O4IxCpZfdOUTaIP8E2cqqP5z0OqcIFMFCFR/SINlgfW5cPSbN/nVKaBZiiL2ycKewGPPWtfBWZq0kwsLvZVshvY7xMUtKNi70S4ABTHPO7cghn/Kg9AvrrDw9qlzy43f4u89gfYmk8giiH3c1DihArFrReD8sDJ9bD3XrVG/KozE2aF6/NJTmVTMKnQSapJnR84G74UuajczOxkcT/kf9j4ySM6hFQ9yxKVdAp3AY89a18M0cRngU1GyTVjZDrZ3wAxlA7adw/LdUurQjJr3Kd34rEtutyLk2XJ9facNBgiG4EOD3cCd4ApuGEWWBUm6sEbXHY95VV0QIWjS58Znrd2dWQ6hBrSCF7DvmkCywxPjdr/PvyBSZoTshbixodsgWEhT88KXgGPPWtfXy9hiNaki0oJ6wsbi+QVkOkvR76oc9loOpX8Baqo7wf2HGC+CQPfmaz2k1ghMHEa9dLfN6yzUtPbgESe/Ne5nyuZ4QpKsfu5ZQq971hK9Pue9UgI7kk7ieg='[39m
+                }
+              }
+            }
+          ]
+        },
+        {
+          role: [32m'tool'[39m,
+          content: [
+            {
+              type: [32m'tool-result'[39m,
+              toolCallId: [32m'VrVkKferHKsx6S4o'[39m,
+              toolName: [32m'executeCommand'[39m,
+              output: {
+                type: [32m'json'[39m,
+                value: {
+                  output: [32m'\r\n'[39m +
+                    [32m'> @redwoodjs/starter@1.0.0 build\r\n'[39m +
+                    [32m'> vite build\r\n'[39m +
+                    [32m'\r\n'[39m +
+                    [32m'Running plugin setup pass...\r\n'[39m +
+                    [32m'vite v7.3.5 building worker environment for production...\r\n'[39m +
+                    [32m'transforming...\r\n'[39m +
+                    [32m'✓ 1 modules transformed.\r\n'[39m +
+                    [32m'rendering chunks...\r\n'[39m +
+                    [32m'✓ built in 57ms\r\n'[39m +
+                    [32m'Building worker...\r\n'[39m +
+                    [32m'vite v7.3.5 building worker environment for production...\r\n'[39m +
+                    [32m'\r\n'[39m +
+                    [32m"… (rwsdk) Scanning for 'use client' and 'use server' directives...\r\n"[39m +
+                    [32m'✓ 91 modules transformed.\r\n'[39m +
+                    [32m"✔ (rwsdk) Done scanning for 'use client' and 'use server' directives.\r\n"[39m +
+                    [32m'dist/worker/.vite/manifest.json                                                0.52 kB\r\n'[39m +
+                    [32m'dist/worker/wrangler.json                                                      1.38 kB\r\n'[39m +
+                    [32m'dist/worker/.vite/ssr-manifest.json                                            5.15 kB\r\n'[39m +
+                    [32m'dist/worker/assets/__vite-optional-peer-dep_capnweb_rwsdk_false-IuYOpnmk.js    0.10 kB\r\n'[39m +
+                    [32m'dist/worker/index.js                                                         100.72 kB\r\n'[39m +
+                    [32m'✓ built in 1.04s\r\n'[39m +
+                    [32m'Building SSR...\r\n'[39m +
+                    [32m'vite v7.3.5 building ssr environment for production...\r\n'[39m +
+                    [32m'transforming...\r\n'[39m +
+                    [32m'✓ 43 modules transformed.\r\n'[39m +
+                    [32m'rendering chunks...\r\n'[39m +
+                    [32m'node_modules/rwsdk/dist/__intermediate_builds/ssr/ssr_bridge.js  404.53 kB\r\n'[39m +
+                    [32m'✓ built in 1.61s\r\n'[39m +
+                    [32m'Building client...\r\n'[39m +
+                    [32m'vite v7.3.5 building client environment for production...\r\n'[39m +
+                    [32m'transforming...\r\n'[39m +
+                    [32m'✓ 61 modules transformed.\r\n'[39m +
+                    [32m'rendering chunks...\r\n'[39m +
+                    [32m'computing gzip size...\r\n'[39m +
+                    [32m'dist/client/.assetsignore                                                      0.02 kB\r\n'[39m +
+                    [32m'dist/client/.vite/manifest.json                                                1.54 kB │ gzip:  0.39 kB\r\n'[39m +
+                    [32m'dist/client/assets/welcome-DZKT8xMu.css                                        1.64 kB │ gzip:  0.64 kB\r\n'[39m +
+                    [32m'dist/client/assets/__vite-optional-peer-dep_capnweb_rwsdk_false-IuYOpnmk.js    0.10 kB │ gzip:  0.11 kB\r\n'[39m +
+                    [32m'dist/client/assets/welcome-6S9dMXRv.js                                         2.30 kB │ gzip:  0.95 kB\r\n'[39m +
+                    [32m'dist/client/assets/ChatRoom-CmspJ0Es.js                                        3.51 kB │ gzip:  1.76 kB\r\n'[39m +
+                    [32m'dist/client/assets/client-Bq__PwCt.js                                          5.71 kB │ gzip:  2.08 kB\r\n'[39m +
+                    [32m'dist/client/assets/client-BbDJnUuo.js                                        229.98 kB │ gzip: 72.92 kB\r\n'[39m +
+                    [32m'✓ built in 1.24s\r\n'[39m +
+                    [32m'Linking worker build...\r\n'[39m +
+                    [32m'vite v7.3.5 building worker environment for production...\r\n'[39m +
+                    [32m'✓ 3 modules transformed.\r\n'[39m +
+                    [32m'dist/worker/.vite/manifest.json                                                         0.61 kB\r\n'[39m +
+                    [32m'dist/worker/wrangler.json                                                               1.38 kB\r\n'[39m +
+                    [32m'dist/worker/.vite/ssr-manifest.json                                                     5.42 kB\r\n'[39m +
+                    [32m'dist/worker/assets/__vite-optional-peer-dep_capnweb_rwsdk_false-IuYOpnmk-IuYOpnmk.js    0.10 kB\r\n'[39m +
+                    [32m'dist/worker/index.js                                                                  341.48 kB\r\n'[39m +
+                    [32m'✓ built in 1.06s\r\n'[39m +
+                    [32m'Build complete!\r\n'[39m +
+                    [32m'Generated an empty chunk: "index".\r\n'[39m +
+                    [32m''[39m,
+                  isTruncated: [33mfalse[39m
+                }
+              },
+              providerOptions: {
+                vertex: {
+                  thoughtSignature: [32m'CksBjz1rX57lXOKzy/kh8SYSuu7ZKPtIPHUCqCP28O4IxCpZfdOUTaIP8E2cqqP5z0OqcIFMFCFR/SINlgfW5cPSbN/nVKaBZiiL2ycKewGPPWtfBWZq0kwsLvZVshvY7xMUtKNi70S4ABTHPO7cghn/Kg9AvrrDw9qlzy43f4u89gfYmk8giiH3c1DihArFrReD8sDJ9bD3XrVG/KozE2aF6/NJTmVTMKnQSapJnR84G74UuajczOxkcT/kf9j4ySM6hFQ9yxKVdAp3AY89a18M0cRngU1GyTVjZDrZ3wAxlA7adw/LdUurQjJr3Kd34rEtutyLk2XJ9facNBgiG4EOD3cCd4ApuGEWWBUm6sEbXHY95VV0QIWjS58Znrd2dWQ6hBrSCF7DvmkCywxPjdr/PvyBSZoTshbixodsgWEhT88KXgGPPWtfXy9hiNaki0oJ6wsbi+QVkOkvR76oc9loOpX8Baqo7wf2HGC+CQPfmaz2k1ghMHEa9dLfN6yzUtPbgESe/Ne5nyuZ4QpKsfu5ZQq971hK9Pue9UgI7kk7ieg='[39m
+                }
+              }
+            }
+          ]
+        },
+        {
+          role: [32m'assistant'[39m,
+          content: [
+            {
+              type: [32m'tool-call'[39m,
+              toolCallId: [32m'81wSWRrhgtg6WeHY'[39m,
+              toolName: [32m'startBackgroundJob'[39m,
+              input: {
+                command: [32m'npm run dev -- --host 0.0.0.0 --port 5173'[39m,
+                cwd: [32m'/home/user/myapp'[39m
+              },
+              providerOptions: {
+                vertex: {
+                  thoughtSignature: [32m'AY89a1/SU719AEDy+WfvoRAw5cp8w+Kzgbk0dcZC+NO+lQBiBGsav9bbUBnQuQrwDhpJU786uMzrd08oBEJ8VDq6pqXF78BbApYnt6vMPj+td/b7e9KhbYR2oW3xgX/MUgOCbGLIntIWe67BIJbSq3pIcl60gApNK2ToqJwPYRh7uaIMO1UvC3dfZtQJCI9fV3kSjEj0pNhcmuiAk5O5eB0pZd07g+Cx+al/Lq6lTBk6W8qu1ubaV0nhSP8RCgZxlnUdEKw1oKXUaRaPTsDuDe8Zjj/qiIII9iRLM4+Tx3abxs82WEb79mVBpWtk'[39m
+                }
+              }
+            }
+          ]
+        },
+        {
+          role: [32m'tool'[39m,
+          content: [
+            {
+              type: [32m'tool-result'[39m,
+              toolCallId: [32m'81wSWRrhgtg6WeHY'[39m,
+              toolName: [32m'startBackgroundJob'[39m,
+              output: {
+                type: [32m'json'[39m,
+                value: {
+                  backgroundJobId: [32m'2451ef85-e5b9-4518-9b57-8c9d1d9326d5'[39m
+                }
+              },
+              providerOptions: {
+                vertex: {
+                  thoughtSignature: [32m'AY89a1/SU719AEDy+WfvoRAw5cp8w+Kzgbk0dcZC+NO+lQBiBGsav9bbUBnQuQrwDhpJU786uMzrd08oBEJ8VDq6pqXF78BbApYnt6vMPj+td/b7e9KhbYR2oW3xgX/MUgOCbGLIntIWe67BIJbSq3pIcl60gApNK2ToqJwPYRh7uaIMO1UvC3dfZtQJCI9fV3kSjEj0pNhcmuiAk5O5eB0pZd07g+Cx+al/Lq6lTBk6W8qu1ubaV0nhSP8RCgZxlnUdEKw1oKXUaRaPTsDuDe8Zjj/qiIII9iRLM4+Tx3abxs82WEb79mVBpWtk'[39m
+                }
+              }
+            }
+          ]
+        },
+        {
+          role: [32m'assistant'[39m,
+          content: [
+            {
+              type: [32m'tool-call'[39m,
+              toolCallId: [32m'XeYSly4zn5j7v0g6'[39m,
+              toolName: [32m'readBackgroundJobOutput'[39m,
+              input: {
+                backgroundJobId: [32m'2451ef85-e5b9-4518-9b57-8c9d1d9326d5'[39m
+              },
+              providerOptions: {
+                vertex: {
+                  thoughtSignature: [32m'AY89a18YxjGF2bERcEOOQ8Mjiwc/B0O88xw7zkrhqYe9tdcg9RJ0Ud2iNQG4JqcWTQUABpqK7j9oYnfZlnwDuZdWbCR7IubKIzigIujTCjM4Mpr3zGcXb58TD3J1j5lzd3AyvywoR/RrMW+rZ9JK44M9w7pk11G5lfcc50xG'[39m
+                }
+              }
+            }
+          ]
+        },
+        {
+          role: [32m'tool'[39m,
+          content: [
+            {
+              type: [32m'tool-result'[39m,
+              toolCallId: [32m'XeYSly4zn5j7v0g6'[39m,
+              toolName: [32m'readBackgroundJobOutput'[39m,
+              output: {
+                type: [32m'json'[39m,
+                value: {
+                  output: [32m'\n'[39m +
+                    [32m'> @redwoodjs/starter@1.0.0 dev\n'[39m +
+                    [32m'> vite dev --host 0.0.0.0 --port 5173\n'[39m +
+                    [32m'\n'[39m +
+                    [32m'\n'[39m +
+                    [32m"… (rwsdk) Scanning for 'use client' and 'use server' directives...\n"[39m +
+                    [32m"✔ (rwsdk) Done scanning for 'use client' and 'use server' directives.\n"[39m +
+                    [32m''[39m,
+                  status: [32m'running'[39m,
+                  isTruncated: [33mfalse[39m
+                }
+              },
+              providerOptions: {
+                vertex: {
+                  thoughtSignature: [32m'AY89a18YxjGF2bERcEOOQ8Mjiwc/B0O88xw7zkrhqYe9tdcg9RJ0Ud2iNQG4JqcWTQUABpqK7j9oYnfZlnwDuZdWbCR7IubKIzigIujTCjM4Mpr3zGcXb58TD3J1j5lzd3AyvywoR/RrMW+rZ9JK44M9w7pk11G5lfcc50xG'[39m
+                }
+              }
+            }
+          ]
+        },
+        {
+          role: [32m'assistant'[39m,
+          content: [
+            {
+              type: [32m'reasoning'[39m,
+              text: [32m'**Observing Progress**\n'[39m +
+                [32m'\n'[39m +
+                [32m'I am currently in a phase of patient observation, allowing the current state of affairs to unfold naturally. Further action will be determined by subsequent developments.\n'[39m +
+                [32m'\n'[39m +
+                [32m''[39m
+            },
+            {
+              type: [32m'tool-call'[39m,
+              toolCallId: [32m'PwLh5wmZ4UDMcTmY'[39m,
+              toolName: [32m'readBackgroundJobOutput'[39m,
+              input: {
+                backgroundJobId: [32m'2451ef85-e5b9-4518-9b57-8c9d1d9326d5'[39m
+              },
+              providerOptions: {
+                vertex: {
+                  thoughtSignature: [32m'CjQBjz1rX02mJkB4DTNb1cok89RdFo8owcg3meue5Qb+TsEyWE+q1uqRehCGmkqTXSitYBk3'[39m
+                }
+              }
+            }
+          ]
+        },
+        {
+          role: [32m'tool'[39m,
+          content: [
+            {
+              type: [32m'tool-result'[39m,
+              toolCallId: [32m'PwLh5wmZ4UDMcTmY'[39m,
+              toolName: [32m'readBackgroundJobOutput'[39m,
+              output: {
+                type: [32m'json'[39m,
+                value: {
+                  output: [32m'4:32:40 AM [vite] (worker) ✨ new dependencies optimized: rwsdk/use-synced-state/worker\n'[39m +
+                    [32m'4:32:40 AM [vite] (worker) ✨ optimized dependencies changed. reloading\n'[39m +
+                    [32m'[vite] program reload\n'[39m +
+                    [32m''[39m,
+                  status: [32m'running'[39m,
+                  isTruncated: [33mfalse[39m
+                }
+              },
+              providerOptions: {
+                vertex: {
+                  thoughtSignature: [32m'CjQBjz1rX02mJkB4DTNb1cok89RdFo8owcg3meue5Qb+TsEyWE+q1uqRehCGmkqTXSitYBk3'[39m
+                }
+              }
+            }
+          ]
+        },
+        {
+          role: [32m'assistant'[39m,
+          content: [
+            {
+              type: [32m'tool-call'[39m,
+              toolCallId: [32m'g42pWRsMETndHhxp'[39m,
+              toolName: [32m'readBackgroundJobOutput'[39m,
+              input: {
+                backgroundJobId: [32m'2451ef85-e5b9-4518-9b57-8c9d1d9326d5'[39m
+              },
+              providerOptions: {
+                vertex: {
+                  thoughtSignature: [32m'AY89a18oAhHSItw49mR3iFUUJ8kdPARGks/dBm2tvtI9GSoy6R63j1ar/Bc+/y1T+GbnHJED/sSUJ2NItUFrt9CZSURo'[39m
+                }
+              }
+            }
+          ]
+        },
+        {
+          role: [32m'tool'[39m,
+          content: [
+            {
+              type: [32m'tool-result'[39m,
+              toolCallId: [32m'g42pWRsMETndHhxp'[39m,
+              toolName: [32m'readBackgroundJobOutput'[39m,
+              output: {
+                type: [32m'json'[39m,
+                value: {
+                  output: [32m'4:32:43 AM [vite] (ssr) ✨ new dependencies optimized: rwsdk/use-synced-state/client\n'[39m +
+                    [32m'4:32:43 AM [vite] (ssr) ✨ optimized dependencies changed. reloading\n'[39m +
+                    [32m'[vite] program reload\n'[39m +
+                    [32m'\n'[39m +
+                    [32m'  VITE v7.3.5  ready in 9709 ms\n'[39m +
+                    [32m'\n'[39m +
+                    [32m'  ➜  Local:   http://localhost:5173/\n'[39m +
+                    [32m'  ➜  Network: http://192.168.16.2:5173/\n'[39m +
+                    [32m'  ➜  Debug:   http://localhost:5173/__debug\n'[39m +
+                    [32m''[39m,
+                  status: [32m'running'[39m,
+                  isTruncated: [33mfalse[39m
+                }
+              },
+              providerOptions: {
+                vertex: {
+                  thoughtSignature: [32m'AY89a18oAhHSItw49mR3iFUUJ8kdPARGks/dBm2tvtI9GSoy6R63j1ar/Bc+/y1T+GbnHJED/sSUJ2NItUFrt9CZSURo'[39m
+                }
+              }
+            }
+          ]
+        },
+        {
+          role: [32m'assistant'[39m,
+          content: [
+            {
+              type: [32m'tool-call'[39m,
+              toolCallId: [32m'CRZiN5ql87hZNJNy'[39m,
+              toolName: [32m'executeCommand'[39m,
+              input: {
+                command: [32m'curl -s http://localhost:5173/chat/general'[39m
+              },
+              providerOptions: {
+                vertex: {
+                  thoughtSignature: [32m'AY89a19TZ1e+JjzNvFLZ36//TWxdEdMlpg2J1DrSe0Ilf8y2J3vBmup89RMtOVFKzn+6J1yhNQJNB+E4EHaS3n8rgwi2HvSYr/0dHhO2snzNypImXLXLaUG7WP7sLRfSTSlABTWJxRrmk7Xt3clMPlVLhQ=='[39m
+                }
+              }
+            }
+          ]
+        },
+        {
+          role: [32m'tool'[39m,
+          content: [
+            {
+              type: [32m'tool-result'[39m,
+              toolCallId: [32m'CRZiN5ql87hZNJNy'[39m,
+              toolName: [32m'executeCommand'[39m,
+              output: {
+                type: [32m'json'[39m,
+                value: {
+                  output: [32m'<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&amp;family=Playfair+Display:ital,wght@0,400..900;1,400..900&amp;display=optional" data-precedence="first"/><title>@redwoodjs/starter-minimal</title><link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin=""/><link rel="modulepreload" href="/src/client.tsx"/></head><body><script nonce="MTI2OTQxOTE4MjEwMjE3MzE3MTEwMDE2NTE0NDEyNDExMjEzNzk0MjAwOA==">globalThis.__RWSDK_CONTEXT = {"rw":{"ssr":true}}</script><div id="hydrate-root"><div><h1>Room: <!-- -->general</h1><div><div style="max-height:300px;overflow-y:auto"></div><input data-testid="chat-input" type="text" value=""/><button data-testid="send-btn">Send</button><button data-testid="clear-btn">Clear</button></div></div><div id="rwsdk-app-end"></div></div><script nonce="MTI2OTQxOTE4MjEwMjE3MzE3MTEwMDE2NTE0NDEyNDExMjEzNzk0MjAwOA==">import("/src/client.tsx")</script><script nonce="MTI2OTQxOTE4MjEwMjE3MzE3MTEwMDE2NTE0NDEyNDExMjEzNzk0MjAwOA==">(self.__FLIGHT_DATA||=[]).push(":N1780979569674\\n4:[\\"accept\\",\\"*/*\\"]\\n5:[\\"accept-encoding\\",\\"br, gzip\\"]\\n6:[\\"accept-language\\",\\"*\\"]\\n7:[\\"cf-connecting-ip\\",\\"127.0.0.1\\"]\\n8:[\\"connection\\",\\"close\\"]\\n9:[\\"host\\",\\"localhost:5173\\"]\\na:[\\"sec-fetch-mode\\",\\"cors\\"]\\nb:[\\"user-agent\\",\\"curl/8.5.0\\"]\\nc:[\\"x-forwarded-host\\",\\"localhost:5173\\"]\\n3:[\\"$4\\",\\"$5\\",\\"$6\\",\\"$7\\",\\"$8\\",\\"$9\\",\\"$a\\",\\"$b\\",\\"$c\\"]\\nd:[]\\n10:\\"$EObject.defineProperty(function AbortSignal() { [native code] },\\\\\\"name\\\\\\",{value:\\\\\\"AbortSignal\\\\\\"})\\"\\nf:\\"$10\\"\\ne:{\\"aborted\\":false,\\"reason\\":\\"$undefined\\",\\"onabort\\":null,\\"\\":\\"$Pf\\"}\\n11:{\\"httpProtocol\\":\\"HTTP/1.1\\",\\"clientAcceptEncoding\\":\\"identity\\",\\"requestPriority\\":\\"\\",\\"edgeRequestKeepAliveStatus\\":1,\\"requestHeaderNames\\":\\"$Y\\",\\"clientTcpRtt\\":6,\\"clientQuicRtt\\":0,\\"colo\\":\\"SEA\\",\\"asn\\":396982,\\"asOrganization\\":\\"Google LLC\\",\\"country\\":\\"US\\",\\"isEUCountry\\":false,\\"city\\":\\"The Dalles\\",\\"continent\\":\\"NA\\",\\"region\\":\\"Oregon\\",\\"regionCode\\":\\"OR\\",\\"timezone\\":\\"America/Los_Angeles\\",\\"longitude\\":\\"-121.17868\\",\\"latitude\\":\\"45.59456\\",\\"postalCode\\":\\"97058\\",\\"metroCode\\":\\"820\\",\\"tlsVersion\\":\\"TLSv1.3\\",\\"tlsCipher\\":\\"AEAD-AES256-GCM-SHA384\\",\\"tlsClientRandom\\":\\"1qTbXCuwxBB8kY7vlNxGdjasNXeuhuPKOcGhkLIPTrg=\\",\\"tlsClientCiphersSha1\\":\\"kXrN3VEKDdzz2cPKTQaKzpxVTxQ=\\",\\"tlsClientExtensionsSha1\\":\\"1eY97BUYYO8vDaTfHQywB1pcNdM=\\",\\"tlsClientExtensionsSha1Le\\":\\"u4wtEMFQBY18l3BzHAvORm+KGRw=\\",\\"tlsExportedAuthenticator\\":\\"$Y\\",\\"tlsClientHelloLength\\":\\"1605\\",\\"tlsClientAuth\\":\\"$Y\\",\\"verifiedBotCategory\\":\\"\\",\\"edgeL4\\":\\"$Y\\",\\"botManagement\\":\\"$Y\\"}\\n13:\\"$EObject.defineProperty(function Request() { [native code] },\\\\\\"name\\\\\\",{value:\\\\\\"Request\\\\\\"})\\"\\n12:\\"$13\\"\\n2:{\\"name\\":\\"ComponentWrappedToThrowResponses\\",\\"key\\":null,\\"env\\":\\"Server\\",\\"stack\\":[[\\"maybeCaptureError\\",\\"file:///workers/runner-worker/index.js\\",50,10,47,1,true]],\\"props\\":{\\"request\\":{\\"method\\":\\"GET\\",\\"url\\":\\"http://localhost:5173/chat/general\\",\\"headers\\":\\"$3\\",\\"redirect\\":\\"manual\\",\\"fetcher\\":\\"$d\\",\\"signal\\":\\"$e\\",\\"cf\\":\\"$11\\",\\"integrity\\":\\"\\",\\"keepalive\\":false,\\"cache\\":\\"$undefined\\",\\"body\\":null,\\"bodyUsed\\":false,\\"\\":\\"$P12\\"},\\"path\\":\\"/chat/general/\\",\\"cf\\":\\"$Y\\",\\"params\\":\\"$Y\\",\\"ctx\\":\\"$Y\\",\\"rw\\":\\"$Y\\",\\"response\\":\\"$Y\\",\\"isAction\\":false}}\\n14:[[\\"maybeCaptureError\\",\\"file:///workers/runner-worker/index.js\\",50,10,47,1,true]]\\n1:D{\\"time\\":16}\\n1:D\\"$2\\"\\n0:{\\"node\\":[\\"$L1\\",[\\"$\\",\\"div\\",null,{\\"id\\":\\"rwsdk-app-end\\"},null,\\"$14\\",1]],\\"actionResult\\":\\"$undefined\\"}\\n18:I[\\"/src/app/components/ChatRoom.tsx#ChatRoom\\",[],\\"/src/app/components/ChatRoom.tsx#ChatRoom\\",1]\\n15:[[\\"ChatRoomPage\\",\\"/home/user/myapp/src/app/pages/chatRoom.tsx\\",7,26,6,22,false]]\\n16:[[\\"ChatRoomPage\\",\\"/home/user/myapp/src/app/pages/chatRoom.tsx\\",8,21,6,22,false]]\\n17:[[\\"ChatRoomPage\\",\\"/home/user/myapp/src/app/pages/chatRoom.tsx\\",16,21,6,22,false]]\\n1:D{\\"time\\":22}\\n1:[\\"$\\",\\"div\\",null,{\\"children\\":[[\\"$\\",\\"h1\\",null,{\\"children\\":[\\"Room: \\",\\"general\\"]},\\"$2\\",\\"$16\\",1],[\\"$\\",\\"$L18\\",null,{\\"roomId\\":\\"general\\"},\\"$2\\",\\"$17\\",1]]},\\"$2\\",\\"$15\\",1]\\n")</script></body></html>'[39m,
+                  isTruncated: [33mfalse[39m
+                }
+              },
+              providerOptions: {
+                vertex: {
+                  thoughtSignature: [32m'AY89a19TZ1e+JjzNvFLZ36//TWxdEdMlpg2J1DrSe0Ilf8y2J3vBmup89RMtOVFKzn+6J1yhNQJNB+E4EHaS3n8rgwi2HvSYr/0dHhO2snzNypImXLXLaUG7WP7sLRfSTSlABTWJxRrmk7Xt3clMPlVLhQ=='[39m
+                }
+              }
+            }
+          ]
+        },
+        {
+          role: [32m'assistant'[39m,
+          content: [
+            {
+              type: [32m'reasoning'[39m,
+              text: [32m'**Testing Client Interaction**\n'[39m +
+                [32m'\n'[39m +
+                [32m'I\'m exploring Playwright for client-side verification. My current focus is on testing the chat interface at `http://localhost:5173/chat/general`. I\'ve confirmed that after clearing the chat, sending "hello redwood" results in that exact message appearing within a `data-` attribute.\n'[39m +
+                [32m'\n'[39m +
+                [32m'**Validating Chat Scoping**\n'[39m +
+                [32m'\n'[39m +
+                [32m`I'm currently focused on validating that chat messages are indeed room-scoped. My latest tests confirm that sending a message in the "general" room leaves no trace in the "other" room after a clear, as expected.\n`[39m +
+                [32m'\n'[39m +
+                [32m'**Developing Puppeteer Scripts**\n'[39m +
+                [32m'\n'[39m +
+                [32m"I'm now shifting to developing Puppeteer scripts to automate these client-side validations. This approach should allow for more robust and repeatable testing of our chat interface's scoping logic.\n"[39m +
+                [32m'\n'[39m +
+                [32m''[39m
+            },
+            {
+              type: [32m'tool-call'[39m,
+              toolCallId: [32m'wfR6lTh5PcgGzJPg'[39m,
+              toolName: [32m'writeToFile'[39m,
+              input: {
+                path: [32m'/home/user/myapp/test.js'[39m,
+                content: [32m"import puppeteer from 'puppeteer-core';\n"[39m +
+                  [32m'\n'[39m +
+                  [32m'(async () => {\n'[39m +
+                  [32m'  const browser = await puppeteer.connect({\n'[39m +
+                  [32m"    browserURL: 'http://127.0.0.1:9222',\n"[39m +
+                  [32m'    defaultViewport: null,\n'[39m +
+                  [32m'  });\n'[39m +
+                  [32m'  \n'[39m +
+                  [32m"  // Or if we don't have an existing browser running, we can launch one.\n"[39m +
+                  [32m'})();'[39m
+              },
+              providerOptions: {
+                vertex: {
+                  thoughtSignature: [32m'CmMBjz1rX6q+E2nX10xjQVfb+zeZj4nnWjO6jIm7CE5q60OWwJzNRP2K5SMZOZwxrqiZ9yuArsG123xsvKwoavC6/2HJfmkFH7xTekg71rrefWKiypwswv39ZI3hmFuVE3l8hOkKfQGPPWtfeNvc3owXKP4fDKs5aSMD+FzMeFf7QBxS30I19Pym8hoVt76jaRq/jG5mVlNAz5rlTeE65cbXJ6/R5fEqISA1DDNX83scOynlQRKVRryg5xm01GIwZ/cCejh+hIVi2jv4H0ebLvOKt8xqddrDfrPT0fjveXpXjEgqCosBAY89a19hpma3pFBQxwbQJ6bv9s1IopabhEgELPR+DvyW5Tc1tonTik8MYtx5B+iCeoTVhsPWhnS/cdbNNzaWdDofBRSqdVf2ST4DMUPNirLw66hQMvSHgSZSKJvULQNU5xL86yaxy5k3+r5iGKT50WXzuW4E4+JjFInS2hI4PM97DYsna09kFBMSDgpwAY89a1+I1O+i2i0T99L9xvPt4n/91d2iAK0HCT1SwDFMQzzTDc6CxJ0NDVLKJepZx83oVsBz8DujjPNhZGhInr72XuVkNiY4JSeIL2ZsBv+hAU0qYnu+A4IDoBQK7LZErBJII4+ESSznsVW8vnlGxQqGAQGPPWtflvCTsa0nw46xtwYLyqF+lsdrj6tnuBXjEGS6025lj6QaWmi4Z735khv5ieG4jenzgKDtxdxkbBQVDfARW8ZFRDrl+InrF/vALBQ7JOclEqY48tyiA5vFGXKGXphZQZXyWVHXZ7ckzK3OgKTTrg2ia3cK1sxQr2JkDfnUaYKijgNgCkgBjz1rX2GS4sL3iwrnq2IASZzZJDv/Nxtncb9C+JrRDtE51ueIDXtTQf5UBpsY0lKXVu88+PuVa8FIWGuyM+IkhaR4TTjRvko='[39m
+                }
+              }
+            }
+          ]
+        },
+        {
+          role: [32m'tool'[39m,
+          content: [
+            {
+              type: [32m'tool-result'[39m,
+              toolCallId: [32m'wfR6lTh5PcgGzJPg'[39m,
+              toolName: [32m'writeToFile'[39m,
+              output: {
+                type: [32m'json'[39m,
+                value: {
+                  success: [33mtrue[39m
+                }
+              },
+              providerOptions: {
+                vertex: {
+                  thoughtSignature: [32m'CmMBjz1rX6q+E2nX10xjQVfb+zeZj4nnWjO6jIm7CE5q60OWwJzNRP2K5SMZOZwxrqiZ9yuArsG123xsvKwoavC6/2HJfmkFH7xTekg71rrefWKiypwswv39ZI3hmFuVE3l8hOkKfQGPPWtfeNvc3owXKP4fDKs5aSMD+FzMeFf7QBxS30I19Pym8hoVt76jaRq/jG5mVlNAz5rlTeE65cbXJ6/R5fEqISA1DDNX83scOynlQRKVRryg5xm01GIwZ/cCejh+hIVi2jv4H0ebLvOKt8xqddrDfrPT0fjveXpXjEgqCosBAY89a19hpma3pFBQxwbQJ6bv9s1IopabhEgELPR+DvyW5Tc1tonTik8MYtx5B+iCeoTVhsPWhnS/cdbNNzaWdDofBRSqdVf2ST4DMUPNirLw66hQMvSHgSZSKJvULQNU5xL86yaxy5k3+r5iGKT50WXzuW4E4+JjFInS2hI4PM97DYsna09kFBMSDgpwAY89a1+I1O+i2i0T99L9xvPt4n/91d2iAK0HCT1SwDFMQzzTDc6CxJ0NDVLKJepZx83oVsBz8DujjPNhZGhInr72XuVkNiY4JSeIL2ZsBv+hAU0qYnu+A4IDoBQK7LZErBJII4+ESSznsVW8vnlGxQqGAQGPPWtflvCTsa0nw46xtwYLyqF+lsdrj6tnuBXjEGS6025lj6QaWmi4Z735khv5ieG4jenzgKDtxdxkbBQVDfARW8ZFRDrl+InrF/vALBQ7JOclEqY48tyiA5vFGXKGXphZQZXyWVHXZ7ckzK3OgKTTrg2ia3cK1sxQr2JkDfnUaYKijgNgCkgBjz1rX2GS4sL3iwrnq2IASZzZJDv/Nxtncb9C+JrRDtE51ueIDXtTQf5UBpsY0lKXVu88+PuVa8FIWGuyM+IkhaR4TTjRvko='[39m
+                }
+              }
+            }
+          ]
+        }
+      ],
+      tools: [
+        {
+          type: [32m'function'[39m,
+          name: [32m'applyDiff'[39m,
+          description: [32m"This is a tool for editing files. For moving or renaming files, you should generally use the executeCommand tool with the 'mv' command instead. For larger edits, use the writeFile tool to overwrite files.\n"[39m +
+            [32m'\n'[39m +
+            [32m"Before using this tool, use the readFile tool to understand the file's contents and context\n"[39m +
+            [32m'\n'[39m +
+            [32m'To make a file edit, provide the following:\n'[39m +
+            [32m'1. path: The path to the file to modify (relative to the current working directory, or an absolute path)\n'[39m +
+            [32m'2. searchContent: The text to replace (must match the file contents exactly, including all whitespace and indentation)\n'[39m +
+            [32m'3. replaceContent: The edited text to replace the searchContent (must be different from searchContent)\n'[39m +
+            [32m'4. expectedReplacements: The number of replacements you expect to make. Defaults to 1 if not specified.\n'[39m +
+            [32m'\n'[39m +
+            [32m'By default, the tool will replace ONE occurrence of searchContent with replaceContent in the specified file. If you want to replace multiple occurrences, provide the expectedReplacements parameter with the exact number of occurrences you expect.\n'[39m +
+            [32m'\n'[39m +
+            [32m'CRITICAL REQUIREMENTS FOR USING THIS TOOL:\n'[39m +
+            [32m'\n'[39m +
+            [32m'1. UNIQUENESS (when expectedReplacements is not specified): The searchContent MUST uniquely identify the specific instance you want to change. This means:\n'[39m +
+            [32m'   - Include AT LEAST 3-5 lines of context BEFORE the change point\n'[39m +
+            [32m'   - Include AT LEAST 3-5 lines of context AFTER the change point\n'[39m +
+            [32m'   - Include all whitespace, indentation, and surrounding code exactly as it appears in the file\n'[39m +
+            [32m'\n'[39m +
+            [32m'2. EXPECTED MATCHES: If you want to replace multiple instances:\n'[39m +
+            [32m'   - Use the expectedReplacements parameter with the exact number of occurrences you expect to replace\n'[39m +
+            [32m'   - This will replace ALL occurrences of the searchContent with the replaceContent\n'[39m +
+            [32m"   - If the actual number of matches doesn't equal expectedReplacements, the edit will fail\n"[39m +
+            [32m'   - This is a safety feature to prevent unintended replacements\n'[39m +
+            [32m'\n'[39m +
+            [32m'3. VERIFICATION: Before using this tool:\n'[39m +
+            [32m'   - Check how many instances of the target text exist in the file\n'[39m +
+            [32m'   - If multiple instances exist, either:\n'[39m +
+            [32m'     a) Gather enough context to uniquely identify each one and make separate calls, OR\n'[39m +
+            [32m'     b) Use expectedReplacements parameter with the exact count of instances you expect to replace\n'[39m +
+            [32m'\n'[39m +
+            [32m'WARNING:\n'[39m +
+            [32m"- The tool will fail if searchContent matches multiple locations and expectedReplacements isn't specified\n"[39m +
+            [32m"- The tool will fail if the number of matches doesn't equal expectedReplacements when it's specified\n"[39m +
+            [32m"- The tool will fail if searchContent doesn't match the file contents exactly (including whitespace)\n"[39m +
+            [32m'- The tool will fail if searchContent and replaceContent are the same\n'[39m +
+            [32m'\n'[39m +
+            [32m'When making edits:\n'[39m +
+            [32m'   - Ensure the edit results in idiomatic, correct code\n'[39m +
+            [32m'   - Do not add trailing whitespace to lines (a newline at the end of a file is fine)\n'[39m +
+            [32m'   - Do not leave the code in a broken state\n'[39m +
+            [32m'\n'[39m +
+            [32m'If you want to create a new file, use:\n'[39m +
+            [32m'   - A new file path, including dir name if needed\n'[39m +
+            [32m'   - An empty searchContent\n'[39m +
+            [32m"   - The new file's contents as replaceContent\n"[39m +
+            [32m'\n'[39m +
+            [32m'Remember: when making multiple file edits in a row to the same file, you should prefer to send all edits in a single message with multiple calls to this tool, rather than multiple messages with a single call each.\n'[39m +
+            [32m'\n'[39m +
+            [32m'You may see the following fields in the result:\n'[39m +
+            [32m'- autoFormattingEdits: If the auto-formatter makes any changes, this field will contain a diff against the file content after your edits and any user edits have been applied.\n'[39m +
+            [32m'- newProblems: If any new problems are found after the edit, this field will contain information about them.'[39m,
+          inputSchema: {
+            [32m'$schema'[39m: [32m'http://json-schema.org/draft-07/schema#'[39m,
+            type: [32m'object'[39m,
+            properties: {
+              path: {
+                type: [32m'string'[39m,
+                description: [32m'The path of the file to modify (relative to the current working directory, or an absolute path).'[39m
+              },
+              searchContent: {
+                type: [32m'string'[39m,
+                description: [32m'The text to replace.'[39m
+              },
+              replaceContent: {
+                type: [32m'string'[39m,
+                description: [32m'The text to replace it with.'[39m
+              },
+              expectedReplacements: {
+                description: [32m'The expected number of replacements to perform. Defaults to 1 if not specified.'[39m,
+                type: [32m'number'[39m
+              }
+            },
+            required: [
+              [32m'path'[39m,
+              [32m'searchContent'[39m,
+              [32m'replaceContent'[39m
+            ],
+            additionalProperties: [33mfalse[39m
+          }
+        },
+        {
+          type: [32m'function'[39m,
+          name: [32m'askFollowupQuestion'[39m,
+          description: [32m'Ask the user a question to gather additional information needed to complete the task. \n'[39m +
+            [32m'\n'[39m +
+            [32m'## When to Use This Tool\n'[39m +
+            [32m'Use this tool in the following scenarios:\n'[39m +
+            [32m"1. The user's request is ambiguous or unclear and requires clarification.\n"[39m +
+            [32m'2. You need more details to proceed effectively.\n'[39m +
+            [32m'3. You have made several unsuccessful attempts to solve the issue and need user guidance to move forward.\n'[39m +
+            [32m'4. Offer choices to the user about what direction to take.\n'[39m +
+            [32m'\n'[39m +
+            [32m'## Usage Notes\n'[39m +
+            [32m'- Users will always be able to select "Other" to provide custom text input\n'[39m +
+            [32m'- Use multiSelect: true to allow multiple answers to be selected for a question\n'[39m +
+            [32m'- If you recommend a specific option, make that the first option in the list and add "(Recommended)" at the end of the label\n'[39m +
+            [32m'- Provide 1-4 questions per call\n'[39m +
+            [32m'\n'[39m +
+            [32m'IMPORTANT: This tool CANNOT be used in combination with other tools (except todoWrite) in a single step. If you need to use other tools, you must do so in a separate step before calling this tool.'[39m,
+          inputSchema: {
+            [32m'$schema'[39m: [32m'http://json-schema.org/draft-07/schema#'[39m,
+            type: [32m'object'[39m,
+            properties: {
+              questions: {
+                minItems: [33m1[39m,
+                maxItems: [33m4[39m,
+                type: [32m'array'[39m,
+                items: {
+                  type: [32m'object'[39m,
+                  properties: {
+                    question: {
+                      type: [32m'string'[39m,
+                      description: [32m'The complete question to ask the user. Should be clear, specific, and end with a question mark.'[39m
+                    },
+                    header: {
+                      type: [32m'string'[39m,
+                      maxLength: [33m12[39m,
+                      description: [32m'Very short label displayed as a chip/tag (max 12 chars). Examples: "Auth method", "Library", "Approach".'[39m
+                    },
+                    options: {
+                      minItems: [33m2[39m,
+                      maxItems: [33m4[39m,
+                      type: [32m'array'[39m,
+                      items: {
+                        type: [32m'object'[39m,
+                        properties: {
+                          label: {
+                            type: [32m'string'[39m,
+                            description: [32m'Short button label shown to the user. Should be concise (1-5 words) and clearly describe the choice.'[39m
+                          },
+                          description: {
+                            description: [32m'Explanation of what this option means or what will happen if chosen. Useful for providing context about trade-offs or implications.'[39m,
+                            type: [32m'string'[39m
+                          }
+                        },
+                        required: [
+                          [32m'label'[39m
+                        ],
+                        additionalProperties: [33mfalse[39m
+                      },
+                      description: [32m"The available choices for this question. Must have 2-4 options. Each option should be a distinct, mutually exclusive choice (unless multiSelect is enabled). There should be no 'Other' option, that will be provided automatically."[39m
+                    },
+                    multiSelect: {
+                      default: [33mfalse[39m,
+                      description: [32m'Set to true to allow the user to select multiple options instead of just one. Use when choices are not mutually exclusive.'[39m,
+                      type: [32m'boolean'[39m
+                    }
+                  },
+                  required: [
+                    [32m'question'[39m,
+                    [32m'header'[39m,
+                    [32m'options'[39m
+                  ],
+                  additionalProperties: [33mfalse[39m
+                },
+                description: [32m'Questions to ask the user (1-4 questions).'[39m
+              }
+            },
+            required: [
+              [32m'questions'[39m
+            ],
+            additionalProperties: [33mfalse[39m
+          }
+        },
+        {
+          type: [32m'function'[39m,
+          name: [32m'attemptCompletion'[39m,
+          description: [32m"Once you've received the results of tool uses and can confirm that the task is complete, use this tool to present the result of your work to the user.\n"[39m +
+            [32m'\n'[39m +
+            [32m'You MUST NOT generate any text before this tool call. All conclusion text must be included within the result parameter of the attemptCompletion tool.\n'[39m +
+            [32m'Never use this tool with a question or request to engage in further conversation! Formulate the end of your result in a way that is final and does not require further input from the user.\n'[39m +
+            [32m'\n'[39m +
+            [32m'IMPORTANT: This tool CANNOT be used in combination with other tools (except todoWrite) in a single step. If you need to use other tools, you must do so in a separate step before calling this tool.'[39m,
+          inputSchema: {
+            [32m'$schema'[39m: [32m'http://json-schema.org/draft-07/schema#'[39m,
+            type: [32m'object'[39m,
+            properties: {
+              result: {
+                type: [32m'string'[39m,
+                description: [32m'The result of the task. Formulate this result in a way that is final and does not require further input from the user.'[39m
+              }
+            },
+            required: [
+              [32m'result'[39m
+            ],
+            additionalProperties: [33mfalse[39m
+          }
+        },
+        {
+          type: [32m'function'[39m,
+          name: [32m'executeCommand'[39m,
+          description: [32m'Executes a given bash command in a persistent shell session with optional timeout, ensuring proper handling and security measures.\n'[39m +
+            [32m'\n'[39m +
+            [32m'IMPORTANT: This tool is for terminal operations like git, npm, docker, etc. DO NOT use it for file operations (reading, writing, editing, searching, finding files) - use the specialized tools for this instead.\n'[39m +
+            [32m'\n'[39m +
+            [32m'Before executing the command, please follow these steps:\n'[39m +
+            [32m'\n'[39m +
+            [32m'1. Directory Verification:\n'[39m +
+            [32m'   - If the command will create new directories or files, first use listFiles to verify the parent directory exists and is the correct location\n'[39m +
+            [32m'   - For example, before running "mkdir foo/bar", first use listFiles to check that "foo" exists and is the intended parent directory\n'[39m +
+            [32m'\n'[39m +
+            [32m'2. Command Execution:\n'[39m +
+            [32m'   - Always quote file paths that contain spaces with double quotes (e.g., cd "path with spaces/file.txt")\n'[39m +
+            [32m'   - Examples of proper quoting:\n'[39m +
+            [32m'     - cd "/Users/name/My Documents" (correct)\n'[39m +
+            [32m'     - cd /Users/name/My Documents (incorrect - will fail)\n'[39m +
+            [32m'     - python "/path/with spaces/script.py" (correct)\n'[39m +
+            [32m'     - python /path/with spaces/script.py (incorrect - will fail)\n'[39m +
+            [32m'   - After ensuring proper quoting, execute the command.\n'[39m +
+            [32m'   - Capture the output of the command.\n'[39m +
+            [32m'\n'[39m +
+            [32m'Usage notes:\n'[39m +
+            [32m'- The command argument is required.\n'[39m +
+            [32m'- You can specify an optional timeout in seconds (up to 300s / 5 minutes). If not specified, commands will timeout after 60s (1 minute).\n'[39m +
+            [32m'- If the output exceeds 30000 characters, output will be truncated before being returned to you.\n'[39m +
+            [32m'- When issuing multiple commands:\n'[39m +
+            [32m'  - If the commands are independent and can run in parallel, make multiple executeCommand tool calls in a single message. For example, if you need to run "git status" and "git diff", send a single message with two executeCommand tool calls in parallel.\n'[39m +
+            [32m'  - If the commands depend on each other and must run sequentially, use a single executeCommand call with \'&&\' to chain them together (e.g., `git add . && git commit -m "message" && git push`). For instance, if one operation must complete before another starts (like mkdir before cp, Write before executeCommand for git operations, or git add before git commit), run these operations sequentially instead.\n'[39m +
+            [32m"  - Use ';' only when you need to run commands sequentially but don't care if earlier commands fail\n"[39m +
+            [32m'  - DO NOT use newlines to separate commands (newlines are ok in quoted strings)\n'[39m +
+            [32m"- You shall avoid use the markdown code block syntax (backtick, '`') in your command, as it will be interpreted as a command substitution.\n"[39m +
+            [32m"- Before using this tool, you must first think about the context provided in <system-reminder> to understand the user's environment and tailor your commands to ensure they are compatible with their system. You must also consider if the command you need to run should be executed in a specific directory rather than the current working directory, and properly set the `cwd` if necessary.\n"[39m +
+            [32m'\n'[39m +
+            [32m'# Committing changes with git\n'[39m +
+            [32m'\n'[39m +
+            [32m'Only create commits when requested by the user. If unclear, ask first. When the user asks you to create a new git commit, follow these steps carefully:\n'[39m +
+            [32m'\n'[39m +
+            [32m'Git Safety Protocol:\n'[39m +
+            [32m'- NEVER update the git config\n'[39m +
+            [32m"- NEVER run destructive git commands (push --force, reset --hard, checkout ., restore ., clean -f, branch -D) unless the user explicitly requests these actions. Taking unauthorized destructive actions is unhelpful and can result in lost work, so it's best to ONLY run these commands when given direct instructions \n"[39m +
+            [32m'- NEVER skip hooks (--no-verify, --no-gpg-sign, etc) unless the user explicitly requests it\n'[39m +
+            [32m'- NEVER run force push to main/master, warn the user if they request it\n'[39m +
+            [32m'- CRITICAL: Always create NEW commits rather than amending, unless the user explicitly requests a git amend. When a pre-commit hook fails, the commit did NOT happen  — so --amend would modify the PREVIOUS commit, which may result in destroying work or losing previous changes. Instead, after hook failure, fix the issue, re-stage, and create a NEW commit\n'[39m +
+            [32m'- When staging files, prefer adding specific files by name rather than using "git add -A" or "git add .", which can accidentally include sensitive files (.env, credentials) or large binaries\n'[39m +
+            [32m'- NEVER commit changes unless the user explicitly asks you to. It is VERY IMPORTANT to only commit when explicitly asked, otherwise the user will feel that you are being too proactive\n'[39m +
+            [32m'\n'[39m +
+            [32m'1. You can call multiple tools in a single response. When multiple independent pieces of information are requested and all commands are likely to succeed, run multiple tool calls in parallel for optimal performance. run the following bash commands in parallel, each using the executeCommand tool:\n'[39m +
+            [32m'  - Run a git status command to see all untracked files. IMPORTANT: Never use the -uall flag as it can cause memory issues on large repos.\n'[39m +
+            [32m'  - Run a git diff command to see both staged and unstaged changes that will be committed.\n'[39m +
+            [32m"  - Run a git log command to see recent commit messages, so that you can follow this repository's commit message style.\n"[39m +
+            [32m'2. Analyze all staged changes (both previously staged and newly added) and draft a commit message:\n'[39m +
+            [32m'  - Summarize the nature of the changes (eg. new feature, enhancement to an existing feature, bug fix, refactoring, test, docs, etc.). Ensure the message accurately reflects the changes and their purpose (i.e. "add" means a wholly new feature, "update" means an enhancement to an existing feature, "fix" means a bug fix, etc.).\n'[39m +
+            [32m'  - Do not commit files that likely contain secrets (.env, credentials.json, etc). Warn the user if they specifically request to commit those files\n'[39m +
+            [32m'  - Draft a concise (1-2 sentences) commit message that focuses on the "why" rather than the "what"\n'[39m +
+            [32m'  - Ensure it accurately reflects the changes and their purpose\n'[39m +
+            [32m'3. You can call multiple tools in a single response. When multiple independent pieces of information are requested and all commands are likely to succeed, run multiple tool calls in parallel for optimal performance. run the following commands:\n'[39m +
+            [32m'   - Add relevant untracked files to the staging area.\n'[39m +
+            [32m'   - Create the commit with a message ending with:\n'[39m +
+            [32m'   🤖 Generated with [Pochi](https://getpochi.com) | [Task](<Share URL>)\n'[39m +
+            [32m'\n'[39m +
+            [32m'   Co-Authored-By: Pochi <noreply@getpochi.com>\n'[39m +
+            [32m'\n'[39m +
+            [32m'   Note: Replace <Share URL> with the Share URL from system information if available. If not available, omit the " | [Task](...)" part.\n'[39m +
+            [32m'\n'[39m +
+            [32m'   - Run git status after the commit completes to verify success.\n'[39m +
+            [32m'   Note: git status depends on the commit completing, so run it sequentially after the commit.\n'[39m +
+            [32m'4. If the commit fails due to pre-commit hook changes, retry the commit ONCE to include these automated changes. If it fails again, it usually means a pre-commit hook is preventing the commit. If the commit succeeds but you notice that files were modified by the pre-commit hook, you MUST amend your commit to include them.\n'[39m +
+            [32m'\n'[39m +
+            [32m'Important notes:\n'[39m +
+            [32m'- NEVER update the git config\n'[39m +
+            [32m'- NEVER run additional commands to read or explore code, besides git bash commands\n'[39m +
+            [32m'- DO NOT push to the remote repository unless the user explicitly asks you to do so\n'[39m +
+            [32m'- IMPORTANT: Never use git commands with the -i flag (like git rebase -i or git add -i) since they require interactive input which is not supported.\n'[39m +
+            [32m'- IMPORTANT: Do not use --no-edit with git rebase commands, as the --no-edit flag is not a valid option for git rebase.\n'[39m +
+            [32m'- If there are no changes to commit (i.e., no untracked files and no modifications), do not create an empty commit\n'[39m +
+            [32m'- In order to ensure good formatting, ALWAYS pass the commit message via a HEREDOC, a la this example:\n'[39m +
+            [32m'<example>\n'[39m +
+            [32m`git commit -m "$(cat <<'EOF'\n`[39m +
+            [32m'Commit message here.\n'[39m +
+            [32m'\n'[39m +
+            [32m'🤖 Generated with [Pochi](https://getpochi.com) | [Task](<Share URL>)\n'[39m +
+            [32m'\n'[39m +
+            [32m'Co-Authored-By: Pochi <noreply@getpochi.com>\n'[39m +
+            [32m'EOF\n'[39m +
+            [32m')"\n'[39m +
+            [32m'</example>\n'[39m +
+            [32m'\n'[39m +
+            [32m'# Creating pull requests\n'[39m +
+            [32m'Use the gh command via the executeCommand tool for ALL GitHub-related tasks including working with issues, pull requests, checks, and releases. If given a Github URL use the gh command to get the information needed.\n'[39m +
+            [32m'\n'[39m +
+            [32m'IMPORTANT: When the user asks you to create a pull request, follow these steps carefully:\n'[39m +
+            [32m'\n'[39m +
+            [32m'1. You can call multiple tools in a single response. When multiple independent pieces of information are requested and all commands are likely to succeed, run multiple tool calls in parallel for optimal performance. run the following bash commands in parallel using the executeCommand tool, in order to understand the current state of the branch since it diverged from the main branch:\n'[39m +
+            [32m'   - Run a git status command to see all untracked files (never use -uall flag)\n'[39m +
+            [32m'   - Run a git diff command to see both staged and unstaged changes that will be committed\n'[39m +
+            [32m'   - Check if the current branch tracks a remote branch and is up to date with the remote, so you know if you need to push to the remote\n'[39m +
+            [32m'   - Run a git log command and `git diff [base-branch]...HEAD` to understand the full commit history for the current branch (from the time it diverged from the base branch)\n'[39m +
+            [32m'2. Analyze all changes that will be included in the pull request, making sure to look at all relevant commits (NOT just the latest commit, but ALL commits that will be included in the pull request!!!), and draft a pull request title and summary:\n'[39m +
+            [32m'   - Keep the PR title short (under 70 characters)\n'[39m +
+            [32m'   - Use the description/body for details, not the title\n'[39m +
+            [32m'3. You can call multiple tools in a single response. When multiple independent pieces of information are requested and all commands are likely to succeed, run multiple tool calls in parallel for optimal performance. run the following commands in parallel:\n'[39m +
+            [32m'   - Create new branch if needed\n'[39m +
+            [32m'   - Push to remote with -u flag if needed\n'[39m +
+            [32m'   - Create PR using gh pr create with the format below. Use a HEREDOC to pass the body to ensure correct formatting.\n'[39m +
+            [32m'<example>\n'[39m +
+            [32m`gh pr create --title "the pr title" --body "$(cat <<'EOF'\n`[39m +
+            [32m'## Summary\n'[39m +
+            [32m'<1-3 bullet points>\n'[39m +
+            [32m'\n'[39m +
+            [32m'## Test plan\n'[39m +
+            [32m'[Checklist of TODOs for testing the pull request...]\n'[39m +
+            [32m'\n'[39m +
+            [32m'🤖 Generated with [Pochi](https://getpochi.com) | [Task](<Share URL>)\n'[39m +
+            [32m'EOF\n'[39m +
+            [32m')"\n'[39m +
+            [32m'</example>\n'[39m +
+            [32m'\n'[39m +
+            [32m'Important:\n'[39m +
+            [32m'- NEVER update the git confi'[39m... 355 more characters,
+          inputSchema: {
+            [32m'$schema'[39m: [32m'http://json-schema.org/draft-07/schema#'[39m,
+            type: [32m'object'[39m,
+            properties: {
+              command: {
+                type: [32m'string'[39m,
+                description: [32m'The CLI command to execute. This should be valid for the current operating system.'[39m
+              },
+              cwd: {
+                description: [32m'The working directory to execute the command in.'[39m,
+                type: [32m'string'[39m
+              },
+              timeout: {
+                description: [32m'Optional timeout in seconds, max 300 seconds. By default the timeout is 120 seconds.'[39m,
+                type: [32m'number'[39m,
+                minimum: [33m1[39m,
+                maximum: [33m300[39m
+              }
+            },
+            required: [
+              [32m'command'[39m
+            ],
+            additionalProperties: [33mfalse[39m
+          }
+        },
+        {
+          type: [32m'function'[39m,
+          name: [32m'globFiles'[39m,
+          description: [32m'Request to find files matching a glob pattern within a specified directory. Use this to get a list of files based on a pattern.'[39m,
+          inputSchema: {
+            [32m'$schema'[39m: [32m'http://json-schema.org/draft-07/schema#'[39m,
+            type: [32m'object'[39m,
+            properties: {
+              path: {
+                type: [32m'string'[39m,
+                description: [32m'The path of the directory to search in (relative to the current working directory, or an absolute path)'[39m
+              },
+              globPattern: {
+                type: [32m'string'[39m,
+                description: [32m"The glob pattern to match files against (e.g., '*.ts', '**/*.js')"[39m
+              }
+            },
+            required: [
+              [32m'path'[39m,
+              [32m'globPattern'[39m
+            ],
+            additionalProperties: [33mfalse[39m
+          }
+        },
+        {
+          type: [32m'function'[39m,
+          name: [32m'listFiles'[39m,
+          description: [32m'Request to list files and directories within the specified directory. If recursive is true, it will list all files and directories recursively. If recursive is false or not provided, it will only list the top-level contents. Do not use this tool to confirm the existence of files you may have created, as the user will let you know if the files were created successfully or not.'[39m,
+          inputSchema: {
+            [32m'$schema'[39m: [32m'http://json-schema.org/draft-07/schema#'[39m,
+            type: [32m'object'[39m,
+            properties: {
+              path: {
+                type: [32m'string'[39m,
+                description: [32m'The path of the directory to list contents for (relative to the current working directory, or an absolute path)'[39m
+              },
+              recursive: {
+                description: [32m'Whether to list files and directories recursively.'[39m,
+                type: [32m'boolean'[39m
+              }
+            },
+            required: [
+              [32m'path'[39m
+            ],
+            additionalProperties: [33mfalse[39m
+          }
+        },
+        {
+          type: [32m'function'[39m,
+          name: [32m'readFile'[39m,
+          description: [32m'Request to read the contents of a file at the specified path. Use this when you need to examine the contents of an existing file you do not know the contents of, for example to analyze code, review text files, extract information from configuration files.\n'[39m +
+            [32m'Also supports reading media files (e.g. image, audio, video) with the following mime types: image/png, image/jpeg, image/webp, image/heic, image/heif, video/mp4, video/mpeg, video/mov, video/avi, video/x-flv, video/mpg, video/webm, video/wmv, video/3gpp, audio/wav, audio/mp3, audio/aiff, audio/aac, audio/ogg, audio/flac, application/pdf.'[39m,
+          inputSchema: {
+            [32m'$schema'[39m: [32m'http://json-schema.org/draft-07/schema#'[39m,
+            type: [32m'object'[39m,
+            properties: {
+              path: {
+                type: [32m'string'[39m,
+                description: [32m'The path of the file to read (relative to the current working directory, or an absolute path)'[39m
+              },
+              startLine: {
+                description: [32m'The starting line number to read from (1-based). If not provided, it starts from the beginning of the file.'[39m,
+                type: [32m'number'[39m
+              },
+              endLine: {
+                description: [32m'The ending line number to read to (1-based, inclusive). If not provided, it reads to the end of the file.'[39m,
+                type: [32m'number'[39m
+              }
+            },
+            required: [
+              [32m'path'[39m
+            ],
+            additionalProperties: [33mfalse[39m
+          }
+        },
+        {
+          type: [32m'function'[39m,
+          name: [32m'useSkill'[39m,
+          description: [32m'Execute a skill within the main conversation\n'[39m +
+            [32m'\n'[39m +
+            [32m'When users ask you to perform tasks, check if any of the available skills below can help complete the task more effectively. Skills provide specialized capabilities and domain knowledge.\n'[39m +
+            [32m'\n'[39m +
+            [32m'When users ask about a SPECIFIC skill (e.g., "How does the pdf skill work?", "What does the commit skill do?"), you must call this tool to get detailed information about that skill.\n'[39m +
+            [32m'\n'[39m +
+            [32m'When users ask general questions like "What skills are available?" or "List all skills", simply refer to the "Available skills" section below - do NOT call this tool.\n'[39m +
+            [32m'\n'[39m +
+            [32m"This tool returns the skill's detailed instructions which you must then follow to complete the task. The instructions contain step-by-step guidance on how to perform the specific task or workflow.\n"[39m +
+            [32m'\n'[39m +
+            [32m'How to invoke:\n'[39m +
+            [32m'- Use this tool with the skill name\n'[39m +
+            [32m'- Example: `skill: "pdf-processing"` - invoke the pdf-processing skill\n'[39m +
+            [32m"- The tool will return the skill's instructions\n"[39m +
+            [32m'- Follow the returned instructions carefully to complete the task\n'[39m +
+            [32m'\n'[39m +
+            [32m'Important:\n'[39m +
+            [32m'- When a skill is relevant for a task OR when users ask about a SPECIFIC skill, you must invoke this tool IMMEDIATELY as your first action\n'[39m +
+            [32m'- For general questions about available skills, simply refer to the "Available skills" list below without calling this tool\n'[39m +
+            [32m'- NEVER just announce or mention a skill in your text response without actually calling this tool (except for general skill listing requests)\n'[39m +
+            [32m'- This is a BLOCKING REQUIREMENT: invoke the relevant Skill tool BEFORE generating any other response about a specific skill or task\n'[39m +
+            [32m'- Only use skills listed in "Available skills" below\n'[39m +
+            [32m'- Check compatibility requirements before using a skill - ensure the skill is compatible with the current OS/environment\n'[39m +
+            [32m'- After calling this tool, follow the returned instructions step by step\n'[39m +
+            [32m'- The skill file location is shown in the [Location: filepath] section of each skill listing below - use this information to understand where the skill is defined\n'[39m +
+            [32m"- Use the directory containing the skill's source file as the base directory for resolving any resource files mentioned in the instructions\n"[39m +
+            [32m'- Proactively explore the skill directory for optional resources that enhance task completion:\n'[39m +
+            [32m'  * scripts/ - executable code that agents can run (Python, Bash, JavaScript, etc.)\n'[39m +
+            [32m'  * references/ - on-demand documentation (REFERENCE.md, FORMS.md, domain-specific files)\n'[39m +
+            [32m'  * assets/ - static resources (templates, images, data files, schemas)\n'[39m +
+            [32m'  Use these resources when they exist and are relevant to the current task\n'[39m +
+            [32m'\n'[39m +
+            [32m'Available skills:\n'[39m +
+            [32m'\n'[39m +
+            [32m'- **find-skills**: Helps users discover and install agent skills when they ask questions like "how do I do X", "find a skill for X", "is there a skill that can...", or express interest in extending capabilities. This skill should be used when the user is looking for functionality that might exist as an installable skill. [Location: _builtIn_]\n'[39m +
+            [32m'- **create-skill**: Helps users create new custom agent skills. Use when the user wants to create a new skill, automate a workflow, or package specialized knowledge for reuse. [Location: _builtIn_]'[39m,
+          inputSchema: {
+            [32m'$schema'[39m: [32m'http://json-schema.org/draft-07/schema#'[39m,
+            type: [32m'object'[39m,
+            properties: {
+              skill: {
+                type: [32m'string'[39m,
+                description: [32m'The name of the skill to use.'[39m
+              }
+            },
+            required: [
+              [32m'skill'[39m
+            ],
+            additionalProperties: [33mfalse[39m
+          }
+        },
+        {
+          type: [32m'function'[39m,
+          name: [32m'searchFiles'[39m,
+          description: [32m'- Fast content search tool that works with any codebase size\n'[39m +
+            [32m'- Searches file contents using regular expressions\n'[39m +
+            [32m'- Supports Rust regex syntax (eg. "log.*Error", "functions+w+", etc.)\n'[39m +
+            [32m'- Filter files by pattern with the include parameter (eg. "*.js", "*.{ts,tsx}")\n'[39m +
+            [32m'- Returns file paths with at least one match sorted by modification time\n'[39m +
+            [32m'- Use this tool when you need to find files containing specific patterns\n'[39m +
+            [32m'- Craft your regex patterns carefully to balance specificity and flexibility.\n'[39m +
+            [32m"- Based on the user's task you may use it to find code patterns, TODO comments, function definitions, or any text-based information across the project. The results include context, so analyze the surrounding code to better understand the matches. Leverage the this tool in combination with other tools for more comprehensive analysis. For example, use it to find specific code patterns, then use readFile to examine the full context of interesting matches before using applyDiff or writeToFile to make informed changes."[39m,
+          inputSchema: {
+            [32m'$schema'[39m: [32m'http://json-schema.org/draft-07/schema#'[39m,
+            type: [32m'object'[39m,
+            properties: {
+              path: {
+                type: [32m'string'[39m,
+                description: [32m'The path of the directory to search in (relative to the current working directory, or an absolute path).'[39m
+              },
+              regex: {
+                type: [32m'string'[39m,
+                description: [32m'The regular expression pattern to search for in file contents. Uses Rust regex syntax.'[39m
+              },
+              filePattern: {
+                description: [32m'File pattern to include in the search (e.g. "*.js", "*.{ts,tsx}"). If not provided, it will search all files.'[39m,
+                type: [32m'string'[39m
+              }
+            },
+            required: [
+              [32m'path'[39m,
+              [32m'regex'[39m
+            ],
+            additionalProperties: [33mfalse[39m
+          }
+        },
+        {
+          type: [32m'function'[39m,
+          name: [32m'todoWrite'[39m,
+          description: [32m'Use this tool to create and manage a structured task list for your current coding session. This helps you track progress, organize complex tasks, and demonstrate thoroughness to the user.\n'[39m +
+            [32m'It also helps the user understand the progress of the task and overall progress of their requests.\n'[39m +
+            [32m'\n'[39m +
+            [32m'## When to Use This Tool\n'[39m +
+            [32m'Use this tool proactively in these scenarios:\n'[39m +
+            [32m'\n'[39m +
+            [32m'1. Complex multi-step tasks - When a task requires 3 or more distinct steps or actions\n'[39m +
+            [32m'2. Non-trivial and complex tasks - Tasks that require careful planning or multiple operations\n'[39m +
+            [32m'3. User explicitly requests todo list - When the user directly asks you to use the todo list\n'[39m +
+            [32m'4. User provides multiple tasks - When users provide a list of things to be done (numbered or comma-separated)\n'[39m +
+            [32m'5. After receiving new instructions - Immediately capture user requirements as todos. Feel free to edit the todo list based on new information.\n'[39m +
+            [32m'6. After completing a task - Mark it complete and add any new follow-up tasks\n'[39m +
+            [32m'7. When you start working on a new task, mark the todo as in-progress. Ideally you should only have one todo as in-progress at a time. Complete existing tasks before starting new ones.\n'[39m +
+            [32m'\n'[39m +
+            [32m'## When NOT to Use This Tool\n'[39m +
+            [32m'\n'[39m +
+            [32m'Skip using this tool when:\n'[39m +
+            [32m'1. There is only a single, straightforward task\n'[39m +
+            [32m'2. The task is trivial and tracking it provides no organizational benefit\n'[39m +
+            [32m'3. The task can be completed in less than 3 trivial steps\n'[39m +
+            [32m'4. The task is purely conversational or informational\n'[39m +
+            [32m'\n'[39m +
+            [32m'NOTE that you should use should not use this tool if there is only one trivial task to do. In this case you are better off just doing the task directly.\n'[39m +
+            [32m'\n'[39m +
+            [32m'## Examples of When to Use the Todo List\n'[39m +
+            [32m'\n'[39m +
+            [32m'<example>\n'[39m +
+            [32m"User: I want to add a dark mode toggle to the application settings. Make sure you run the tests and build when you're done!\n"[39m +
+            [32m"Assistant: I'll help add a dark mode toggle to your application settings. Let me create a todo list to track this implementation.\n"[39m +
+            [32m'*Creates todo list with the following items:*\n'[39m +
+            [32m'1. Create dark mode toggle component in Settings page\n'[39m +
+            [32m'2. Add dark mode state management (context/store)\n'[39m +
+            [32m'3. Implement CSS-in-JS styles for dark theme\n'[39m +
+            [32m'4. Update existing components to support theme switching\n'[39m +
+            [32m'5. Run tests and build process, addressing any failures or errors that occur\n'[39m +
+            [32m'*Begins working on the first task*\n'[39m +
+            [32m'\n'[39m +
+            [32m'<reasoning>\n'[39m +
+            [32m'The assistant used the todo list because:\n'[39m +
+            [32m'1. Adding dark mode is a multi-step feature requiring UI, state management, and styling changes\n'[39m +
+            [32m'2. The user explicitly requested tests and build be run afterward\n'[39m +
+            [32m'3. The assistant inferred that tests and build need to pass by adding "Ensure tests and build succeed" as the final task\n'[39m +
+            [32m'</reasoning>\n'[39m +
+            [32m'</example>\n'[39m +
+            [32m'\n'[39m +
+            [32m'<example>\n'[39m +
+            [32m'User: Help me rename the function getCwd to getCurrentWorkingDirectory across my project\n'[39m +
+            [32m"Assistant: Let me first search through your codebase to find all occurrences of 'getCwd'.\n"[39m +
+            [32m'*Uses grep or search tools to locate all instances of getCwd in the codebase*\n'[39m +
+            [32m"Assistant: I've found 15 instances of 'getCwd' across 8 different files. Let me create a todo list to track these changes.\n"[39m +
+            [32m'*Creates todo list with specific items for each file that needs updating*\n'[39m +
+            [32m'\n'[39m +
+            [32m'<reasoning>\n'[39m +
+            [32m'The assistant used the todo list because:\n'[39m +
+            [32m'1. First, the assistant searched to understand the scope of the task\n'[39m +
+            [32m'2. Upon finding multiple occurrences across different files, it determined this was a complex task with multiple steps\n'[39m +
+            [32m'3. The todo list helps ensure every instance is tracked and updated systematically\n'[39m +
+            [32m'4. This approach prevents missing any occurrences and maintains code consistency\n'[39m +
+            [32m'</reasoning>\n'[39m +
+            [32m'</example>\n'[39m +
+            [32m'\n'[39m +
+            [32m'\n'[39m +
+            [32m'<example>\n'[39m +
+            [32m'User: I need to implement these features for my e-commerce site: user registration, product catalog, shopping cart, and checkout flow.\n'[39m +
+            [32m"Assistant: I'll help implement these features. First, let's add all the features to the todo list.\n"[39m +
+            [32m'*Creates a todo list breaking down each feature into specific tasks based on the project architecture*\n'[39m +
+            [32m"Assistant: Let's start with user registration. This will involve creating database models, API endpoints, and frontend forms that integrate with your existing authentication system.\n"[39m +
+            [32m'\n'[39m +
+            [32m'<reasoning>\n'[39m +
+            [32m'The assistant used the todo list because:\n'[39m +
+            [32m'1. The user provided multiple complex features to implement in a comma separated list\n'[39m +
+            [32m'2. The todo list helps organize these large features into manageable tasks\n'[39m +
+            [32m'3. This approach allows for tracking progress across the entire implementation\n'[39m +
+            [32m'</reasoning>\n'[39m +
+            [32m'</example>\n'[39m +
+            [32m'\n'[39m +
+            [32m'<example>\n'[39m +
+            [32m"User: Can you help optimize my React application? It's rendering slowly and has performance issues.</user>\n"[39m +
+            [32m"Assistant: I'll help optimize your React application. First, let me examine your codebase to identify potential performance bottlenecks.\n"[39m +
+            [32m'*Reviews component structure, render patterns, state management, and data fetching*\n'[39m +
+            [32m"Assistant: After analyzing your codebase, I've identified several performance issues. Let me create a todo list to track our optimization efforts.\n"[39m +
+            [32m'*Creates todo list with items like: 1) Implement memoization for expensive calculations in ProductList, 2) Add virtualization for long lists in Dashboard, 3) Optimize image loading in Gallery component, 4) Fix state update loops in ShoppingCart, 5) Review bundle size and implement code splitting*\n'[39m +
+            [32m"Let's start by implementing memoization for the expensive calculations in your ProductList component.</assistant>\n"[39m +
+            [32m'\n'[39m +
+            [32m'<reasoning>\n'[39m +
+            [32m'The assistant used the todo list because:\n'[39m +
+            [32m'1. First, the assistant examined the codebase to identify specific performance issues\n'[39m +
+            [32m'2. Based on this analysis, it identified multiple optimization opportunities\n'[39m +
+            [32m'3. Performance optimization is a non-trivial task requiring multiple steps\n'[39m +
+            [32m'4. The todo list helps methodically track improvements across different components\n'[39m +
+            [32m'5. This systematic approach ensures all performance bottlenecks are addressed\n'[39m +
+            [32m'</reasoning>\n'[39m +
+            [32m'</example>\n'[39m +
+            [32m'\n'[39m +
+            [32m'## Examples of When NOT to Use the Todo List\n'[39m +
+            [32m'\n'[39m +
+            [32m'<example>\n'[39m +
+            [32m"User: How do I print 'Hello World' in Python?\n"[39m +
+            [32m'Assistant: In Python, you can print "Hello World" with this simple code:\n'[39m +
+            [32m'\n'[39m +
+            [32m'python\n'[39m +
+            [32m'print("Hello World")\n'[39m +
+            [32m'\n'[39m +
+            [32m'This will output the text "Hello World" to the console when executed.</assistant>\n'[39m +
+            [32m'\n'[39m +
+            [32m'<reasoning>\n'[39m +
+            [32m"The assistant did not use the todo list because this is a single, trivial task that can be completed in one step. There's no need to track multiple tasks or steps for such a straightforward request.\n"[39m +
+            [32m'</reasoning>\n'[39m +
+            [32m'</example>\n'[39m +
+            [32m'\n'[39m +
+            [32m'<example>\n'[39m +
+            [32m'User: What does the git status command do?\n'[39m +
+            [32m"Assistant: The git status command shows the current state of your working directory and staging area. It displays which changes have been staged, which haven't, and which files aren't being tracked by Git. This is a fundamental command for understanding the current state of your repository before making commits.\n"[39m +
+            [32m'\n'[39m +
+            [32m'<reasoning>\n'[39m +
+            [32m'The assistant did not use the todo list because this is an informational request with no actual coding task to complete. The user is simply asking for an explanation, not for the assistant to perform multiple steps or tasks.\n'[39m +
+            [32m'</reasoning>\n'[39m +
+            [32m'</example>\n'[39m +
+            [32m'\n'[39m +
+            [32m'<example>\n'[39m +
+            [32m'User: Can you add a comment to the calculateTotal function to explain what it does?\n'[39m +
+            [32m'Assistant: Sure, let me add a comment to the calculateTotal function to explain what it does.\n'[39m +
+            [32m'* Uses the Edit tool to add a comment to the calculateTotal function *\n'[39m +
+            [32m'\n'[39m +
+            [32m'<reasoning>\n'[39m +
+            [32m"The assistant did not use the todo list because this is a single, straightforward task confined to one location in the code. Adding a comment doesn't require tracking multiple steps or systematic organization.\n"[39m +
+            [32m'</reasoning>\n'[39m +
+            [32m'</example>\n'[39m +
+            [32m'\n'[39m +
+            [32m'<example>\n'[39m +
+            [32m'User: Run npm install for me and tell me what happens.\n'[39m +
+            [32m"Assistant: I'll run the npm install command for you.\n"[39m +
+            [32m'\n'[39m +
+            [32m'*Executes: npm install*\n'[39m +
+            [32m'\n'[39m +
+            [32m"The command completed successfully. Here's the output:\n"[39m +
+            [32m'[Output of npm install command]\n'[39m +
+            [32m'\n'[39m +
+            [32m'All dependencies have been installed according to your package.json file.\n'[39m +
+            [32m'\n'[39m +
+            [32m'<reasoning>\n'[39m +
+            [32m'The assistant did not use the todo list because this is a single command execution with immediate results. There are no multiple steps to track or organize, making the todo list unnecessary for this straightforward task.\n'[39m +
+            [32m'</reasoning>\n'[39m +
+            [32m'</example>\n'[39m +
+            [32m'\n'[39m +
+            [32m'## Task States and Management\n'[39m +
+            [32m'\n'[39m +
+            [32m'1. **Task States**: Use these states to track progress:\n'[39m +
+            [32m'   - pending: Task not yet started\n'[39m +
+            [32m'   - in-progress: Currently working on (limit to ONE task at a time)\n'[39m +
+            [32m'   - completed: Task finished successfully\n'[39m +
+            [32m'   - cancelled: Task no longer needed\n'[39m +
+            [32m'\n'[39m +
+            [32m'2. **Task Management**:\n'[39m +
+            [32m'   - Update task status in real-time as you work\n'[39m +
+            [32m"   - Mark tasks complete IMMEDIATELY after finishing (don't batch completions)\n"[39m +
+            [32m'   - Only have ONE task in-progress at any time\n'[39m +
+            [32m'   - Complete current tasks before starting new ones\n'[39m +
+            [32m'   - Cancel tasks that become irrelevant\n'[39m +
+            [32m'\n'[39m +
+            [32m'3. **Task Breakdown**:\n'[39m +
+            [32m'   - Create specific, actionable items\n'[39m +
+            [32m'   - Break complex tasks into smaller, manageable steps\n'[39m +
+            [32m'   - Use clear, descriptive task names\n'[39m +
+            [32m'\n'[39m +
+            [32m'When in doubt, use this tool. Being proactive with task management demonstrates attentiveness and ensures you complete all requirements successfully.'[39m,
+          inputSchema: {
+            [32m'$schema'[39m: [32m'http://json-schema.org/draft-07/schema#'[39m,
+            type: [32m'object'[39m,
+            properties: {
+              todos: {
+                type: [32m'array'[39m,
+                items: {
+                  type: [32m'object'[39m,
+                  properties: {
+                    id: {
+                      type: [32m'string'[39m,
+                      description: [32m'The unique identifier of the task, e.g "collect-information".'[39m
+                    },
+                    content: {
+                      type: [32m'string'[39m,
+                      description: [32m'The content of the task.'[39m
+                    },
+                    status: {
+                      type: [32m'string'[39m,
+                      enum: [
+                        [32m'pending'[39m,
+                        [32m'in-progress'[39m,
+                        [32m'completed'[39m,
+                        [32m'cancelled'[39m
+                      ],
+                      description: [32m'The status of the task.'[39m
+                    },
+                    priority: {
+                      type: [32m'string'[39m,
+                      enum: [
+                        [32m'low'[39m,
+                        [32m'medium'[39m,
+                        [32m'high'[39m
+                      ],
+                      description: [32m'The priority of the task.'[39m
+                    }
+                  },
+                  required: [
+                    [32m'id'[39m,
+                    [32m'content'[39m,
+                    [32m'status'[39m,
+                    [32m'priority'[39m
+                  ],
+                  additionalProperties: [33mfalse[39m
+                }
+              }
+            },
+            required: [
+              [32m'todos'[39m
+            ],
+            additionalProperties: [33mfalse[39m
+          }
+        },
+        {
+          type: [32m'function'[39m,
+          name: [32m'writeToFile'[39m,
+          description: [32m'Request to write full content to a file at the specified path.\n'[39m +
+            [32m'If the file exists, it will be overwritten with the provided content.\n'[39m +
+            [32m"If the file doesn't exist, it will be created. This tool will automatically create any directories needed to write the file.\n"[39m +
+            [32m'\n'[39m +
+            [32m'You may see the following fields in the result:\n'[39m +
+            [32m'- autoFormattingEdits: If the auto-formatter makes any changes, this field will contain a diff against the file content after your edits and any user edits have been applied.\n'[39m +
+            [32m'- newProblems: If any new problems are found after the edit, this field will contain information about them.'[39m,
+          inputSchema: {
+            [32m'$schema'[39m: [32m'http://json-schema.org/draft-07/schema#'[39m,
+            type: [32m'object'[39m,
+            properties: {
+              path: {
+                type: [32m'string'[39m,
+                description: [32m'The path of the file to write to (relative to the current working directory, or an absolute path).'[39m
+              },
+              content: {
+                type: [32m'string'[39m,
+                description: [32m'The content to write to the file.'[39m
+              }
+            },
+            required: [
+              [32m'path'[39m,
+              [32m'content'[39m
+            ],
+            additionalProperties: [33mfalse[39m
+          }
+        },
+        {
+          type: [32m'function'[39m,
+          name: [32m'editNotebook'[39m,
+          description: [32m'Edit a specific cell in a Jupyter notebook (.ipynb file) by its cell ID'[39m,
+          inputSchema: {
+            [32m'$schema'[39m: [32m'http://json-schema.org/draft-07/schema#'[39m,
+            type: [32m'object'[39m,
+            properties: {
+              path: {
+                type: [32m'string'[39m,
+                description: [32m'The path to the notebook file (relative to the current working directory, or an absolute path)'[39m
+              },
+              cellId: {
+                type: [32m'string'[39m,
+                description: [32m'The ID of the cell to edit'[39m
+              },
+              content: {
+                type: [32m'string'[39m,
+                description: [32m'The new content of the cell'[39m
+              }
+            },
+            required: [
+              [32m'path'[39m,
+              [32m'cellId'[39m,
+              [32m'content'[39m
+            ],
+            additionalProperties: [33mfalse[39m
+          }
+        },
+        {
+          type: [32m'function'[39m,
+          name: [32m'newTask'[39m,
+          description: [32m'Launch a new agent to handle complex, multi-step tasks autonomously.\n'[39m +
+            [32m'When using the newTask tool, you may specify a agentType parameter to select which agent type to use.\n'[39m +
+            [32m'Available agent types and the tools they have access to:\n'[39m +
+            [32m'\n'[39m +
+            [32m'### planner\n'[39m +
+            [32m'Engage this agent to formulate comprehensive, technical implementation strategies for feature development, system refactoring, or defect resolution.\n'[39m +
+            [32m'This agent is strictly limited to planning and architectural design; it DOES NOT execute code modifications.\n'[39m +
+            [32m'\n'[39m +
+            [32m'Examples of user requests this agent shall trigger:\n'[39m +
+            [32m'- "create a plan to implement the user authentication feature"\n'[39m +
+            [32m'- "how should we refactor the database schema"\n'[39m +
+            [32m'- "design a solution for the memory leak issue"\n'[39m +
+            [32m'\n'[39m +
+            [32m'### browser\n'[39m +
+            [32m'Web browser automation agent for navigating websites, interacting with pages, and extracting information. Uses agent-browser CLI for browser control, including headless sessions and optional local Chrome auto-connect.\n'[39m +
+            [32m'\n'[39m +
+            [32m'### reviewer\n'[39m +
+            [32m'Engage this agent to perform code reviews and leave inline comments.\n'[39m +
+            [32m'This agent can analyze code and create review comments on specific lines.\n'[39m +
+            [32m'\n'[39m +
+            [32m'Examples of user requests this agent shall trigger:\n'[39m +
+            [32m'- "review the code in src/auth"\n'[39m +
+            [32m'- "add review comments to this file"\n'[39m +
+            [32m'- "check this code and leave feedback"\n'[39m +
+            [32m'\n'[39m +
+            [32m'### walkthrough\n'[39m +
+            [32m'Engage this agent to create a summary of the changes made in the current task.\n'[39m +
+            [32m'This agent is strictly limited to documentation and explanation; it DOES NOT execute code modifications.\n'[39m +
+            [32m'\n'[39m +
+            [32m'Examples of user requests this agent shall trigger:\n'[39m +
+            [32m'- "summarize what we have done"\n'[39m +
+            [32m'- "create a walkthrough for the changes"\n'[39m +
+            [32m'- "explain the changes made in this task"\n'[39m +
+            [32m'\n'[39m +
+            [32m'### explore\n'[39m +
+            [32m'Use this agent to explore the codebase when you need to: understand project structure, find where features are implemented, locate specific functions or classes, analyze code patterns, investigate how something works, search for examples or usage, or gather information before making changes.\n'[39m +
+            [32m'\n'[39m +
+            [32m'Examples of questions this agent shall trigger:\n'[39m +
+            [32m'- "where is the authentication logic implemented"\n'[39m +
+            [32m'- "find all usages of the config parser"\n'[39m +
+            [32m'- "how does the ignore-walk module work"\n'[39m +
+            [32m'\n'[39m +
+            [32m'### guide\n'[39m +
+            [32m"A comprehensive guide for learning about Pochi's capabilities, features, and configuration.\n"[39m +
+            [32m'This agent helps users understand how to use Pochi effectively, fetch documentation, and modify their config file (.pochi/config.jsonc) with proper confirmation.\n'[39m +
+            [32m"**IMPORTANT: Any request to modify Pochi's configuration must be handled by this agent.**\n"[39m +
+            [32m'\n'[39m +
+            [32m'Trigger examples:\n'[39m +
+            [32m'- General info: "what can Pochi do?", "what agents/tools are available?", "how does Pochi work?"\n'[39m +
+            [32m'- Configuration: "how do I configure Pochi?", "explain config options", "help me modify my config", "set up a new provider", "add an MCP server"\n'[39m +
+            [32m'- Help & feedback: "join the discord", "report a bug", "where can I get help?"\n'[39m +
+            [32m'\n'[39m +
+            [32m'\n'[39m +
+            [32m'Always include a reminder in your prompt to ensure the result will be submitted through the `attemptCompletion` tool.\n'[39m +
+            [32m'If the task stops without submitting the result, it will return an error message.\n'[39m +
+            [32m'\n'[39m +
+            [32m'When NOT to use the newTask tool:\n'[39m +
+            [32m'- If you want to read a specific file path, use the readFile or globFiles tool instead of the newTask tool, to find the match more quickly\n'[39m +
+            [32m'- If you are searching for a specific class definition like "class Foo", use the globFiles tool instead, to find the match more quickly\n'[39m +
+            [32m'- If you are searching for code within a specific file or set of 2-3 files, use the readFile tool instead of the newTask tool, to find the match more quickly\n'[39m +
+            [32m'- Other tasks that are not related to the agent descriptions above\n'[39m +
+            [32m'\n'[39m +
+            [32m'Usage notes:\n'[39m +
+            [32m'1. Launch multiple agents tools concurrently whenever possible to maximize performance; to do that, use a single message with multiple tool uses\n'[39m +
+            [32m'2. When the agent is done, it will return a single message back to you. The result returned by the agent is not visible to the user. To show the user the result, you should send a text message back to the user with a concise summary of the result.\n'[39m +
+            [32m'3. Each agent invocation is stateless. You will not be able to send additional messages to the agent, nor will the agent be able to communicate with you outside of its final report. Therefore, your prompt should contain a highly detailed task description for the agent to perform autonomously and you should specify exactly what information the agent should return back to you in its final and only message to you.\n'[39m +
+            [32m"4. The agent's outputs should generally be trusted\n"[39m +
+            [32m"5. Clearly tell the agent whether you expect it to write code or just to do research (search, file reads, web fetches, etc.), since it is not aware of the user's intent\n"[39m +
+            [32m'6. If the agent description mentions that it should be used proactively, then you should try your best to use it without the user having to ask for it first. Use your judgement.'[39m,
+          inputSchema: {
+            [32m'$schema'[39m: [32m'http://json-schema.org/draft-07/schema#'[39m,
+            type: [32m'object'[39m,
+            properties: {
+              description: {
+                type: [32m'string'[39m,
+                description: [32m'A short description of the task.'[39m
+              },
+              prompt: {
+                type: [32m'string'[39m,
+                description: [32m'The detailed prompt for the task to be performed.'[39m
+              },
+              agentType: {
+                description: [32m'The type of the specialized agent to use for the task.'[39m,
+                type: [32m'string'[39m
+              }
+            },
+            required: [
+              [32m'description'[39m,
+              [32m'prompt'[39m
+            ],
+            additionalProperties: [33mfalse[39m
+          }
+        },
+        {
+          type: [32m'function'[39m,
+          name: [32m'startBackgroundJob'[39m,
+          description: [32m'Start a background job to execute a bash command, which allows you to continue working while the job runs.\n'[39m +
+            [32m'\n'[39m +
+            [32m'Before starting the background job, please follow these steps:\n'[39m +
+            [32m'\n'[39m +
+            [32m'1. Directory Verification:\n'[39m +
+            [32m'   - If the command will create new directories or files, first use the listFiles tool to verify the parent directory exists and is the correct location\n'[39m +
+            [32m'   - For example, before running "mkdir foo/bar", first use listFiles to check that "foo" exists and is the intended parent directory\n'[39m +
+            [32m'\n'[39m +
+            [32m'2. Job Execution:\n'[39m +
+            [32m'   - After ensuring proper quoting, start the background job.\n'[39m +
+            [32m'\n'[39m +
+            [32m'Usage notes:\n'[39m +
+            [32m'- The command argument is required.\n'[39m +
+            [32m'- Use readBackgroundJobOutput to monitor the output and status of the job.\n'[39m +
+            [32m'- Use killBackgroundJob to terminate the job if needed.\n'[39m +
+            [32m'- If the output exceeds 30000 characters, output will be truncated before being returned to you.\n'[39m +
+            [32m'\n'[39m +
+            [32m'Common use cases and examples:\n'[39m +
+            [32m'- Development servers: `npm run dev`, `yarn start`, `bun run dev`\n'[39m +
+            [32m'- Build processes: `npm run build`, `make`, `cargo build`\n'[39m +
+            [32m'- File watchers: `npm run watch`, `tsc --watch`\n'[39m +
+            [32m'- Testing: `npm run test:watch`, `jest --watch`\n'[39m +
+            [32m'- Database services: `docker run -p 5432:5432 postgres`\n'[39m +
+            [32m'\n'[39m +
+            [32m'Command execution rules:\n'[39m +
+            [32m"- Never run 'sleep' as it will return immediately.\n"[39m +
+            [32m"- You do not need to use '&' at the end of the command.\n"[39m +
+            [32m"- When issuing multiple commands, use the ';' or '&&' operator to separate them. DO NOT use newlines (newlines are ok in quoted strings).\n"[39m +
+            [32m"- You shall avoid use the markdown code block syntax (backtick, '`') in your command, as it will be interpreted as a command substitution."[39m,
+          inputSchema: {
+            [32m'$schema'[39m: [32m'http://json-schema.org/draft-07/schema#'[39m,
+            type: [32m'object'[39m,
+            properties: {
+              command: {
+                type: [32m'string'[39m,
+                description: [32m'The CLI command to execute. This should be valid for the current operating system.'[39m
+              },
+              cwd: {
+                description: [32m'The working directory to execute the command in.'[39m,
+                type: [32m'string'[39m
+              }
+            },
+            required: [
+              [32m'command'[39m
+            ],
+            additionalProperties: [33mfalse[39m
+          }
+        },
+        {
+          type: [32m'function'[39m,
+          name: [32m'readBackgroundJobOutput'[39m,
+          description: [32m'- Retrieves output from a running or completed background job\n'[39m +
+            [32m'- Takes a backgroundJobId parameter identifying the job\n'[39m +
+            [32m'- For terminal jobs, returns only new output since the last check\n'[39m +
+            [32m'- Returns stdout and stderr output along with job status\n'[39m +
+            [32m'- Supports optional regex filtering to show only lines matching a pattern\n'[39m +
+            [32m'- Use this tool when you need to monitor or check the output of a long-running background job'[39m,
+          inputSchema: {
+            [32m'$schema'[39m: [32m'http://json-schema.org/draft-07/schema#'[39m,
+            type: [32m'object'[39m,
+            properties: {
+              backgroundJobId: {
+                type: [32m'string'[39m,
+                description: [32m'The ID of the background job to get output from'[39m
+              },
+              regex: {
+                description: [32m'Optional regular expression to filter the output lines. Only lines matching this regex will be included in the result. Any lines that do not match will no longer be available to read.'[39m,
+                type: [32m'string'[39m
+              }
+            },
+            required: [
+              [32m'backgroundJobId'[39m
+            ],
+            additionalProperties: [33mfalse[39m
+          }
+        },
+        {
+          type: [32m'function'[39m,
+          name: [32m'killBackgroundJob'[39m,
+          description: [32m'- Kills a running background job by its ID\n'[39m +
+            [32m'- Takes a backgroundJobId parameter identifying the job to kill\n'[39m +
+            [32m'- Returns a success or failure status\n'[39m +
+            [32m'- Use this tool when you need to terminate a long-running background job'[39m,
+          inputSchema: {
+            [32m'$schema'[39m: [32m'http://json-schema.org/draft-07/schema#'[39m,
+            type: [32m'object'[39m,
+            properties: {
+              backgroundJobId: {
+                type: [32m'string'[39m,
+                description: [32m'The ID of the background job to kill.'[39m
+              }
+            },
+            required: [
+              [32m'backgroundJobId'[39m
+            ],
+            additionalProperties: [33mfalse[39m
+          }
+        },
+        {
+          type: [32m'function'[39m,
+          name: [32m'webFetch'[39m,
+          description: [32m'- Fetches content from a specified URL and converts HTML to markdown\n'[39m +
+            [32m'- Use this tool when you need to retrieve and analyze web content\n'[39m +
+            [32m'\n'[39m +
+            [32m'Usage notes:\n'[39m +
+            [32m'  - IMPORTANT: If an MCP-provided web fetch tool is available, prefer using that tool instead of this one, as it may have fewer restrictions.\n'[39m +
+            [32m'  - The URL must be a fully-formed valid URL\n'[39m +
+            [32m'  - The prompt should describe what information you want to extract from the page\n'[39m +
+            [32m'  - This tool is read-only and does not modify any files\n'[39m +
+            [32m'  - Includes a self-cleaning 10-minute cache for faster responses when repeatedly accessing the same URL'[39m,
+          inputSchema: {
+            [32m'$schema'[39m: [32m'https://json-schema.org/draft/2020-12/schema'[39m,
+            type: [32m'object'[39m,
+            properties: {
+              url: {
+                type: [32m'string'[39m,
+                format: [32m'uri'[39m
+              }
+            },
+            required: [
+              [32m'url'[39m
+            ],
+            additionalProperties: [33mfalse[39m
+          }
+        },
+        {
+          type: [32m'function'[39m,
+          name: [32m'webSearch'[39m,
+          description: [32m'- Allows Pochi to search the web and use the results to inform responses\n'[39m +
+            [32m'- Provides up-to-date information for current events and recent data\n'[39m +
+            [32m'- Returns search result information formatted as search result blocks, including links as markdown hyperlinks\n'[39m +
+            [32m'- Searches are performed automatically within a single API call\n'[39m +
+            [32m'\n'[39m +
+            [32m'CRITICAL REQUIREMENT - You MUST follow this:\n'[39m +
+            [32m`  - After answering the user's question, you MUST include a "Sources:" section at the end of your response\n`[39m +
+            [32m'  - In the Sources section, list all relevant URLs from the search results as markdown hyperlinks: [Title](URL)\n'[39m +
+            [32m'  - This is MANDATORY - never skip including sources in your response\n'[39m +
+            [32m'  - Example format:\n'[39m +
+            [32m'\n'[39m +
+            [32m'    [Your answer here]\n'[39m +
+            [32m'\n'[39m +
+            [32m'    Sources:\n'[39m +
+            [32m'    - [Source Title 1](https://example.com/1)\n'[39m +
+            [32m'    - [Source Title 2](https://example.com/2)\n'[39m +
+            [32m'\n'[39m +
+            [32m'Usage notes:\n'[39m +
+            [32m`  - Account for "Today's date" in <system-reminder>. For example, if <system-reminder> says "Today's date: 2025-07-01", and the user wants the latest docs, do not use 2024 in the search query. Use 2025.\n`[39m +
+            [32m'  - To research several related facets in one round-trip, pass "query" as an array of up to 5 query strings instead of a single string. Prefer a single string for focused lookups.'[39m,
+          inputSchema: {
+            [32m'$schema'[39m: [32m'https://json-schema.org/draft/2020-12/schema'[39m,
+            type: [32m'object'[39m,
+            properties: {
+              query: {
+                oneOf: [
+                  {
+                    type: [32m'string'[39m,
+                    minLength: [33m2[39m
+                  },
+                  {
+                    minItems: [33m1[39m,
+                    maxItems: [33m5[39m,
+                    type: [32m'array'[39m,
+                    items: {
+                      type: [32m'string'[39m,
+                      minLength: [33m2[39m
+                    }
+                  }
+                ],
+                description: [32m'A single search query string, OR an array of up to 5 related query strings to batch in one request. Prefer a single string for focused lookups; use an array when you want to research several related facets in one call.'[39m
+              },
+              country: {
+                description: [32m"Country code to filter search results by, e.g. 'US', 'GB', 'JP'"[39m,
+                type: [32m'string'[39m
+              },
+              searchDomainFilter: {
+                description: [32m"List of domains to filter search results. Use allowlist mode (e.g. ['github.com', 'stackoverflow.com']) to include only those domains, or denylist mode (e.g. ['-reddit.com', '-pinterest.com']) to exclude domains. Cannot mix both modes. Maximum 20 domains."[39m,
+                type: [32m'array'[39m,
+                items: {
+                  type: [32m'string'[39m
+                }
+              }
+            },
+            required: [
+              [32m'query'[39m
+            ],
+            additionalProperties: [33mfalse[39m
+          }
+        }
+      ],
+      providerOptions: {
+        pochi: {
+          taskId: [32m'a961e0fd-f3dd-4b18-8f63-9bb1b03042f3'[39m,
+          client: [32m'PochiCli/0.6.12'[39m,
+          useCase: [32m'agent'[39m
+        }
+      }
+    }
+  }
+}
+[37m2026-06-09 04:35:00.171[39m[0m[0m	[32m[1mDEBUG[22m[39m[0m[0m	[37mnative:7[39m[0m[0m[1m[37m	Pochi[39m[22m[0m[0m	Task runner finished successfully.
+[37m2026-06-09 04:35:00.172[39m[0m[0m	[32m[1mDEBUG[22m[39m[0m[0m	[37mnative:7[39m[0m[0m[1m[37m	Pochi[39m[22m[0m[0m	Shutting down...
+[37m2026-06-09 04:35:00.197[39m[0m[0m	[32m[1mDEBUG[22m[39m[0m[0m	[37mnative:7[39m[0m[0m[1m[37m	Pochi[39m[22m[0m[0m	Shutdown completed. Process will exit.
+[37m2026-06-09 04:35:00.198[39m[0m[0m	[32m[1mDEBUG[22m[39m[0m[0m	[37m[39m[0m[0m[1m[37m	Pochi[39m[22m[0m[0m	Process exiting with code 0

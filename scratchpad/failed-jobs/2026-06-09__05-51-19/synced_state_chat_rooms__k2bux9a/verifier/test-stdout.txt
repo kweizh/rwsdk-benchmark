@@ -1,0 +1,66 @@
+============================= test session starts ==============================
+platform linux -- Python 3.12.3, pytest-7.4.4, pluggy-1.4.0
+rootdir: /tests
+plugins: xprocess-1.0.2, json-ctrf-0.5.0
+collected 3 items
+
+tests/test_final_state.py .FF                                            [100%]
+
+=================================== FAILURES ===================================
+_______________________________ test_room_pages ________________________________
+
+start_app = None
+
+    def test_room_pages(start_app):
+        r = requests.get(f"{BASE_URL}/chat/general", timeout=30)
+        assert r.status_code == 200
+>       assert "<h1>Room: general</h1>" in r.text, f"Room heading missing: {r.text[:400]}"
+E       AssertionError: Room heading missing: <!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&amp;family=Playfair+Display:ital,wght@0,400..900;1,400..900&amp;display=optional" data-precedence="first"/><title>@redwoodjs/starter-minimal</title><link rel="
+E       assert '<h1>Room: general</h1>' in '<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta name="viewport" content="width=device-width, initia...\\"$L18\\",null,{\\"roomId\\":\\"general\\"},\\"$2\\",\\"$17\\",1]]},\\"$2\\",\\"$15\\",1]\\n")</script></body></html>'
+E        +  where '<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta name="viewport" content="width=device-width, initia...\\"$L18\\",null,{\\"roomId\\":\\"general\\"},\\"$2\\",\\"$17\\",1]]},\\"$2\\",\\"$15\\",1]\\n")</script></body></html>' = <Response [200]>.text
+
+tests/test_final_state.py:69: AssertionError
+_____________________ test_browser_chat_send_and_isolation _____________________
+
+start_app = None
+
+    def test_browser_chat_send_and_isolation(start_app):
+        reason = (
+            "Verify the RedwoodSDK realtime chat rooms based on useSyncedState handle "
+            "per-room scoping: messages sent in one room must not appear in another."
+        )
+        truth = (
+            "Navigate to http://localhost:5173/chat/general. Click the 'Clear' button. "
+            "Verify no element with data-testid=\"chat-message\" is present on the page. "
+            "Type 'hello redwood' into the input with data-testid=\"chat-input\". "
+            "Click the button labelled 'Send'. "
+            "Verify that an element with data-testid=\"chat-message\" now contains the text 'hello redwood'. "
+            "Then navigate to http://localhost:5173/chat/other. "
+            "Click the 'Clear' button. "
+            "Verify that no visible text on the page contains 'hello redwood'."
+        )
+        verifier = PochiVerifier()
+        result = verifier.verify(
+            reason=reason,
+            truth=truth,
+            use_browser_agent=True,
+            trajectory_dir="/logs/verifier/pochi/test_browser_chat_send_and_isolation",
+        )
+>       assert result.status == "pass", f"Browser verification failed: {result.reason}"
+E       AssertionError: Browser verification failed: The test failed at Step 6. After typing 'hello redwood' into the chat input and clicking 'Send' in the /chat/general room, the message did not appear on the page. The input field remained populated, suggesting the send action was either not triggered or failed to execute. Consequently, the isolation check in /chat/other could not be meaningfully validated as the initial message was never successfully posted.
+E       assert 'fail' == 'pass'
+E         - pass
+E         + fail
+
+tests/test_final_state.py:98: AssertionError
+==================================== PASSES ====================================
+____________________________ test_wrangler_bindings ____________________________
+---------------------------- Captured stdout setup -----------------------------
+/tests/.pytest_cache/d/.xprocess/rwsdk_dev$ npm run dev -- --host 0.0.0.0 --port 5173
+process 'rwsdk_dev' started pid=1743
+rwsdk_dev process startup detected
+=========================== short test summary info ============================
+PASSED tests/test_final_state.py::test_wrangler_bindings
+FAILED tests/test_final_state.py::test_room_pages - AssertionError: Room head...
+FAILED tests/test_final_state.py::test_browser_chat_send_and_isolation - Asse...
+=================== 2 failed, 1 passed in 486.58s (0:08:06) ====================

@@ -1,0 +1,41 @@
+============================= test session starts ==============================
+platform linux -- Python 3.12.3, pytest-7.4.4, pluggy-1.4.0
+rootdir: /tests
+plugins: xprocess-1.0.2, json-ctrf-0.5.0
+collected 1 item
+
+tests/test_final_state.py F                                              [100%]
+
+=================================== FAILURES ===================================
+______________________________ test_logging_flow _______________________________
+
+start_app = None
+
+    def test_logging_flow(start_app):
+        r1 = requests.get(f"{BASE_URL}/track/ping", headers={"User-Agent": "zealt-tester/1"}, timeout=30)
+        assert r1.status_code == 200 and r1.text.strip() == "tracked", \
+            f"/track/ping unexpected: {r1.status_code} {r1.text!r}"
+    
+        r2 = requests.get(f"{BASE_URL}/track/pong", headers={"User-Agent": "zealt-tester/2"}, timeout=30)
+        assert r2.status_code == 200 and r2.text.strip() == "tracked", \
+            f"/track/pong unexpected: {r2.status_code} {r2.text!r}"
+    
+        rlast = requests.get(f"{BASE_URL}/debug/last", timeout=30)
+        assert rlast.status_code == 200
+        assert "application/json" in rlast.headers.get("content-type", "").lower()
+        last = rlast.json()
+        assert last.get("method") == "GET", f"Expected method GET, got {last!r}"
+>       assert last.get("path") == "/track/pong", f"Expected last path /track/pong, got {last!r}"
+E       AssertionError: Expected last path /track/pong, got {'method': 'GET', 'path': '/debug/last', 'userAgent': 'python-requests/2.34.2'}
+E       assert '/debug/last' == '/track/pong'
+E         - /track/pong
+E         + /debug/last
+
+tests/test_final_state.py:46: AssertionError
+---------------------------- Captured stdout setup -----------------------------
+/tests/.pytest_cache/d/.xprocess/rwsdk_dev$ npm run dev -- --host 0.0.0.0 --port 5173
+process 'rwsdk_dev' started pid=1579
+rwsdk_dev process startup detected
+=========================== short test summary info ============================
+FAILED tests/test_final_state.py::test_logging_flow - AssertionError: Expecte...
+============================== 1 failed in 0.52s ===============================

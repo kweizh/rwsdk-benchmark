@@ -1,0 +1,85 @@
+{
+    "results": {
+        "tool": {
+            "name": "pytest",
+            "version": "7.4.4"
+        },
+        "summary": {
+            "tests": 6,
+            "passed": 6,
+            "failed": 0,
+            "skipped": 0,
+            "pending": 0,
+            "other": 0,
+            "start": 1780983230826,
+            "stop": 1780983231399
+        },
+        "environment": {
+            "buildName": "Pytest JSON CTRF Report",
+            "buildNumber": "000",
+            "buildUrl": "https://ctrf.io"
+        },
+        "tests": [
+            {
+                "name": "test_final_state.py::test_prefix_usage_in_source",
+                "status": "passed",
+                "duration": 110,
+                "start": 1780983231126,
+                "stop": 1780983231236,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_v1_ping",
+                "status": "passed",
+                "duration": 48,
+                "start": 1780983231237,
+                "stop": 1780983231285,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_v1_echo",
+                "status": "passed",
+                "duration": 28,
+                "start": 1780983231286,
+                "stop": 1780983231314,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "tags": [
+                    "parametrize::msg::['hello', 'redwood']"
+                ]
+            },
+            {
+                "name": "test_final_state.py::test_v1_echo",
+                "status": "passed",
+                "duration": 27,
+                "start": 1780983231314,
+                "stop": 1780983231341,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "tags": [
+                    "parametrize::msg::['hello', 'redwood']"
+                ]
+            },
+            {
+                "name": "test_final_state.py::test_v1_profile",
+                "status": "passed",
+                "duration": 24,
+                "start": 1780983231341,
+                "stop": 1780983231365,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_v2_unknown",
+                "status": "passed",
+                "duration": 34,
+                "start": 1780983231365,
+                "stop": 1780983231399,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            }
+        ]
+    }
+}

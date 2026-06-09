@@ -1,0 +1,37 @@
+{
+    "results": {
+        "tool": {
+            "name": "pytest",
+            "version": "7.4.4"
+        },
+        "summary": {
+            "tests": 1,
+            "passed": 0,
+            "failed": 1,
+            "skipped": 0,
+            "pending": 0,
+            "other": 0,
+            "start": 1780982440163,
+            "stop": 1780982440514
+        },
+        "environment": {
+            "buildName": "Pytest JSON CTRF Report",
+            "buildNumber": "000",
+            "buildUrl": "https://ctrf.io"
+        },
+        "tests": [
+            {
+                "name": "test_final_state.py::test_logging_flow",
+                "status": "failed",
+                "raw_status": "call_failed",
+                "duration": 207,
+                "start": 1780982440306,
+                "stop": 1780982440513,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "start_app = None\n\n    def test_logging_flow(start_app):\n        r1 = requests.get(f\"{BASE_URL}/track/ping\", headers={\"User-Agent\": \"zealt-tester/1\"}, timeout=30)\n        assert r1.status_code == 200 and r1.text.strip() == \"tracked\", \\\n            f\"/track/ping unexpected: {r1.status_code} {r1.text!r}\"\n    \n        r2 = requests.get(f\"{BASE_URL}/track/pong\", headers={\"User-Agent\": \"zealt-tester/2\"}, timeout=30)\n        assert r2.status_code == 200 and r2.text.strip() == \"tracked\", \\\n            f\"/track/pong unexpected: {r2.status_code} {r2.text!r}\"\n    \n        rlast = requests.get(f\"{BASE_URL}/debug/last\", timeout=30)\n        assert rlast.status_code == 200\n        assert \"application/json\" in rlast.headers.get(\"content-type\", \"\").lower()\n        last = rlast.json()\n        assert last.get(\"method\") == \"GET\", f\"Expected method GET, got {last!r}\"\n>       assert last.get(\"path\") == \"/track/pong\", f\"Expected last path /track/pong, got {last!r}\"\nE       AssertionError: Expected last path /track/pong, got {'method': 'GET', 'path': '/debug/last', 'userAgent': 'python-requests/2.34.2'}\nE       assert '/debug/last' == '/track/pong'\nE         - /track/pong\nE         + /debug/last\n\ntests/test_final_state.py:46: AssertionError",
+                "message": "The test failed in the call phase due to an assertion error"
+            }
+        ]
+    }
+}

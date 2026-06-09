@@ -1,0 +1,52 @@
+{
+    "results": {
+        "tool": {
+            "name": "pytest",
+            "version": "7.4.4"
+        },
+        "summary": {
+            "tests": 3,
+            "passed": 3,
+            "failed": 0,
+            "skipped": 0,
+            "pending": 0,
+            "other": 0,
+            "start": 1780986543870,
+            "stop": 1780986545200
+        },
+        "environment": {
+            "buildName": "Pytest JSON CTRF Report",
+            "buildNumber": "000",
+            "buildUrl": "https://ctrf.io"
+        },
+        "tests": [
+            {
+                "name": "test_final_state.py::test_sales_suspense",
+                "status": "passed",
+                "duration": 951,
+                "start": 1780986544161,
+                "stop": 1780986545112,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_quick_suspense",
+                "status": "passed",
+                "duration": 30,
+                "start": 1780986545113,
+                "stop": 1780986545143,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_reports_json",
+                "status": "passed",
+                "duration": 56,
+                "start": 1780986545143,
+                "stop": 1780986545199,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            }
+        ]
+    }
+}

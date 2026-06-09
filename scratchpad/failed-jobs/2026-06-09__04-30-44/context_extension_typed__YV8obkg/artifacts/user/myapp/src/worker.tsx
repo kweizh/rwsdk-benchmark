@@ -1,0 +1,34 @@
+import { render, route } from "rwsdk/router";
+import { defineApp } from "rwsdk/worker";
+
+import { Document } from "@/app/document";
+import { setCommonHeaders } from "@/app/headers";
+import { Home } from "@/app/pages/home";
+
+export type AppContext = {};
+
+export default defineApp([
+  setCommonHeaders(),
+  ({ request, response, ctx }) => {
+    const userId = request.headers.get("X-User-Id");
+    if (userId) {
+      const roleHeader = request.headers.get("X-User-Role");
+      const role = (roleHeader === "admin" || roleHeader === "member") ? roleHeader : "guest";
+      ctx.user = { id: userId, role };
+    }
+    
+    const requestId = crypto.randomUUID();
+    ctx.requestId = requestId;
+    response.headers.set("X-Request-Id", requestId);
+  },
+  route("/me", ({ ctx }) => {
+    return new Response(JSON.stringify({ user: ctx.user ?? null, requestId: ctx.requestId }), {
+      headers: { "Content-Type": "application/json" }
+    });
+  }),
+  route("/me/role", ({ ctx }) => {
+    return new Response(ctx.user ? ctx.user.role : "anonymous");
+  }),
+  render(Document, [route("/", Home)]),
+]);
+
