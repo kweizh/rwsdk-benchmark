@@ -1,0 +1,255 @@
+============================= test session starts ==============================
+platform linux -- Python 3.12.3, pytest-7.4.4, pluggy-1.4.0
+rootdir: /tests
+plugins: xprocess-1.0.2, json-ctrf-0.5.0
+collected 10 items
+
+tests/test_final_state.py FFFFFFFFF.                                     [100%]
+
+=================================== FAILURES ===================================
+_________________________ test_health_endpoint_no_csrf _________________________
+
+start_app = None
+
+    def test_health_endpoint_no_csrf(start_app):
+        session = requests.Session()
+        r = session.get(f"{BASE_URL}/api/health", timeout=15)
+        assert r.status_code == 200, f"Expected 200 from /api/health, got {r.status_code}: {r.text}"
+        ct = r.headers.get("Content-Type", "")
+>       assert ct.startswith("application/json"), (
+            f"/api/health must return Content-Type application/json, got: {ct}"
+        )
+E       AssertionError: /api/health must return Content-Type application/json, got: text/html
+E       assert False
+E        +  where False = <built-in method startswith of str object at 0x7f6ea9495230>('application/json')
+E        +    where <built-in method startswith of str object at 0x7f6ea9495230> = 'text/html'.startswith
+
+tests/test_final_state.py:81: AssertionError
+---------------------------- Captured stdout setup -----------------------------
+/tests/.pytest_cache/d/.xprocess/rwsdk_csrf_app$ npm run dev
+process 'rwsdk_csrf_app' started pid=2975
+rwsdk_csrf_app process startup detected
+___________ test_csrf_endpoint_returns_token_and_sets_strict_cookie ____________
+
+start_app = None
+
+    def test_csrf_endpoint_returns_token_and_sets_strict_cookie(start_app):
+        session = requests.Session()
+>       token, raw_set_cookie = _issue_token(session)
+
+tests/test_final_state.py:90: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+session = <requests.sessions.Session object at 0x7f6ea966bc80>
+
+    def _issue_token(session: requests.Session):
+        """GET /csrf with the given session, return (token, raw Set-Cookie string)."""
+        r = session.get(f"{BASE_URL}/csrf", timeout=15)
+        assert r.status_code == 200, f"Expected 200 from /csrf, got {r.status_code}: {r.text}"
+        ct = r.headers.get("Content-Type", "")
+>       assert ct.startswith("application/json"), (
+            f"/csrf must return Content-Type application/json, got: {ct}"
+        )
+E       AssertionError: /csrf must return Content-Type application/json, got: text/html
+E       assert False
+E        +  where False = <built-in method startswith of str object at 0x7f6ea94c38f0>('application/json')
+E        +    where <built-in method startswith of str object at 0x7f6ea94c38f0> = 'text/html'.startswith
+
+tests/test_final_state.py:55: AssertionError
+___________________ test_csrf_token_is_regenerated_each_call ___________________
+
+start_app = None
+
+    def test_csrf_token_is_regenerated_each_call(start_app):
+        session_a = requests.Session()
+>       token_a, _ = _issue_token(session_a)
+
+tests/test_final_state.py:109: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+session = <requests.sessions.Session object at 0x7f6eaa1565a0>
+
+    def _issue_token(session: requests.Session):
+        """GET /csrf with the given session, return (token, raw Set-Cookie string)."""
+        r = session.get(f"{BASE_URL}/csrf", timeout=15)
+        assert r.status_code == 200, f"Expected 200 from /csrf, got {r.status_code}: {r.text}"
+        ct = r.headers.get("Content-Type", "")
+>       assert ct.startswith("application/json"), (
+            f"/csrf must return Content-Type application/json, got: {ct}"
+        )
+E       AssertionError: /csrf must return Content-Type application/json, got: text/html
+E       assert False
+E        +  where False = <built-in method startswith of str object at 0x7f6ea95260f0>('application/json')
+E        +    where <built-in method startswith of str object at 0x7f6ea95260f0> = 'text/html'.startswith
+
+tests/test_final_state.py:55: AssertionError
+___________ test_post_comment_succeeds_with_valid_header_and_cookie ____________
+
+start_app = None
+
+    def test_post_comment_succeeds_with_valid_header_and_cookie(start_app):
+        session = requests.Session()
+>       token, _ = _issue_token(session)
+
+tests/test_final_state.py:124: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+session = <requests.sessions.Session object at 0x7f6ea94b4e60>
+
+    def _issue_token(session: requests.Session):
+        """GET /csrf with the given session, return (token, raw Set-Cookie string)."""
+        r = session.get(f"{BASE_URL}/csrf", timeout=15)
+        assert r.status_code == 200, f"Expected 200 from /csrf, got {r.status_code}: {r.text}"
+        ct = r.headers.get("Content-Type", "")
+>       assert ct.startswith("application/json"), (
+            f"/csrf must return Content-Type application/json, got: {ct}"
+        )
+E       AssertionError: /csrf must return Content-Type application/json, got: text/html
+E       assert False
+E        +  where False = <built-in method startswith of str object at 0x7f6ea952ae70>('application/json')
+E        +    where <built-in method startswith of str object at 0x7f6ea952ae70> = 'text/html'.startswith
+
+tests/test_final_state.py:55: AssertionError
+__________________ test_post_comment_succeeds_with_form_field __________________
+
+start_app = None
+
+    def test_post_comment_succeeds_with_form_field(start_app):
+        session = requests.Session()
+>       token, _ = _issue_token(session)
+
+tests/test_final_state.py:146: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+session = <requests.sessions.Session object at 0x7f6ea94b6390>
+
+    def _issue_token(session: requests.Session):
+        """GET /csrf with the given session, return (token, raw Set-Cookie string)."""
+        r = session.get(f"{BASE_URL}/csrf", timeout=15)
+        assert r.status_code == 200, f"Expected 200 from /csrf, got {r.status_code}: {r.text}"
+        ct = r.headers.get("Content-Type", "")
+>       assert ct.startswith("application/json"), (
+            f"/csrf must return Content-Type application/json, got: {ct}"
+        )
+E       AssertionError: /csrf must return Content-Type application/json, got: text/html
+E       assert False
+E        +  where False = <built-in method startswith of str object at 0x7f6ea94e2ab0>('application/json')
+E        +    where <built-in method startswith of str object at 0x7f6ea94e2ab0> = 'text/html'.startswith
+
+tests/test_final_state.py:55: AssertionError
+________________ test_post_comment_rejected_when_header_missing ________________
+
+start_app = None
+
+    def test_post_comment_rejected_when_header_missing(start_app):
+        session = requests.Session()
+>       _issue_token(session)  # establish csrf cookie
+
+tests/test_final_state.py:167: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+session = <requests.sessions.Session object at 0x7f6ea94b7cb0>
+
+    def _issue_token(session: requests.Session):
+        """GET /csrf with the given session, return (token, raw Set-Cookie string)."""
+        r = session.get(f"{BASE_URL}/csrf", timeout=15)
+        assert r.status_code == 200, f"Expected 200 from /csrf, got {r.status_code}: {r.text}"
+        ct = r.headers.get("Content-Type", "")
+>       assert ct.startswith("application/json"), (
+            f"/csrf must return Content-Type application/json, got: {ct}"
+        )
+E       AssertionError: /csrf must return Content-Type application/json, got: text/html
+E       assert False
+E        +  where False = <built-in method startswith of str object at 0x7f6ea95124b0>('application/json')
+E        +    where <built-in method startswith of str object at 0x7f6ea95124b0> = 'text/html'.startswith
+
+tests/test_final_state.py:55: AssertionError
+____________ test_post_comment_rejected_when_header_does_not_match _____________
+
+start_app = None
+
+    def test_post_comment_rejected_when_header_does_not_match(start_app):
+        session = requests.Session()
+>       token, _ = _issue_token(session)
+
+tests/test_final_state.py:189: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+session = <requests.sessions.Session object at 0x7f6ea94f9340>
+
+    def _issue_token(session: requests.Session):
+        """GET /csrf with the given session, return (token, raw Set-Cookie string)."""
+        r = session.get(f"{BASE_URL}/csrf", timeout=15)
+        assert r.status_code == 200, f"Expected 200 from /csrf, got {r.status_code}: {r.text}"
+        ct = r.headers.get("Content-Type", "")
+>       assert ct.startswith("application/json"), (
+            f"/csrf must return Content-Type application/json, got: {ct}"
+        )
+E       AssertionError: /csrf must return Content-Type application/json, got: text/html
+E       assert False
+E        +  where False = <built-in method startswith of str object at 0x7f6ea953d4b0>('application/json')
+E        +    where <built-in method startswith of str object at 0x7f6ea953d4b0> = 'text/html'.startswith
+
+tests/test_final_state.py:55: AssertionError
+__________________ test_post_comment_rejected_when_no_cookie ___________________
+
+start_app = None
+
+    def test_post_comment_rejected_when_no_cookie(start_app):
+        session = requests.Session()  # fresh, no cookies issued
+        payload = {"author": "mallory", "text": "no cookie"}
+        r = session.post(
+            f"{BASE_URL}/api/comments",
+            json=payload,
+            headers={"X-CSRF-Token": "deadbeefdeadbeefdeadbeefdeadbeef"},
+            timeout=15,
+        )
+>       assert r.status_code == 403, (
+            f"Expected 403 when csrf cookie is absent, got {r.status_code}: {r.text}"
+        )
+E       AssertionError: Expected 403 when csrf cookie is absent, got 404: 
+E       assert 404 == 403
+E        +  where 404 = <Response [404]>.status_code
+
+tests/test_final_state.py:223: AssertionError
+___________________ test_get_comments_lists_accepted_entries ___________________
+
+start_app = None
+
+    def test_get_comments_lists_accepted_entries(start_app):
+        # First, post two known-good comments with valid tokens.
+        session = requests.Session()
+>       token1, _ = _issue_token(session)
+
+tests/test_final_state.py:238: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+session = <requests.sessions.Session object at 0x7f6ea94fb6e0>
+
+    def _issue_token(session: requests.Session):
+        """GET /csrf with the given session, return (token, raw Set-Cookie string)."""
+        r = session.get(f"{BASE_URL}/csrf", timeout=15)
+        assert r.status_code == 200, f"Expected 200 from /csrf, got {r.status_code}: {r.text}"
+        ct = r.headers.get("Content-Type", "")
+>       assert ct.startswith("application/json"), (
+            f"/csrf must return Content-Type application/json, got: {ct}"
+        )
+E       AssertionError: /csrf must return Content-Type application/json, got: text/html
+E       assert False
+E        +  where False = <built-in method startswith of str object at 0x7f6ea953af30>('application/json')
+E        +    where <built-in method startswith of str object at 0x7f6ea953af30> = 'text/html'.startswith
+
+tests/test_final_state.py:55: AssertionError
+==================================== PASSES ====================================
+=========================== short test summary info ============================
+PASSED tests/test_final_state.py::test_get_methods_never_rejected_by_csrf
+FAILED tests/test_final_state.py::test_health_endpoint_no_csrf - AssertionErr...
+FAILED tests/test_final_state.py::test_csrf_endpoint_returns_token_and_sets_strict_cookie
+FAILED tests/test_final_state.py::test_csrf_token_is_regenerated_each_call - ...
+FAILED tests/test_final_state.py::test_post_comment_succeeds_with_valid_header_and_cookie
+FAILED tests/test_final_state.py::test_post_comment_succeeds_with_form_field
+FAILED tests/test_final_state.py::test_post_comment_rejected_when_header_missing
+FAILED tests/test_final_state.py::test_post_comment_rejected_when_header_does_not_match
+FAILED tests/test_final_state.py::test_post_comment_rejected_when_no_cookie
+FAILED tests/test_final_state.py::test_get_comments_lists_accepted_entries - ...
+=================== 9 failed, 1 passed in 265.96s (0:04:25) ====================

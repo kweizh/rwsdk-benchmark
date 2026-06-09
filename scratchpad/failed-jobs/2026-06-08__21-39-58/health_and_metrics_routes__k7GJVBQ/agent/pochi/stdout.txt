@@ -1,0 +1,123 @@
+- Initializing MCP connections...
+You
+# Health and Metrics Routes for a RedwoodSDK Service ## Background You are running a RedwoodSDK (rwsdk) service on Cloudflare Workers. Operations needs three standard observability endpoints so that a load balancer can probe liveness/readiness, and a Prometheus scraper can collect application metrics. The project is already scaffolded with a `wrangler.jsonc`, a `src/worker.tsx` entry, and `npm install` has been run. You must add the routes inside the rwsdk worker so that they work end-to-end against the real Cloudflare bindings provided by miniflare (the local dev runtime started by `npm run dev`). ## Requirements * Implement three HTTP routes on the rwsdk app: * `GET /healthz` — basic liveness. * `GET /readyz` — readiness, must actually exercise the configured Cloudflare bindings. * `GET /metrics` — Prometheus text exposition. * The readiness check must: * Write a value to a KV namespace and read it back (using the configured KV binding) under key `health:probe`. * Call a `ping` method on a Durable Object instance (using the configured Durable Object binding) and verify it returns `pong`. * The metrics endpoint must expose application counters and a request-latency histogram populated by a global middleware that observes every request handled by the worker. * All routes must be served by the same rwsdk worker started via `npm run dev`, and must operate against the real miniflare-emulated bindings (no in-memory mocks). ## Implementation Hints * Use `defineApp` and route handlers from `rwsdk/router` and middleware to instrument requests. * For Durable Objects, define a class (e.g. with a `ping()` method) and bind it in `wrangler.jsonc`; remember the SQLite migration for new DO classes. * For KV, declare a `kv_namespaces` entry in `wrangler.jsonc` and access it via the worker env/`ctx`. * The Prometheus exposition format requires `HELP` and `TYPE` lines for each metric family, and label values must be properly quoted/escaped. * A simple in-memory counter map and histogram bucket array, reset each isolate, is acceptable — the verifier seeds the counters by hitting routes before scraping `/metrics`. * Make sure middleware runs for every route (including 404s on unknown paths) and uses the route's matched path pattern (or the raw pathname if no match) as the `path` label. ## Acceptance Criteria * Project path: /home/user/myproject * Start command: npm run dev * Port: 5173 * HTTP Endpoints: * `GET /healthz` * Status: 200 * Content-Type starts with `application/json` * Response JSON shape: ```json { "status": "ok", "uptimeSec": number, "version": "1.0.0" } ``` * `uptimeSec` is a non-negative number measured in seconds since the worker module loaded. * `GET /readyz` * When both checks pass: * Status: 200 * Response JSON shape: ```json { "ready": true, "checks": { "kv": "ok", "durableObject": "ok" } } ``` * The handler must perform a real KV write+read on key `health:probe` and a real Durable Object `ping` call returning `pong`. * When any check fails: * Status: 503 * `ready` is `false` and the failing entry of `checks` is the string `"fail"`. * `GET /metrics` * Status: 200 * Content-Type: `text/plain; version=0.0.4` (an optional `; charset=utf-8` suffix is allowed) * Body is valid Prometheus text exposition format containing at least the following metric families with proper `# HELP` and `# TYPE` lines: * Counter `app_requests_total` with labels `path`, `method`, `status`; incremented by middleware for every request. * Histogram `app_request_duration_seconds` with explicit buckets `0.005, 0.01, 0.025, 0.05, 0.1, 0.25, 0.5, 1, 2.5, 5, 10, +Inf` and the standard `_bucket`, `_sum`, `_count` series; observes the duration of every request. * Labels and metric names must be valid per the Prometheus exposition spec; label values must be properly escaped. * The worker must register and use a KV namespace binding and a Durable Object binding declared in `wrangler.jsonc`. The readiness route must produce a 503 if either binding is missing or returns an error.   
+
+Pochi
+I'll start by exploring the existing project structure to understand what's already in place.   
+📂 Listing files in /home/user/myproject recursively ✔ 
+Let me read the key project files to understand the existing structure.   
+📖 Reading /home/user/myproject/package.json ✔ 
+📖 Reading /home/user/myproject/wrangler.jsonc ✔ 
+📖 Reading /home/user/myproject/src/worker.tsx ✔ 
+📖 Reading /home/user/myproject/worker-configuration.d.ts ✔ 
+📖 Reading /home/user/myproject/tsconfig.json ✔ 
+📖 Reading /home/user/myproject/vite.config.mts ✔ 
+Now let me explore the rwsdk package to understand its APIs.   
+❯ Explore rwsdk package API (explore)
+| 📖 Reading unknown
+| 📖 Reading /home/user/myproject/node_modules/rwsdk/package.json
+| 📂 Listing files in .
+| 📂 Listing files in /home/user/myproject/node_modules/rwsdk
+| 📂 Listing files in .
+| 📂 Listing files in /home/user/myproject/node_modules/rwsdk/dist recursively
+| 📖 Reading unknown
+| 📖 Reading /home/user/myproject/node_modules/rwsdk/dist/runtime/entries/router.js
+| 📖 Reading unknown
+| 📖 Reading /home/user/myproject/node_modules/rwsdk/dist/runtime/entries/router.d.ts
+| 📖 Reading unknown
+| 📖 Reading /home/user/myproject/node_modules/rwsdk/dist/runtime/entries/worker.js
+| 📖 Reading unknown
+| 📖 Reading /home/user/myproject/node_modules/rwsdk/dist/runtime/entries/worker.d.ts
+| 📖 Reading unknown
+| 📖 Reading /home/user/myproject/node_modules/rwsdk/dist/runtime/entries/types/worker.d.ts
+| 📖 Reading unknown
+| 📖 Reading /home/user/myproject/node_modules/rwsdk/dist/runtime/entries/types/worker.js
+| 📖 Reading unknown
+| 📖 Reading /home/user/myproject/node_modules/rwsdk/dist/runtime/lib/router.js
+| 📖 Reading unknown
+| 📖 Reading /home/user/myproject/node_modules/rwsdk/dist/runtime/lib/router.d.ts
+| 📖 Reading unknown
+| 📖 Reading /home/user/myproject/node_modules/rwsdk/dist/runtime/lib/links.js
+| 📖 Reading unknown
+| 📖 Reading /home/user/myproject/node_modules/rwsdk/dist/runtime/lib/links.d.ts
+| 📖 Reading unknown
+| 📖 Reading /home/user/myproject/node_modules/rwsdk/dist/runtime/server.js
+| 📖 Reading unknown
+| 📖 Reading /home/user/myproject/node_modules/rwsdk/dist/runtime/server.d.ts
+| 📖 Reading unknown
+| 📖 Reading /home/user/myproject/node_modules/rwsdk/dist/runtime/worker.js
+| 📖 Reading unknown
+| 📖 Reading /home/user/myproject/node_modules/rwsdk/dist/runtime/worker.d.ts
+| 📖 Reading unknown
+| 📖 Reading /home/user/myproject/node_modules/rwsdk/dist/runtime/requestInfo/types.js
+| 📖 Reading unknown
+| 📖 Reading /home/user/myproject/node_modules/rwsdk/dist/runtime/requestInfo/types.d.ts
+| 📖 Reading unknown
+| 📖 Reading /home/user/myproject/node_modules/rwsdk/dist/runtime/requestInfo/worker.js
+| 📖 Reading unknown
+| 📖 Reading /home/user/myproject/node_modules/rwsdk/dist/runtime/requestInfo/worker.d.ts
+| 📖 Reading unknown
+| 📖 Reading /home/user/myproject/node_modules/rwsdk/dist/runtime/lib/types.js
+| 📖 Reading unknown
+| 📖 Reading /home/user/myproject/node_modules/rwsdk/dist/runtime/lib/types.d.ts
+| 📖 Reading unknown
+| 📖 Reading /home/user/myproject/node_modules/rwsdk/dist/runtime/lib/utils.js
+| 📖 Reading unknown
+| 📖 Reading /home/user/myproject/node_modules/rwsdk/dist/runtime/lib/utils.d.ts
+| 📖 Reading unknown
+| 📖 Reading /home/user/myproject/node_modules/rwsdk/dist/runtime/error.js
+| 📖 Reading unknown
+| 📖 Reading /home/user/myproject/node_modules/rwsdk/dist/runtime/error.d.ts
+| 📖 Reading unknown
+| 📖 Reading /home/user/myproject/node_modules/rwsdk/dist/runtime/register/worker.js
+| 📖 Reading unknown
+| 📖 Reading /home/user/myproject/node_modules/rwsdk/dist/runtime/register/worker.d.ts
+| 📖 Reading unknown
+| 📖 Reading /home/user/myproject/node_modules/rwsdk/dist/llms/rules/middleware.js
+| 📖 Reading unknown
+| 📖 Reading /home/user/myproject/node_modules/rwsdk/dist/llms/rules/middleware.d.ts
+| 📖 Reading unknown
+| 📖 Reading /home/user/myproject/node_modules/rwsdk/dist/llms/rules/request-response.js
+| 📖 Reading unknown
+| 📖 Reading /home/user/myproject/node_modules/rwsdk/dist/llms/rules/request-response.d.ts
+| 📖 Reading unknown
+| 📖 Reading /home/user/myproject/node_modules/rwsdk/dist/runtime/requestInfo/utils.js
+| 📖 Reading unknown
+| 📖 Reading /home/user/myproject/node_modules/rwsdk/dist/runtime/requestInfo/utils.d.ts
+| 📖 Reading unknown
+| 📖 Reading /home/user/myproject/node_modules/rwsdk/dist/runtime/script.js
+| 📖 Reading unknown
+| 📖 Reading /home/user/myproject/node_modules/rwsdk/dist/runtime/script.d.ts
+✔ Explore rwsdk package API (explore)
+📋 Updating todo list (7 items) ✔ 
+Let me look more closely at how `defineApp` works internally to understand how to pass `env` to handlers, and also explore the DO/KV patterns.   
+📖 Reading /home/user/myproject/node_modules/rwsdk/dist/runtime/server.js ✔ 
+📖 Reading /home/user/myproject/node_modules/rwsdk/dist/runtime/entries/router.d.ts ✔ 
+📖 Reading /home/user/myproject/node_modules/rwsdk/dist/runtime/lib/router.d.ts ✔ 
+📖 Reading /home/user/myproject/node_modules/rwsdk/dist/runtime/server.d.ts ✔ 
+Now let me look at how `defineApp` is structured in the actual JS to understand how env flows:   
+🔍 Searching for export.*defineApp in *.js files in /home/user/myproject/node_modules/rwsdk/dist ✔ 
+📖 Reading /home/user/myproject/node_modules/rwsdk/dist/runtime/worker.js ✔ 
+This is very informative. I can see that in `defineApp`, the `env` is received in the `fetch` handler but it's NOT passed to `outerRequestInfo`. The `outerRequestInfo` only has `request`, `path`, `cf`, `params`, `ctx`, `rw`, `response`, `isAction`. However, looking at the code, `env` is used internally for `env.ASSETS.fetch()`. I need to make `env` accessible to route handlers. The best approach is to use a module-level variable to capture `env`, or wrap `defineApp` to inject env into ctx. Let me also look at how the existing routes and document work:   
+📖 Reading /home/user/myproject/src/app/document.tsx ✔ 
+📖 Reading /home/user/myproject/src/app/headers.ts ✔ 
+📖 Reading /home/user/myproject/src/app/pages ✖ "EISDIR: illegal operation on a directory, read"
+📂 Listing files in /home/user/myproject/src/app/pages recursively ✔ 
+📖 Reading /home/user/myproject/src/app/pages/home.tsx ✔ 
+Now I have a thorough understanding of the project. Let me also look at how `defineRoutes` handles middleware vs routes to understand how global middleware works:   
+📖 Reading /home/user/myproject/node_modules/rwsdk/dist/runtime/lib/router.js ✔ 
+Now I have a complete understanding. The key insight is that `env` is NOT passed to `RequestInfo` by the SDK. I need to capture it in a module-level variable and inject it into `ctx` via a global middleware. Let me now implement everything.   
+📋 Updating todo list (7 items) ✔ 
+✏️  Writing /home/user/myproject/wrangler.jsonc ✔ 
+✏️  Writing /home/user/myproject/worker-configuration.d.ts ✔ 
+📋 Updating todo list (7 items) ✔ 
+✏️  Writing /home/user/myproject/src/health-do.ts ✔ 
+📋 Updating todo list (7 items) ✔ 
+Now let me create the metrics module:   
+✏️  Writing /home/user/myproject/src/metrics.ts ✔ 
+📋 Updating todo list (7 items) ✔ 
+Now let me create the health route handlers:   
+✏️  Writing /home/user/myproject/src/routes/health.ts ✔ 
+📋 Updating todo list (7 items) ✔ 
+Now I need to update `worker.tsx`. The key challenge is that `defineApp` doesn't pass `env` to route handlers. I need to capture `env` and inject it into `ctx` via a global middleware. Looking at the `defineApp` code more carefully, the `fetch` handler receives `(request, env, cf)` but the `outerRequestInfo` doesn't include `env`. I'll use a module-level variable approach:   
+✏️  Writing /home/user/myproject/src/worker.tsx ✔ 

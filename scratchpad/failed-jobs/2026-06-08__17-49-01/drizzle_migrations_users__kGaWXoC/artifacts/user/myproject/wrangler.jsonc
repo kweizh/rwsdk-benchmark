@@ -1,0 +1,14 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "myproject",
+  "main": "src/worker.tsx",
+  "compatibility_date": "2026-06-08",
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "my-db",
+      "database_id": "xxxx-xxxx-xxxx-xxxx-xxxx",
+      "migrations_dir": "drizzle/migrations"
+    }
+  ]
+}

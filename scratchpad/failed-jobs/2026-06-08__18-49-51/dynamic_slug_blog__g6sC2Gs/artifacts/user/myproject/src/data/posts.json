@@ -1,0 +1,23 @@
+[
+  {
+    "slug": "hello-rwsdk",
+    "title": "Hello RedwoodSDK",
+    "author": "Alice Redwood",
+    "publishedAt": "2024-01-15",
+    "body": "# Hello RedwoodSDK\n\nWelcome to **RedwoodSDK** — the full-stack framework built for Cloudflare Workers.\n\n## Getting Started\n\nRedwoodSDK makes it easy to build server-rendered React applications that run at the edge.\n\n- Fast cold-start times\n- Built-in routing\n- React Server Components support\n\nGive it a try and see how quickly you can ship!\n"
+  },
+  {
+    "slug": "cf-edge-tips",
+    "title": "Cloudflare Edge Tips",
+    "author": "Bob Cloudman",
+    "publishedAt": "2024-02-20",
+    "body": "# Cloudflare Edge Tips\n\nRunning code at the **edge** means your users get faster responses no matter where they are in the world.\n\n## Top Tips\n\n1. Use **KV** for low-latency reads of configuration and content.\n2. Leverage **Durable Objects** for coordinating stateful workloads.\n3. Keep your worker bundles small — every byte counts at startup.\n4. Cache aggressively with `Cache-Control` headers.\n\n> The edge is not a magic bullet, but it is a very sharp one.\n"
+  },
+  {
+    "slug": "react-rsc-101",
+    "title": "React Server Components 101",
+    "author": "Carol Components",
+    "publishedAt": "2024-03-10",
+    "body": "# React Server Components 101\n\nReact Server Components (RSC) let you render components **on the server** without sending their JavaScript to the client.\n\n## Why RSC?\n\n- Smaller client bundles\n- Direct access to server-side data sources\n- Improved Time to First Byte (TTFB)\n\n## How It Works\n\nServer components are rendered once on the server and streamed to the client as a special React payload. Client components hydrate in the browser as usual.\n\nCombined with RedwoodSDK, RSC is a powerful tool for building fast, data-driven apps.\n"
+  }
+]

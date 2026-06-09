@@ -1,0 +1,142 @@
+{
+    "results": {
+        "tool": {
+            "name": "pytest",
+            "version": "7.4.4"
+        },
+        "summary": {
+            "tests": 10,
+            "passed": 1,
+            "failed": 9,
+            "skipped": 0,
+            "pending": 0,
+            "other": 0,
+            "start": 1780950586843,
+            "stop": 1780950852802
+        },
+        "environment": {
+            "buildName": "Pytest JSON CTRF Report",
+            "buildNumber": "000",
+            "buildUrl": "https://ctrf.io"
+        },
+        "tests": [
+            {
+                "name": "test_final_state.py::test_health_endpoint_no_csrf",
+                "status": "failed",
+                "raw_status": "call_failed",
+                "duration": 265508,
+                "start": 1780950587146,
+                "stop": 1780950852654,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "start_app = None\n\n    def test_health_endpoint_no_csrf(start_app):\n        session = requests.Session()\n        r = session.get(f\"{BASE_URL}/api/health\", timeout=15)\n        assert r.status_code == 200, f\"Expected 200 from /api/health, got {r.status_code}: {r.text}\"\n        ct = r.headers.get(\"Content-Type\", \"\")\n>       assert ct.startswith(\"application/json\"), (\n            f\"/api/health must return Content-Type application/json, got: {ct}\"\n        )\nE       AssertionError: /api/health must return Content-Type application/json, got: text/html\nE       assert False\nE        +  where False = <built-in method startswith of str object at 0x7f6ea9495230>('application/json')\nE        +    where <built-in method startswith of str object at 0x7f6ea9495230> = 'text/html'.startswith\n\ntests/test_final_state.py:81: AssertionError",
+                "message": "The test failed in the call phase due to an assertion error"
+            },
+            {
+                "name": "test_final_state.py::test_csrf_endpoint_returns_token_and_sets_strict_cookie",
+                "status": "failed",
+                "raw_status": "call_failed",
+                "duration": 22,
+                "start": 1780950852654,
+                "stop": 1780950852676,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "start_app = None\n\n    def test_csrf_endpoint_returns_token_and_sets_strict_cookie(start_app):\n        session = requests.Session()\n>       token, raw_set_cookie = _issue_token(session)\n\ntests/test_final_state.py:90: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nsession = <requests.sessions.Session object at 0x7f6ea966bc80>\n\n    def _issue_token(session: requests.Session):\n        \"\"\"GET /csrf with the given session, return (token, raw Set-Cookie string).\"\"\"\n        r = session.get(f\"{BASE_URL}/csrf\", timeout=15)\n        assert r.status_code == 200, f\"Expected 200 from /csrf, got {r.status_code}: {r.text}\"\n        ct = r.headers.get(\"Content-Type\", \"\")\n>       assert ct.startswith(\"application/json\"), (\n            f\"/csrf must return Content-Type application/json, got: {ct}\"\n        )\nE       AssertionError: /csrf must return Content-Type application/json, got: text/html\nE       assert False\nE        +  where False = <built-in method startswith of str object at 0x7f6ea94c38f0>('application/json')\nE        +    where <built-in method startswith of str object at 0x7f6ea94c38f0> = 'text/html'.startswith\n\ntests/test_final_state.py:55: AssertionError",
+                "message": "The test failed in the call phase due to an assertion error"
+            },
+            {
+                "name": "test_final_state.py::test_csrf_token_is_regenerated_each_call",
+                "status": "failed",
+                "raw_status": "call_failed",
+                "duration": 17,
+                "start": 1780950852676,
+                "stop": 1780950852693,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "start_app = None\n\n    def test_csrf_token_is_regenerated_each_call(start_app):\n        session_a = requests.Session()\n>       token_a, _ = _issue_token(session_a)\n\ntests/test_final_state.py:109: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nsession = <requests.sessions.Session object at 0x7f6eaa1565a0>\n\n    def _issue_token(session: requests.Session):\n        \"\"\"GET /csrf with the given session, return (token, raw Set-Cookie string).\"\"\"\n        r = session.get(f\"{BASE_URL}/csrf\", timeout=15)\n        assert r.status_code == 200, f\"Expected 200 from /csrf, got {r.status_code}: {r.text}\"\n        ct = r.headers.get(\"Content-Type\", \"\")\n>       assert ct.startswith(\"application/json\"), (\n            f\"/csrf must return Content-Type application/json, got: {ct}\"\n        )\nE       AssertionError: /csrf must return Content-Type application/json, got: text/html\nE       assert False\nE        +  where False = <built-in method startswith of str object at 0x7f6ea95260f0>('application/json')\nE        +    where <built-in method startswith of str object at 0x7f6ea95260f0> = 'text/html'.startswith\n\ntests/test_final_state.py:55: AssertionError",
+                "message": "The test failed in the call phase due to an assertion error"
+            },
+            {
+                "name": "test_final_state.py::test_post_comment_succeeds_with_valid_header_and_cookie",
+                "status": "failed",
+                "raw_status": "call_failed",
+                "duration": 17,
+                "start": 1780950852693,
+                "stop": 1780950852710,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "start_app = None\n\n    def test_post_comment_succeeds_with_valid_header_and_cookie(start_app):\n        session = requests.Session()\n>       token, _ = _issue_token(session)\n\ntests/test_final_state.py:124: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nsession = <requests.sessions.Session object at 0x7f6ea94b4e60>\n\n    def _issue_token(session: requests.Session):\n        \"\"\"GET /csrf with the given session, return (token, raw Set-Cookie string).\"\"\"\n        r = session.get(f\"{BASE_URL}/csrf\", timeout=15)\n        assert r.status_code == 200, f\"Expected 200 from /csrf, got {r.status_code}: {r.text}\"\n        ct = r.headers.get(\"Content-Type\", \"\")\n>       assert ct.startswith(\"application/json\"), (\n            f\"/csrf must return Content-Type application/json, got: {ct}\"\n        )\nE       AssertionError: /csrf must return Content-Type application/json, got: text/html\nE       assert False\nE        +  where False = <built-in method startswith of str object at 0x7f6ea952ae70>('application/json')\nE        +    where <built-in method startswith of str object at 0x7f6ea952ae70> = 'text/html'.startswith\n\ntests/test_final_state.py:55: AssertionError",
+                "message": "The test failed in the call phase due to an assertion error"
+            },
+            {
+                "name": "test_final_state.py::test_post_comment_succeeds_with_form_field",
+                "status": "failed",
+                "raw_status": "call_failed",
+                "duration": 16,
+                "start": 1780950852710,
+                "stop": 1780950852726,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "start_app = None\n\n    def test_post_comment_succeeds_with_form_field(start_app):\n        session = requests.Session()\n>       token, _ = _issue_token(session)\n\ntests/test_final_state.py:146: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nsession = <requests.sessions.Session object at 0x7f6ea94b6390>\n\n    def _issue_token(session: requests.Session):\n        \"\"\"GET /csrf with the given session, return (token, raw Set-Cookie string).\"\"\"\n        r = session.get(f\"{BASE_URL}/csrf\", timeout=15)\n        assert r.status_code == 200, f\"Expected 200 from /csrf, got {r.status_code}: {r.text}\"\n        ct = r.headers.get(\"Content-Type\", \"\")\n>       assert ct.startswith(\"application/json\"), (\n            f\"/csrf must return Content-Type application/json, got: {ct}\"\n        )\nE       AssertionError: /csrf must return Content-Type application/json, got: text/html\nE       assert False\nE        +  where False = <built-in method startswith of str object at 0x7f6ea94e2ab0>('application/json')\nE        +    where <built-in method startswith of str object at 0x7f6ea94e2ab0> = 'text/html'.startswith\n\ntests/test_final_state.py:55: AssertionError",
+                "message": "The test failed in the call phase due to an assertion error"
+            },
+            {
+                "name": "test_final_state.py::test_post_comment_rejected_when_header_missing",
+                "status": "failed",
+                "raw_status": "call_failed",
+                "duration": 15,
+                "start": 1780950852726,
+                "stop": 1780950852741,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "start_app = None\n\n    def test_post_comment_rejected_when_header_missing(start_app):\n        session = requests.Session()\n>       _issue_token(session)  # establish csrf cookie\n\ntests/test_final_state.py:167: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nsession = <requests.sessions.Session object at 0x7f6ea94b7cb0>\n\n    def _issue_token(session: requests.Session):\n        \"\"\"GET /csrf with the given session, return (token, raw Set-Cookie string).\"\"\"\n        r = session.get(f\"{BASE_URL}/csrf\", timeout=15)\n        assert r.status_code == 200, f\"Expected 200 from /csrf, got {r.status_code}: {r.text}\"\n        ct = r.headers.get(\"Content-Type\", \"\")\n>       assert ct.startswith(\"application/json\"), (\n            f\"/csrf must return Content-Type application/json, got: {ct}\"\n        )\nE       AssertionError: /csrf must return Content-Type application/json, got: text/html\nE       assert False\nE        +  where False = <built-in method startswith of str object at 0x7f6ea95124b0>('application/json')\nE        +    where <built-in method startswith of str object at 0x7f6ea95124b0> = 'text/html'.startswith\n\ntests/test_final_state.py:55: AssertionError",
+                "message": "The test failed in the call phase due to an assertion error"
+            },
+            {
+                "name": "test_final_state.py::test_post_comment_rejected_when_header_does_not_match",
+                "status": "failed",
+                "raw_status": "call_failed",
+                "duration": 15,
+                "start": 1780950852742,
+                "stop": 1780950852757,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "start_app = None\n\n    def test_post_comment_rejected_when_header_does_not_match(start_app):\n        session = requests.Session()\n>       token, _ = _issue_token(session)\n\ntests/test_final_state.py:189: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nsession = <requests.sessions.Session object at 0x7f6ea94f9340>\n\n    def _issue_token(session: requests.Session):\n        \"\"\"GET /csrf with the given session, return (token, raw Set-Cookie string).\"\"\"\n        r = session.get(f\"{BASE_URL}/csrf\", timeout=15)\n        assert r.status_code == 200, f\"Expected 200 from /csrf, got {r.status_code}: {r.text}\"\n        ct = r.headers.get(\"Content-Type\", \"\")\n>       assert ct.startswith(\"application/json\"), (\n            f\"/csrf must return Content-Type application/json, got: {ct}\"\n        )\nE       AssertionError: /csrf must return Content-Type application/json, got: text/html\nE       assert False\nE        +  where False = <built-in method startswith of str object at 0x7f6ea953d4b0>('application/json')\nE        +    where <built-in method startswith of str object at 0x7f6ea953d4b0> = 'text/html'.startswith\n\ntests/test_final_state.py:55: AssertionError",
+                "message": "The test failed in the call phase due to an assertion error"
+            },
+            {
+                "name": "test_final_state.py::test_post_comment_rejected_when_no_cookie",
+                "status": "failed",
+                "raw_status": "call_failed",
+                "duration": 10,
+                "start": 1780950852758,
+                "stop": 1780950852768,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "start_app = None\n\n    def test_post_comment_rejected_when_no_cookie(start_app):\n        session = requests.Session()  # fresh, no cookies issued\n        payload = {\"author\": \"mallory\", \"text\": \"no cookie\"}\n        r = session.post(\n            f\"{BASE_URL}/api/comments\",\n            json=payload,\n            headers={\"X-CSRF-Token\": \"deadbeefdeadbeefdeadbeefdeadbeef\"},\n            timeout=15,\n        )\n>       assert r.status_code == 403, (\n            f\"Expected 403 when csrf cookie is absent, got {r.status_code}: {r.text}\"\n        )\nE       AssertionError: Expected 403 when csrf cookie is absent, got 404: \nE       assert 404 == 403\nE        +  where 404 = <Response [404]>.status_code\n\ntests/test_final_state.py:223: AssertionError",
+                "message": "The test failed in the call phase due to an assertion error"
+            },
+            {
+                "name": "test_final_state.py::test_get_comments_lists_accepted_entries",
+                "status": "failed",
+                "raw_status": "call_failed",
+                "duration": 19,
+                "start": 1780950852769,
+                "stop": 1780950852788,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "start_app = None\n\n    def test_get_comments_lists_accepted_entries(start_app):\n        # First, post two known-good comments with valid tokens.\n        session = requests.Session()\n>       token1, _ = _issue_token(session)\n\ntests/test_final_state.py:238: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nsession = <requests.sessions.Session object at 0x7f6ea94fb6e0>\n\n    def _issue_token(session: requests.Session):\n        \"\"\"GET /csrf with the given session, return (token, raw Set-Cookie string).\"\"\"\n        r = session.get(f\"{BASE_URL}/csrf\", timeout=15)\n        assert r.status_code == 200, f\"Expected 200 from /csrf, got {r.status_code}: {r.text}\"\n        ct = r.headers.get(\"Content-Type\", \"\")\n>       assert ct.startswith(\"application/json\"), (\n            f\"/csrf must return Content-Type application/json, got: {ct}\"\n        )\nE       AssertionError: /csrf must return Content-Type application/json, got: text/html\nE       assert False\nE        +  where False = <built-in method startswith of str object at 0x7f6ea953af30>('application/json')\nE        +    where <built-in method startswith of str object at 0x7f6ea953af30> = 'text/html'.startswith\n\ntests/test_final_state.py:55: AssertionError",
+                "message": "The test failed in the call phase due to an assertion error"
+            },
+            {
+                "name": "test_final_state.py::test_get_methods_never_rejected_by_csrf",
+                "status": "passed",
+                "duration": 13,
+                "start": 1780950852788,
+                "stop": 1780950852801,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            }
+        ]
+    }
+}

@@ -1,0 +1,118 @@
+Skipping image OS validation for hb__health_and_metrics_routes: docker inspect returned 1
+Running command: apt-get update && apt-get install -y curl ripgrep
+Command outputs captured
+Running command: set -euo pipefail; curl -fsSL https://getpochi.com/install.sh | bash -x -s -- pochi-v0.6.12 && mkdir -p /logs/agent/pochi && ~/.pochi/bin/pochi --version
+Command outputs captured
+Running command: ln -sf ~/.pochi/bin/pochi /usr/local/bin/pochi
+Command outputs captured
+Running command: echo zr-k7gjvbq > /logs/artifacts/run-id && echo health_and_metrics_routes__k7GJVBQ > /logs/artifacts/trial_id
+Command outputs captured
+Running command: mkdir -p ~/.pochi && cat << 'EOF' | sed -e "s/OPENAI_API_KEY/${OPENAI_API_KEY}/g" -e "s/DEEPINFRA_API_KEY/${DEEPINFRA_API_KEY}/g" > ~/.pochi/config.jsonc
+{
+  "providers": {
+    "deepinfra": {
+      "kind": "openai",
+      "baseURL": "https://api.deepinfra.com/v1/openai",
+      "apiKey": "DEEPINFRA_API_KEY",
+      "models": {
+        "zai-org/GLM-4.7-Flash": {
+          "name": "glm-4.7-flash"
+        },
+        "moonshotai/Kimi-K2.6": {
+          "name": "kimi-K2.6"
+        },
+        "deepseek-ai/DeepSeek-V4-Pro": {
+          "name": "DeepSeek-V4-Pro"
+        }
+      }
+    },
+    "openai": {
+      "kind": "openai",
+      "baseURL": "https://api.openai.com/v1",
+      "apiKey": "OPENAI_API_KEY",
+      "models": {
+        "gpt-5.4": {
+          "name": "gpt-5.4"
+        }
+      }
+    }
+  }
+}
+EOF
+Command outputs captured
+Running command: if [ -f /bootstrap/test_initial_state.py ]; then pytest -s --log-cli-level=DEBUG /bootstrap/test_initial_state.py > >(tee /logs/agent/pochi/initial-test-stdout.txt) 2> >(tee /logs/agent/pochi/initial-test-stderr.txt >&2); fi
+Command outputs captured
+Running command: pochi --model deepseek/deepseek-4-pro --max-steps 200 --max-retries 10 --blobs-dir /logs/agent/pochi/blobs --experimental-stream-trajectory /logs/agent/pochi/trajectory.jsonl > >(tee /logs/agent/pochi/stdout.txt) 2> >(tee /logs/agent/pochi/stderr.txt >&2) <<'EOF'
+# Health and Metrics Routes for a RedwoodSDK Service
+
+## Background
+You are running a RedwoodSDK (rwsdk) service on Cloudflare Workers. Operations needs three standard observability endpoints so that a load balancer can probe liveness/readiness, and a Prometheus scraper can collect application metrics. The project is already scaffolded with a `wrangler.jsonc`, a `src/worker.tsx` entry, and `npm install` has been run.
+
+You must add the routes inside the rwsdk worker so that they work end-to-end against the real Cloudflare bindings provided by miniflare (the local dev runtime started by `npm run dev`).
+
+## Requirements
+- Implement three HTTP routes on the rwsdk app:
+  - `GET /healthz` — basic liveness.
+  - `GET /readyz`  — readiness, must actually exercise the configured Cloudflare bindings.
+  - `GET /metrics` — Prometheus text exposition.
+- The readiness check must:
+  - Write a value to a KV namespace and read it back (using the configured KV binding) under key `health:probe`.
+  - Call a `ping` method on a Durable Object instance (using the configured Durable Object binding) and verify it returns `pong`.
+- The metrics endpoint must expose application counters and a request-latency histogram populated by a global middleware that observes every request handled by the worker.
+- All routes must be served by the same rwsdk worker started via `npm run dev`, and must operate against the real miniflare-emulated bindings (no in-memory mocks).
+
+## Implementation Hints
+- Use `defineApp` and route handlers from `rwsdk/router` and middleware to instrument requests.
+- For Durable Objects, define a class (e.g. with a `ping()` method) and bind it in `wrangler.jsonc`; remember the SQLite migration for new DO classes.
+- For KV, declare a `kv_namespaces` entry in `wrangler.jsonc` and access it via the worker env/`ctx`.
+- The Prometheus exposition format requires `HELP` and `TYPE` lines for each metric family, and label values must be properly quoted/escaped.
+- A simple in-memory counter map and histogram bucket array, reset each isolate, is acceptable — the verifier seeds the counters by hitting routes before scraping `/metrics`.
+- Make sure middleware runs for every route (including 404s on unknown paths) and uses the route's matched path pattern (or the raw pathname if no match) as the `path` label.
+
+## Acceptance Criteria
+- Project path: /home/user/myproject
+- Start command: npm run dev
+- Port: 5173
+- HTTP Endpoints:
+  - `GET /healthz`
+    - Status: 200
+    - Content-Type starts with `application/json`
+    - Response JSON shape:
+      ```json
+      {
+        "status": "ok",
+        "uptimeSec": number,
+        "version": "1.0.0"
+      }
+      ```
+    - `uptimeSec` is a non-negative number measured in seconds since the worker module loaded.
+  - `GET /readyz`
+    - When both checks pass:
+      - Status: 200
+      - Response JSON shape:
+        ```json
+        {
+          "ready": true,
+          "checks": {
+            "kv": "ok",
+            "durableObject": "ok"
+          }
+        }
+        ```
+      - The handler must perform a real KV write+read on key `health:probe` and a real Durable Object `ping` call returning `pong`.
+    - When any check fails:
+      - Status: 503
+      - `ready` is `false` and the failing entry of `checks` is the string `"fail"`.
+  - `GET /metrics`
+    - Status: 200
+    - Content-Type: `text/plain; version=0.0.4` (an optional `; charset=utf-8` suffix is allowed)
+    - Body is valid Prometheus text exposition format containing at least the following metric families with proper `# HELP` and `# TYPE` lines:
+      - Counter `app_requests_total` with labels `path`, `method`, `status`; incremented by middleware for every request.
+      - Histogram `app_request_duration_seconds` with explicit buckets `0.005, 0.01, 0.025, 0.05, 0.1, 0.25, 0.5, 1, 2.5, 5, 10, +Inf` and the standard `_bucket`, `_sum`, `_count` series; observes the duration of every request.
+    - Labels and metric names must be valid per the Prometheus exposition spec; label values must be properly escaped.
+- The worker must register and use a KV namespace binding and a Durable Object binding declared in `wrangler.jsonc`. The readiness route must produce a 503 if either binding is missing or returns an error.
+
+
+EOF
+Running command: rm -f ~/.pochi/config.jsonc
+Command outputs captured

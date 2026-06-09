@@ -1,0 +1,6 @@
+{
+  "name": "myproject",
+  "main": "./src/worker.tsx",
+  "compatibility_date": "2025-06-08",
+  "compatibility_flags": ["nodejs_compat"]
+}

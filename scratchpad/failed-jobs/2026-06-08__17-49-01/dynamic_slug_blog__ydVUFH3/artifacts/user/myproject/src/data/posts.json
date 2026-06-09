@@ -1,0 +1,23 @@
+[
+  {
+    "slug": "hello-rwsdk",
+    "title": "Hello RedwoodSDK",
+    "author": "Pochi the Developer",
+    "date": "2026-06-08",
+    "body": "Welcome to RedwoodSDK! This is a bare-bones starter template designed to get you up and running as quickly as possible. RedwoodSDK is a powerful tool for building server-rendered React applications with cloudflare workers."
+  },
+  {
+    "slug": "cf-edge-tips",
+    "title": "Cloudflare Edge Tips & Tricks",
+    "author": "Edge Master",
+    "date": "2026-06-07",
+    "body": "When building on Cloudflare Workers, you want to keep your bundle size small and utilize edge caching effectively. Here are some top tips for optimizing your edge application performance."
+  },
+  {
+    "slug": "react-rsc-101",
+    "title": "React Server Components 101",
+    "author": "React Enthusiast",
+    "date": "2026-06-06",
+    "body": "React Server Components (RSC) represent a paradigm shift in how we build React applications. By running components on the server, we can reduce client bundle size and improve load times."
+  }
+]

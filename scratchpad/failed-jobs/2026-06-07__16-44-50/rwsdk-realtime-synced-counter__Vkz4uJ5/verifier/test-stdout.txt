@@ -1,0 +1,125 @@
+============================= test session starts ==============================
+platform linux -- Python 3.12.3, pytest-7.4.4, pluggy-1.4.0
+rootdir: /tests
+plugins: xprocess-1.0.2, json-ctrf-0.5.0
+collected 3 items
+
+tests/test_final_state.py FFF                                            [100%]
+
+=================================== FAILURES ===================================
+_____________ test_wrangler_registers_synced_state_durable_object ______________
+
+    def test_wrangler_registers_synced_state_durable_object():
+        """wrangler.jsonc must register SyncedStateServer as a Durable Object
+        bound to SYNCED_STATE_SERVER, with a new_sqlite_classes migration."""
+        wrangler_path = os.path.join(PROJECT_DIR, "wrangler.jsonc")
+        assert os.path.isfile(wrangler_path), f"{wrangler_path} not found"
+    
+        with open(wrangler_path, encoding="utf-8") as f:
+            raw = f.read()
+        config = json.loads(_strip_jsonc(raw))
+    
+        do = config.get("durable_objects") or {}
+        bindings = do.get("bindings") or []
+        matching = [
+            b
+            for b in bindings
+            if isinstance(b, dict)
+            and b.get("name") == "SYNCED_STATE_SERVER"
+            and b.get("class_name") == "SyncedStateServer"
+        ]
+>       assert matching, (
+            "Expected wrangler.jsonc to declare a Durable Object binding with "
+            "name 'SYNCED_STATE_SERVER' and class_name 'SyncedStateServer', "
+            f"got: {bindings!r}"
+        )
+E       AssertionError: Expected wrangler.jsonc to declare a Durable Object binding with name 'SYNCED_STATE_SERVER' and class_name 'SyncedStateServer', got: []
+E       assert []
+
+tests/test_final_state.py:126: AssertionError
+________________ test_document_includes_client_hydration_script ________________
+
+dev_server = 'http://127.0.0.1:5173/'
+
+    def test_document_includes_client_hydration_script(dev_server):
+        """The Document shell must include the client.tsx hydration script,
+        otherwise the Like button click handler will not run."""
+        with urllib.request.urlopen(dev_server, timeout=15) as resp:
+            assert resp.status == 200, f"GET / returned status {resp.status}"
+            body = resp.read().decode("utf-8", errors="replace")
+>       assert '<script type="module" src="/src/client.tsx"></script>' in body, (
+            "Document shell at '/' must include the client hydration script tag "
+            "'<script type=\"module\" src=\"/src/client.tsx\"></script>'. "
+            "Received body: " + body[:500]
+        )
+E       AssertionError: Document shell at '/' must include the client hydration script tag '<script type="module" src="/src/client.tsx"></script>'. Received body: <!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&amp;family=Playfair+Display:ital,wght@0,400..900;1,400..900&amp;display=optional" data-precedence="first"/><title>@redwoodjs/starter-minimal</title><link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.
+E       assert '<script type="module" src="/src/client.tsx"></script>' in '<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta name="viewport" content="width=device-width, initia...,26,6,14,false]]\\n1:D{\\"time\\":2}\\n1:[\\"$\\",\\"$L16\\",null,{},\\"$2\\",\\"$15\\",1]\\n")</script></body></html>'
+
+tests/test_final_state.py:148: AssertionError
+---------------------------- Captured stdout setup -----------------------------
+/tests/.pytest_cache/d/.xprocess/rwsdk_dev_server$ npm run dev -- --host 127.0.0.1 --port 5173
+process 'rwsdk_dev_server' started pid=791
+rwsdk_dev_server process startup detected
+_________________ test_realtime_like_counter_syncs_across_tabs _________________
+
+dev_server = 'http://127.0.0.1:5173/'
+
+    def test_realtime_like_counter_syncs_across_tabs(dev_server):
+        """End-to-end realtime check: clicking 'Like' in one tab updates the
+        counter in another open tab without a reload."""
+        with sync_playwright() as p:
+            browser = p.chromium.launch(headless=True, args=["--no-sandbox"])
+            try:
+                ctx_a = browser.new_context()
+                ctx_b = browser.new_context()
+                page_a = ctx_a.new_page()
+                page_b = ctx_b.new_page()
+    
+                page_a.goto(dev_server, wait_until="domcontentloaded")
+                page_b.goto(dev_server, wait_until="domcontentloaded")
+    
+                # The "Like" button and the count element must both exist.
+>               page_a.locator('button:has-text("Like")').wait_for(state="visible", timeout=20000)
+
+tests/test_final_state.py:193: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+usr/local/lib/python3.12/dist-packages/playwright/sync_api/_generated.py:20048: in wait_for
+    self._sync(
+usr/local/lib/python3.12/dist-packages/playwright/_impl/_locator.py:741: in wait_for
+    await self._frame.wait_for_selector(
+usr/local/lib/python3.12/dist-packages/playwright/_impl/_frame.py:372: in wait_for_selector
+    await self._channel.send(
+usr/local/lib/python3.12/dist-packages/playwright/_impl/_connection.py:69: in send
+    return await self._connection.wrap_api_call(
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <playwright._impl._connection.Connection object at 0x7f191bdc2120>
+cb = <function Channel.send.<locals>.<lambda> at 0x7f191bc88220>
+is_internal = False, title = None
+
+    async def wrap_api_call(
+        self, cb: Callable[[], Any], is_internal: bool = False, title: str = None
+    ) -> Any:
+        if self._api_zone.get():
+            return await cb()
+        task = asyncio.current_task(self._loop)
+        st: List[inspect.FrameInfo] = getattr(
+            task, "__pw_stack__", None
+        ) or inspect.stack(0)
+    
+        parsed_st = _extract_stack_trace_information_from_stack(st, is_internal, title)
+        self._api_zone.set(parsed_st)
+        try:
+            return await cb()
+        except Exception as error:
+>           raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+E           playwright._impl._errors.TimeoutError: Locator.wait_for: Timeout 20000ms exceeded.
+E           Call log:
+E             - waiting for locator("button:has-text(\"Like\")") to be visible
+
+usr/local/lib/python3.12/dist-packages/playwright/_impl/_connection.py:559: TimeoutError
+=========================== short test summary info ============================
+FAILED tests/test_final_state.py::test_wrangler_registers_synced_state_durable_object
+FAILED tests/test_final_state.py::test_document_includes_client_hydration_script
+FAILED tests/test_final_state.py::test_realtime_like_counter_syncs_across_tabs
+============================== 3 failed in 38.57s ==============================

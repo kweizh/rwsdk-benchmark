@@ -1,0 +1,89 @@
+Skipping image OS validation for hb__versioned_api_routes: docker inspect returned 1
+Running command: apt-get update && apt-get install -y curl ripgrep
+Command outputs captured
+Running command: set -euo pipefail; curl -fsSL https://getpochi.com/install.sh | bash -x -s -- pochi-v0.6.12 && mkdir -p /logs/agent/pochi && ~/.pochi/bin/pochi --version
+Command outputs captured
+Running command: ln -sf ~/.pochi/bin/pochi /usr/local/bin/pochi
+Command outputs captured
+Running command: echo zr-svmrx5v > /logs/artifacts/run-id && echo versioned_api_routes__Svmrx5V > /logs/artifacts/trial_id
+Command outputs captured
+Running command: mkdir -p ~/.pochi && cat << 'EOF' | sed -e "s/OPENAI_API_KEY/${OPENAI_API_KEY}/g" -e "s/DEEPINFRA_API_KEY/${DEEPINFRA_API_KEY}/g" > ~/.pochi/config.jsonc
+{
+  "providers": {
+    "deepinfra": {
+      "kind": "openai",
+      "baseURL": "https://api.deepinfra.com/v1/openai",
+      "apiKey": "DEEPINFRA_API_KEY",
+      "models": {
+        "zai-org/GLM-4.7-Flash": {
+          "name": "glm-4.7-flash"
+        },
+        "moonshotai/Kimi-K2.6": {
+          "name": "kimi-K2.6"
+        },
+        "deepseek-ai/DeepSeek-V4-Pro": {
+          "name": "DeepSeek-V4-Pro"
+        }
+      }
+    },
+    "openai": {
+      "kind": "openai",
+      "baseURL": "https://api.openai.com/v1",
+      "apiKey": "OPENAI_API_KEY",
+      "models": {
+        "gpt-5.4": {
+          "name": "gpt-5.4"
+        }
+      }
+    }
+  }
+}
+EOF
+Command outputs captured
+Running command: if [ -f /bootstrap/test_initial_state.py ]; then pytest -s --log-cli-level=DEBUG /bootstrap/test_initial_state.py > >(tee /logs/agent/pochi/initial-test-stdout.txt) 2> >(tee /logs/agent/pochi/initial-test-stderr.txt >&2); fi
+Command outputs captured
+Running command: pochi --model google/gemini-3.5-flash --max-steps 200 --max-retries 10 --blobs-dir /logs/agent/pochi/blobs --experimental-stream-trajectory /logs/agent/pochi/trajectory.jsonl > >(tee /logs/agent/pochi/stdout.txt) 2> >(tee /logs/agent/pochi/stderr.txt >&2) <<'EOF'
+# RedwoodSDK Versioned API Routes
+
+## Background
+Build a RedwoodSDK (rwsdk) worker application that exposes the same user resource under two API versions (`/v1` and `/v2`). Each version uses its own middleware to advertise an `X-API-Version` response header, and the response payload schema differs per version.
+
+## Requirements
+- Implement an HTTP API in a RedwoodSDK app using `defineApp` from `rwsdk/worker`.
+- Group the routes for each version using the `prefix()` helper from `rwsdk/router`.
+- Both `/v1` and `/v2` mount the same logical resource backed by a single shared in-memory user store.
+- For `/v1` responses, return user objects containing only `id` and `name` (no `email`).
+- For `/v2` responses, return user objects containing `id`, `name`, and `email`.
+- Apply a middleware to all `/v1/*` requests that sets the response header `X-API-Version: 1`.
+- Apply a separate middleware to all `/v2/*` requests that sets the response header `X-API-Version: 2`.
+- Handle unknown user IDs with HTTP 404 and a JSON body `{"error":"not_found"}`, while still emitting the appropriate `X-API-Version` header.
+
+## Implementation Hints
+- Scaffold a new project with `npx create-rwsdk@latest`.
+- The `prefix()` helper lets you group routes (and middleware) under a path segment.
+- Response headers can be mutated through the `response` object available on `requestInfo` (`response.headers.set(...)`).
+- Keep the user store as a plain in-memory array shared by both version handlers; do NOT persist to disk or any database.
+- Return JSON responses using `Response.json(...)` or `new Response(JSON.stringify(...), { headers: { 'content-type': 'application/json' } })`.
+
+## Acceptance Criteria
+- Project path: /home/user/myproject
+- Start command: npm run dev
+- Port: 5173
+- The dev server must bind to `0.0.0.0` and listen on port 5173 so external HTTP requests can reach it.
+- Seeded users (shared by both versions):
+  - `{id: "u1", name: "Alice", email: "alice@example.com"}`
+  - `{id: "u2", name: "Bob", email: "bob@example.com"}`
+  - `{id: "u3", name: "Cyrus", email: "cyrus@example.com"}`
+- API endpoints (all responses use `Content-Type: application/json`):
+  - `GET /v1/users` → 200, header `X-API-Version: 1`, JSON array of `{id, name}` objects (no `email` field).
+  - `GET /v1/users/:id` → 200, header `X-API-Version: 1`, JSON object `{id, name}` (no `email` field). For unknown id, 404 with body `{"error":"not_found"}` and header `X-API-Version: 1`.
+  - `GET /v2/users` → 200, header `X-API-Version: 2`, JSON array of `{id, name, email}` objects.
+  - `GET /v2/users/:id` → 200, header `X-API-Version: 2`, JSON object `{id, name, email}`. For unknown id, 404 with body `{"error":"not_found"}` and header `X-API-Version: 2`.
+- Routes must be grouped using the `prefix()` helper from `rwsdk/router`.
+- Both `/v1` and `/v2` must read from the same shared in-memory user store.
+
+
+EOF
+Command outputs captured
+Running command: rm -f ~/.pochi/config.jsonc
+Command outputs captured

@@ -1,0 +1,142 @@
+{
+    "results": {
+        "tool": {
+            "name": "pytest",
+            "version": "7.4.4"
+        },
+        "summary": {
+            "tests": 11,
+            "passed": 11,
+            "failed": 0,
+            "skipped": 0,
+            "pending": 0,
+            "other": 0,
+            "start": 1780943653658,
+            "stop": 1780943654426
+        },
+        "environment": {
+            "buildName": "Pytest JSON CTRF Report",
+            "buildNumber": "000",
+            "buildUrl": "https://ctrf.io"
+        },
+        "tests": [
+            {
+                "name": "test_final_state.py::test_v1_users_list_returns_id_name_only",
+                "status": "passed",
+                "duration": 168,
+                "start": 1780943653921,
+                "stop": 1780943654089,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_v1_user_detail_returns_id_name_only",
+                "status": "passed",
+                "duration": 28,
+                "start": 1780943654090,
+                "stop": 1780943654118,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "tags": [
+                    "parametrize::user::[{'id': 'u1', 'name': 'Alice', 'email': 'alice@example.com'}, {'id': 'u2', 'name': 'Bob', 'email': 'bob@example.com'}, {'id': 'u3', 'name': 'Cyrus', 'email': 'cyrus@example.com'}]::ids_['u1', 'u2', 'u3']"
+                ]
+            },
+            {
+                "name": "test_final_state.py::test_v1_user_detail_returns_id_name_only",
+                "status": "passed",
+                "duration": 26,
+                "start": 1780943654118,
+                "stop": 1780943654144,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "tags": [
+                    "parametrize::user::[{'id': 'u1', 'name': 'Alice', 'email': 'alice@example.com'}, {'id': 'u2', 'name': 'Bob', 'email': 'bob@example.com'}, {'id': 'u3', 'name': 'Cyrus', 'email': 'cyrus@example.com'}]::ids_['u1', 'u2', 'u3']"
+                ]
+            },
+            {
+                "name": "test_final_state.py::test_v1_user_detail_returns_id_name_only",
+                "status": "passed",
+                "duration": 23,
+                "start": 1780943654145,
+                "stop": 1780943654168,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "tags": [
+                    "parametrize::user::[{'id': 'u1', 'name': 'Alice', 'email': 'alice@example.com'}, {'id': 'u2', 'name': 'Bob', 'email': 'bob@example.com'}, {'id': 'u3', 'name': 'Cyrus', 'email': 'cyrus@example.com'}]::ids_['u1', 'u2', 'u3']"
+                ]
+            },
+            {
+                "name": "test_final_state.py::test_v1_unknown_user_returns_404",
+                "status": "passed",
+                "duration": 23,
+                "start": 1780943654169,
+                "stop": 1780943654192,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_v2_users_list_includes_email",
+                "status": "passed",
+                "duration": 27,
+                "start": 1780943654192,
+                "stop": 1780943654219,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_v2_user_detail_includes_email",
+                "status": "passed",
+                "duration": 26,
+                "start": 1780943654219,
+                "stop": 1780943654245,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "tags": [
+                    "parametrize::user::[{'id': 'u1', 'name': 'Alice', 'email': 'alice@example.com'}, {'id': 'u2', 'name': 'Bob', 'email': 'bob@example.com'}, {'id': 'u3', 'name': 'Cyrus', 'email': 'cyrus@example.com'}]::ids_['u1', 'u2', 'u3']"
+                ]
+            },
+            {
+                "name": "test_final_state.py::test_v2_user_detail_includes_email",
+                "status": "passed",
+                "duration": 28,
+                "start": 1780943654245,
+                "stop": 1780943654273,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "tags": [
+                    "parametrize::user::[{'id': 'u1', 'name': 'Alice', 'email': 'alice@example.com'}, {'id': 'u2', 'name': 'Bob', 'email': 'bob@example.com'}, {'id': 'u3', 'name': 'Cyrus', 'email': 'cyrus@example.com'}]::ids_['u1', 'u2', 'u3']"
+                ]
+            },
+            {
+                "name": "test_final_state.py::test_v2_user_detail_includes_email",
+                "status": "passed",
+                "duration": 23,
+                "start": 1780943654273,
+                "stop": 1780943654296,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "tags": [
+                    "parametrize::user::[{'id': 'u1', 'name': 'Alice', 'email': 'alice@example.com'}, {'id': 'u2', 'name': 'Bob', 'email': 'bob@example.com'}, {'id': 'u3', 'name': 'Cyrus', 'email': 'cyrus@example.com'}]::ids_['u1', 'u2', 'u3']"
+                ]
+            },
+            {
+                "name": "test_final_state.py::test_v2_unknown_user_returns_404",
+                "status": "passed",
+                "duration": 28,
+                "start": 1780943654296,
+                "stop": 1780943654324,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_version_headers_are_isolated",
+                "status": "passed",
+                "duration": 102,
+                "start": 1780943654324,
+                "stop": 1780943654426,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            }
+        ]
+    }
+}

@@ -1,0 +1,42 @@
+# Realtime Synced Like Counter with RedwoodSDK
+
+## Background
+RedwoodSDK (rwsdk) is a server-first React framework for Cloudflare Workers. It provides realtime state synchronization across all connected clients via the `useSyncedState` hook, which is backed by a Cloudflare Durable Object (`SyncedStateServer`).
+
+A baseline rwsdk project is already scaffolded at `/home/user/myproject` with `npm install` already run. The default `/` route currently returns a static greeting. Your job is to turn it into a shared, realtime "Like" counter that updates instantly across every open browser tab without a page refresh.
+
+## Requirements
+- Replace the home page (`/` route) with a UI that contains:
+  - A button whose visible label is exactly `Like`.
+  - An element that displays the current like count, marked with the attribute `data-testid="like-count"`.
+- Clicking the `Like` button must increment a shared counter that is synchronized in real time across all connected clients using `useSyncedState` from `rwsdk/use-synced-state/client`.
+- The counter value must be globally shared (one counter for the whole app, not per-room).
+- The realtime backend must be powered by the `SyncedStateServer` Durable Object provided by rwsdk; do not implement your own WebSocket server or polling loop.
+- The HTML `Document` shell must include the client hydration script `<script type="module" src="/src/client.tsx"></script>` so the client component actually hydrates and event handlers run.
+- `wrangler.jsonc` must register `SyncedStateServer` as a Durable Object binding named `SYNCED_STATE_SERVER` and must declare it as a `new_sqlite_classes` migration so the Durable Object can boot.
+- The development server must start cleanly with `npm run dev` and serve the application on port `5173`.
+
+## Implementation Hints
+- The interactive part of the page must run on the client, so put it inside a component whose file starts with the `"use client"` directive.
+- The synced counter hook lives in `rwsdk/use-synced-state/client`. It behaves like `useState`, but takes a unique key as its second argument.
+- The Durable Object class and the route helpers needed by `useSyncedState` come from `rwsdk/use-synced-state/worker` (`SyncedStateServer` and `syncedStateRoutes`). The Durable Object class must be `export`ed from the worker entry so Cloudflare can find it, and `syncedStateRoutes` must be wired into `defineApp`.
+- Verify that the `Document` component is the one used by `render(Document, ...)` and that it includes the client hydration `<script>` tag, otherwise the button click will be a no-op.
+- After editing `wrangler.jsonc`, no manual `wrangler types` step is required for the tests to pass.
+- You do not need to persist state to D1; the in-memory state inside the Durable Object is enough for this task.
+
+## Acceptance Criteria
+- Project path: /home/user/myproject
+- Start command: npm run dev
+- Port: 5173
+- Routes / UI:
+  - GET `/`: Returns an HTML page that, after client hydration, contains:
+    - A `<button>` whose text content is exactly `Like`.
+    - An element with attribute `data-testid="like-count"` whose text content is the current synced count as a base-10 integer (initial value `0`).
+- Realtime behavior (observable in a browser):
+  - When two browser contexts both have `/` open and one of them clicks the `Like` button, the `data-testid="like-count"` value in the OTHER context updates to the new count within a few seconds, without a page reload.
+  - Clicking the button N times in one tab eventually makes the count in every other open tab equal to the same value.
+- `wrangler.jsonc` must:
+  - Declare a Durable Object binding with `name: "SYNCED_STATE_SERVER"` and `class_name: "SyncedStateServer"`.
+  - Include a migrations entry that lists `"SyncedStateServer"` under `new_sqlite_classes`.
+- The Document shell served at `/` must include `<script type="module" src="/src/client.tsx"></script>`.
+

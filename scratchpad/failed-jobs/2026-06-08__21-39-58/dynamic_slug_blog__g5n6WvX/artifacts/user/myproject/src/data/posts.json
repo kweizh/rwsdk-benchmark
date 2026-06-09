@@ -1,0 +1,23 @@
+[
+  {
+    "slug": "hello-rwsdk",
+    "title": "Hello, RedwoodSDK",
+    "author": "Pochi",
+    "published": "2025-06-01",
+    "body": "# Hello, RedwoodSDK\n\nWelcome to the world of **RedwoodSDK**! This is a full-stack framework built on top of Cloudflare Workers, React Server Components, and Vite.\n\n## Why RedwoodSDK?\n\nRedwoodSDK gives you:\n\n- **Server-side rendering** out of the box\n- **React Server Components** for optimal performance\n- **Edge computing** with Cloudflare Workers\n- **TypeScript** support from day one\n\nGet started by creating your first route and deploying to the edge!\n"
+  },
+  {
+    "slug": "cf-edge-tips",
+    "title": "Cloudflare Edge Tips & Tricks",
+    "author": "Pochi",
+    "published": "2025-05-15",
+    "body": "# Cloudflare Edge Tips & Tricks\n\nRunning your app at the edge comes with unique challenges and opportunities. Here are some tips to get the most out of Cloudflare Workers.\n\n## 1. Keep It Light\n\nWorkers have a **CPU time limit**. Avoid heavy computation in your request handlers.\n\n## 2. Use KV and D1\n\nCloudflare's storage products integrate seamlessly:\n\n- **KV** for key-value storage\n- **D1** for relational data at the edge\n- **R2** for object storage\n\n## 3. Cache Aggressively\n\nUse the Cache API to store responses and reduce origin load.\n\n```js\nconst cache = caches.default;\nconst cached = await cache.match(request);\nif (cached) return cached;\n```\n\nHappy edge computing!\n"
+  },
+  {
+    "slug": "react-rsc-101",
+    "title": "React Server Components 101",
+    "author": "Pochi",
+    "published": "2025-04-20",
+    "body": "# React Server Components 101\n\nReact Server Components (RSC) represent a paradigm shift in how we build React applications.\n\n## What Are Server Components?\n\nServer Components are React components that **run exclusively on the server**. They can:\n\n- Access backend resources directly (databases, file systems)\n- Reduce client-side JavaScript bundle size\n- Keep sensitive data on the server\n\n## Server vs Client Components\n\n| Feature | Server | Client |\n|---------|--------|--------|\n| Interactivity | No | Yes |\n| Data fetching | Direct | Via API |\n| Bundle impact | Zero | Full |\n\nUse `\"use client\"` directive to mark components that need interactivity.\n\nRSC is the future of React — embrace it!\n"
+  }
+]

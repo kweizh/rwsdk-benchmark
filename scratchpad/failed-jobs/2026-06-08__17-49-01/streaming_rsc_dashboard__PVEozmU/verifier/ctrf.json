@@ -1,0 +1,55 @@
+{
+    "results": {
+        "tool": {
+            "name": "pytest",
+            "version": "7.4.4"
+        },
+        "summary": {
+            "tests": 3,
+            "passed": 2,
+            "failed": 1,
+            "skipped": 0,
+            "pending": 0,
+            "other": 0,
+            "start": 1780944395234,
+            "stop": 1780944499795
+        },
+        "environment": {
+            "buildName": "Pytest JSON CTRF Report",
+            "buildNumber": "000",
+            "buildUrl": "https://ctrf.io"
+        },
+        "tests": [
+            {
+                "name": "test_final_state.py::test_dashboard_streams_loading_markers_first",
+                "status": "failed",
+                "raw_status": "call_failed",
+                "duration": 10273,
+                "start": 1780944395540,
+                "stop": 1780944405813,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "start_app = None\n\n    def test_dashboard_streams_loading_markers_first(start_app):\n        \"\"\"The initial chunk of /dashboard must contain all three loading markers,\n        received before the slowest 3s panel can resolve.\"\"\"\n        start = time.time()\n        chunk = b\"\"\n        with requests.get(DASHBOARD_URL, stream=True, timeout=15) as resp:\n            assert resp.status_code == 200, (\n                f\"GET {DASHBOARD_URL} returned status {resp.status_code}; expected 200.\"\n            )\n            # Read until we have ~32KB OR 0.8s have elapsed (well under the 3s slowest panel).\n            for raw in resp.iter_content(chunk_size=1024):\n                if raw:\n                    chunk += raw\n                if len(chunk) >= 32 * 1024:\n                    break\n                if time.time() - start > 0.8:\n                    break\n    \n        html = chunk.decode(\"utf-8\", errors=\"ignore\")\n    \n        for panel in PANEL_NAMES:\n            assert _panel_marker_present(html, panel, \"loading\"), (\n                f\"Initial streamed chunk does not contain a loading marker for panel \"\n                f\"'{panel}' (expected an element with both data-panel=\\\"{panel}\\\" and \"\n                f\"data-state=\\\"loading\\\"). Got prefix: {html[:1000]!r}\"\n            )\n    \n        # The final values must NOT have arrived yet in the very first chunk.\n        for panel, final_text in PANEL_FINAL_TEXT.items():\n>           assert final_text not in html, (\n                f\"Initial streamed chunk already contains final value '{final_text}' for \"\n                f\"panel '{panel}'; the page does not appear to be streaming progressively.\"\n            )\nE           AssertionError: Initial streamed chunk already contains final value '$12,345' for panel 'revenue'; the page does not appear to be streaming progressively.\nE           assert '$12,345' not in '<!DOCTYPE h...n\")</script>'\nE             '$12,345' is contained here:\nE               dren\\\":\\\"$$12,345\\\"},null,\\\"$25\\\",1]\\n\")</script>\nE             ?           +++++++\n\ntests/test_final_state.py:126: AssertionError",
+                "message": "The test failed in the call phase due to an assertion error"
+            },
+            {
+                "name": "test_final_state.py::test_dashboard_full_response_contains_final_values",
+                "status": "passed",
+                "duration": 3027,
+                "start": 1780944405814,
+                "stop": 1780944408841,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_dashboard_browser_verification",
+                "status": "passed",
+                "duration": 90952,
+                "start": 1780944408842,
+                "stop": 1780944499794,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            }
+        ]
+    }
+}

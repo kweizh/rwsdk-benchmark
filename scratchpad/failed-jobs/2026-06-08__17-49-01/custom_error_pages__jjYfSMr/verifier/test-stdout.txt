@@ -1,0 +1,518 @@
+============================= test session starts ==============================
+platform linux -- Python 3.12.3, pytest-7.4.4, pluggy-1.4.0
+rootdir: /tests
+plugins: xprocess-1.0.2, json-ctrf-0.5.0
+collected 8 items
+
+tests/test_final_state.py EEEEEEEE                                       [100%]
+
+==================================== ERRORS ====================================
+_____________ ERROR at setup of test_home_returns_200_with_welcome _____________
+
+xprocess = <xprocess.xprocess.XProcess object at 0x7f0ef9d6b230>
+
+    @pytest.fixture(scope="session")
+    def start_app(xprocess):
+        """Start the RedwoodSDK dev server using xprocess."""
+    
+        class Starter(ProcessStarter):
+            name = "rwsdk_dev_server"
+            args = ["npm", "run", "dev"]
+            env = os.environ.copy()
+            popen_kwargs = {
+                "cwd": PROJECT_DIR,
+                "text": True,
+            }
+            timeout = 300
+            terminate_on_interrupt = True
+    
+            def startup_check(self):
+                try:
+                    with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
+                        s.settimeout(2)
+                        if s.connect_ex(("localhost", APP_PORT)) != 0:
+                            return False
+                    # Any HTTP response (even error) means the server is up.
+                    resp = requests.get(f"{BASE_URL}/", timeout=10)
+                    return resp.status_code < 600
+                except Exception:
+                    return False
+    
+>       xprocess.ensure(Starter.name, Starter)
+
+tests/test_final_state.py:46: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+usr/local/lib/python3.12/dist-packages/xprocess/xprocess.py:284: in ensure
+    if not starter.wait(log_file_handle):
+usr/local/lib/python3.12/dist-packages/xprocess/xprocess.py:413: in wait
+    callback_ok = self.wait_callback()
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <test_final_state.start_app.<locals>.Starter object at 0x7f0ef927e8a0>
+
+    def wait_callback(self):
+        """Assert that process is ready to answer queries using provided
+        callback funtion. Will raise TimeoutError if self.callback does not
+        return True before self.timeout seconds"""
+        while True:
+            sleep(0.1)
+            if self.startup_check():
+                return True
+            if datetime.now() > self._max_time:
+>               raise TimeoutError(
+                    "The provided startup callback could not assert process\
+                    responsiveness within the specified time interval of {} \
+                    seconds".format(
+                        self.timeout
+                    )
+                )
+E               TimeoutError: The provided startup callback could not assert process                    responsiveness within the specified time interval of 300                     seconds
+
+usr/local/lib/python3.12/dist-packages/xprocess/xprocess.py:391: TimeoutError
+---------------------------- Captured stdout setup -----------------------------
+/tests/.pytest_cache/d/.xprocess/rwsdk_dev_server$ npm run dev
+process 'rwsdk_dev_server' started pid=1824
+_____ ERROR at setup of test_unmatched_html_route_returns_404_custom_page ______
+
+xprocess = <xprocess.xprocess.XProcess object at 0x7f0ef9d6b230>
+
+    @pytest.fixture(scope="session")
+    def start_app(xprocess):
+        """Start the RedwoodSDK dev server using xprocess."""
+    
+        class Starter(ProcessStarter):
+            name = "rwsdk_dev_server"
+            args = ["npm", "run", "dev"]
+            env = os.environ.copy()
+            popen_kwargs = {
+                "cwd": PROJECT_DIR,
+                "text": True,
+            }
+            timeout = 300
+            terminate_on_interrupt = True
+    
+            def startup_check(self):
+                try:
+                    with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
+                        s.settimeout(2)
+                        if s.connect_ex(("localhost", APP_PORT)) != 0:
+                            return False
+                    # Any HTTP response (even error) means the server is up.
+                    resp = requests.get(f"{BASE_URL}/", timeout=10)
+                    return resp.status_code < 600
+                except Exception:
+                    return False
+    
+>       xprocess.ensure(Starter.name, Starter)
+
+tests/test_final_state.py:46: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+usr/local/lib/python3.12/dist-packages/xprocess/xprocess.py:284: in ensure
+    if not starter.wait(log_file_handle):
+usr/local/lib/python3.12/dist-packages/xprocess/xprocess.py:413: in wait
+    callback_ok = self.wait_callback()
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <test_final_state.start_app.<locals>.Starter object at 0x7f0ef927e8a0>
+
+    def wait_callback(self):
+        """Assert that process is ready to answer queries using provided
+        callback funtion. Will raise TimeoutError if self.callback does not
+        return True before self.timeout seconds"""
+        while True:
+            sleep(0.1)
+            if self.startup_check():
+                return True
+            if datetime.now() > self._max_time:
+>               raise TimeoutError(
+                    "The provided startup callback could not assert process\
+                    responsiveness within the specified time interval of {} \
+                    seconds".format(
+                        self.timeout
+                    )
+                )
+E               TimeoutError: The provided startup callback could not assert process                    responsiveness within the specified time interval of 300                     seconds
+
+usr/local/lib/python3.12/dist-packages/xprocess/xprocess.py:391: TimeoutError
+__ ERROR at setup of test_unmatched_html_nested_route_returns_404_custom_page __
+
+xprocess = <xprocess.xprocess.XProcess object at 0x7f0ef9d6b230>
+
+    @pytest.fixture(scope="session")
+    def start_app(xprocess):
+        """Start the RedwoodSDK dev server using xprocess."""
+    
+        class Starter(ProcessStarter):
+            name = "rwsdk_dev_server"
+            args = ["npm", "run", "dev"]
+            env = os.environ.copy()
+            popen_kwargs = {
+                "cwd": PROJECT_DIR,
+                "text": True,
+            }
+            timeout = 300
+            terminate_on_interrupt = True
+    
+            def startup_check(self):
+                try:
+                    with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
+                        s.settimeout(2)
+                        if s.connect_ex(("localhost", APP_PORT)) != 0:
+                            return False
+                    # Any HTTP response (even error) means the server is up.
+                    resp = requests.get(f"{BASE_URL}/", timeout=10)
+                    return resp.status_code < 600
+                except Exception:
+                    return False
+    
+>       xprocess.ensure(Starter.name, Starter)
+
+tests/test_final_state.py:46: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+usr/local/lib/python3.12/dist-packages/xprocess/xprocess.py:284: in ensure
+    if not starter.wait(log_file_handle):
+usr/local/lib/python3.12/dist-packages/xprocess/xprocess.py:413: in wait
+    callback_ok = self.wait_callback()
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <test_final_state.start_app.<locals>.Starter object at 0x7f0ef927e8a0>
+
+    def wait_callback(self):
+        """Assert that process is ready to answer queries using provided
+        callback funtion. Will raise TimeoutError if self.callback does not
+        return True before self.timeout seconds"""
+        while True:
+            sleep(0.1)
+            if self.startup_check():
+                return True
+            if datetime.now() > self._max_time:
+>               raise TimeoutError(
+                    "The provided startup callback could not assert process\
+                    responsiveness within the specified time interval of {} \
+                    seconds".format(
+                        self.timeout
+                    )
+                )
+E               TimeoutError: The provided startup callback could not assert process                    responsiveness within the specified time interval of 300                     seconds
+
+usr/local/lib/python3.12/dist-packages/xprocess/xprocess.py:391: TimeoutError
+_____ ERROR at setup of test_boom_returns_500_html_and_does_not_leak_error _____
+
+xprocess = <xprocess.xprocess.XProcess object at 0x7f0ef9d6b230>
+
+    @pytest.fixture(scope="session")
+    def start_app(xprocess):
+        """Start the RedwoodSDK dev server using xprocess."""
+    
+        class Starter(ProcessStarter):
+            name = "rwsdk_dev_server"
+            args = ["npm", "run", "dev"]
+            env = os.environ.copy()
+            popen_kwargs = {
+                "cwd": PROJECT_DIR,
+                "text": True,
+            }
+            timeout = 300
+            terminate_on_interrupt = True
+    
+            def startup_check(self):
+                try:
+                    with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
+                        s.settimeout(2)
+                        if s.connect_ex(("localhost", APP_PORT)) != 0:
+                            return False
+                    # Any HTTP response (even error) means the server is up.
+                    resp = requests.get(f"{BASE_URL}/", timeout=10)
+                    return resp.status_code < 600
+                except Exception:
+                    return False
+    
+>       xprocess.ensure(Starter.name, Starter)
+
+tests/test_final_state.py:46: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+usr/local/lib/python3.12/dist-packages/xprocess/xprocess.py:284: in ensure
+    if not starter.wait(log_file_handle):
+usr/local/lib/python3.12/dist-packages/xprocess/xprocess.py:413: in wait
+    callback_ok = self.wait_callback()
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <test_final_state.start_app.<locals>.Starter object at 0x7f0ef927e8a0>
+
+    def wait_callback(self):
+        """Assert that process is ready to answer queries using provided
+        callback funtion. Will raise TimeoutError if self.callback does not
+        return True before self.timeout seconds"""
+        while True:
+            sleep(0.1)
+            if self.startup_check():
+                return True
+            if datetime.now() > self._max_time:
+>               raise TimeoutError(
+                    "The provided startup callback could not assert process\
+                    responsiveness within the specified time interval of {} \
+                    seconds".format(
+                        self.timeout
+                    )
+                )
+E               TimeoutError: The provided startup callback could not assert process                    responsiveness within the specified time interval of 300                     seconds
+
+usr/local/lib/python3.12/dist-packages/xprocess/xprocess.py:391: TimeoutError
+___________ ERROR at setup of test_api_unknown_path_returns_json_404 ___________
+
+xprocess = <xprocess.xprocess.XProcess object at 0x7f0ef9d6b230>
+
+    @pytest.fixture(scope="session")
+    def start_app(xprocess):
+        """Start the RedwoodSDK dev server using xprocess."""
+    
+        class Starter(ProcessStarter):
+            name = "rwsdk_dev_server"
+            args = ["npm", "run", "dev"]
+            env = os.environ.copy()
+            popen_kwargs = {
+                "cwd": PROJECT_DIR,
+                "text": True,
+            }
+            timeout = 300
+            terminate_on_interrupt = True
+    
+            def startup_check(self):
+                try:
+                    with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
+                        s.settimeout(2)
+                        if s.connect_ex(("localhost", APP_PORT)) != 0:
+                            return False
+                    # Any HTTP response (even error) means the server is up.
+                    resp = requests.get(f"{BASE_URL}/", timeout=10)
+                    return resp.status_code < 600
+                except Exception:
+                    return False
+    
+>       xprocess.ensure(Starter.name, Starter)
+
+tests/test_final_state.py:46: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+usr/local/lib/python3.12/dist-packages/xprocess/xprocess.py:284: in ensure
+    if not starter.wait(log_file_handle):
+usr/local/lib/python3.12/dist-packages/xprocess/xprocess.py:413: in wait
+    callback_ok = self.wait_callback()
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <test_final_state.start_app.<locals>.Starter object at 0x7f0ef927e8a0>
+
+    def wait_callback(self):
+        """Assert that process is ready to answer queries using provided
+        callback funtion. Will raise TimeoutError if self.callback does not
+        return True before self.timeout seconds"""
+        while True:
+            sleep(0.1)
+            if self.startup_check():
+                return True
+            if datetime.now() > self._max_time:
+>               raise TimeoutError(
+                    "The provided startup callback could not assert process\
+                    responsiveness within the specified time interval of {} \
+                    seconds".format(
+                        self.timeout
+                    )
+                )
+E               TimeoutError: The provided startup callback could not assert process                    responsiveness within the specified time interval of 300                     seconds
+
+usr/local/lib/python3.12/dist-packages/xprocess/xprocess.py:391: TimeoutError
+________ ERROR at setup of test_api_unknown_deep_path_returns_json_404 _________
+
+xprocess = <xprocess.xprocess.XProcess object at 0x7f0ef9d6b230>
+
+    @pytest.fixture(scope="session")
+    def start_app(xprocess):
+        """Start the RedwoodSDK dev server using xprocess."""
+    
+        class Starter(ProcessStarter):
+            name = "rwsdk_dev_server"
+            args = ["npm", "run", "dev"]
+            env = os.environ.copy()
+            popen_kwargs = {
+                "cwd": PROJECT_DIR,
+                "text": True,
+            }
+            timeout = 300
+            terminate_on_interrupt = True
+    
+            def startup_check(self):
+                try:
+                    with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
+                        s.settimeout(2)
+                        if s.connect_ex(("localhost", APP_PORT)) != 0:
+                            return False
+                    # Any HTTP response (even error) means the server is up.
+                    resp = requests.get(f"{BASE_URL}/", timeout=10)
+                    return resp.status_code < 600
+                except Exception:
+                    return False
+    
+>       xprocess.ensure(Starter.name, Starter)
+
+tests/test_final_state.py:46: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+usr/local/lib/python3.12/dist-packages/xprocess/xprocess.py:284: in ensure
+    if not starter.wait(log_file_handle):
+usr/local/lib/python3.12/dist-packages/xprocess/xprocess.py:413: in wait
+    callback_ok = self.wait_callback()
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <test_final_state.start_app.<locals>.Starter object at 0x7f0ef927e8a0>
+
+    def wait_callback(self):
+        """Assert that process is ready to answer queries using provided
+        callback funtion. Will raise TimeoutError if self.callback does not
+        return True before self.timeout seconds"""
+        while True:
+            sleep(0.1)
+            if self.startup_check():
+                return True
+            if datetime.now() > self._max_time:
+>               raise TimeoutError(
+                    "The provided startup callback could not assert process\
+                    responsiveness within the specified time interval of {} \
+                    seconds".format(
+                        self.timeout
+                    )
+                )
+E               TimeoutError: The provided startup callback could not assert process                    responsiveness within the specified time interval of 300                     seconds
+
+usr/local/lib/python3.12/dist-packages/xprocess/xprocess.py:391: TimeoutError
+___ ERROR at setup of test_api_boom_returns_json_500_and_does_not_leak_error ___
+
+xprocess = <xprocess.xprocess.XProcess object at 0x7f0ef9d6b230>
+
+    @pytest.fixture(scope="session")
+    def start_app(xprocess):
+        """Start the RedwoodSDK dev server using xprocess."""
+    
+        class Starter(ProcessStarter):
+            name = "rwsdk_dev_server"
+            args = ["npm", "run", "dev"]
+            env = os.environ.copy()
+            popen_kwargs = {
+                "cwd": PROJECT_DIR,
+                "text": True,
+            }
+            timeout = 300
+            terminate_on_interrupt = True
+    
+            def startup_check(self):
+                try:
+                    with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
+                        s.settimeout(2)
+                        if s.connect_ex(("localhost", APP_PORT)) != 0:
+                            return False
+                    # Any HTTP response (even error) means the server is up.
+                    resp = requests.get(f"{BASE_URL}/", timeout=10)
+                    return resp.status_code < 600
+                except Exception:
+                    return False
+    
+>       xprocess.ensure(Starter.name, Starter)
+
+tests/test_final_state.py:46: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+usr/local/lib/python3.12/dist-packages/xprocess/xprocess.py:284: in ensure
+    if not starter.wait(log_file_handle):
+usr/local/lib/python3.12/dist-packages/xprocess/xprocess.py:413: in wait
+    callback_ok = self.wait_callback()
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <test_final_state.start_app.<locals>.Starter object at 0x7f0ef927e8a0>
+
+    def wait_callback(self):
+        """Assert that process is ready to answer queries using provided
+        callback funtion. Will raise TimeoutError if self.callback does not
+        return True before self.timeout seconds"""
+        while True:
+            sleep(0.1)
+            if self.startup_check():
+                return True
+            if datetime.now() > self._max_time:
+>               raise TimeoutError(
+                    "The provided startup callback could not assert process\
+                    responsiveness within the specified time interval of {} \
+                    seconds".format(
+                        self.timeout
+                    )
+                )
+E               TimeoutError: The provided startup callback could not assert process                    responsiveness within the specified time interval of 300                     seconds
+
+usr/local/lib/python3.12/dist-packages/xprocess/xprocess.py:391: TimeoutError
+______ ERROR at setup of test_server_remains_stable_after_throwing_routes ______
+
+xprocess = <xprocess.xprocess.XProcess object at 0x7f0ef9d6b230>
+
+    @pytest.fixture(scope="session")
+    def start_app(xprocess):
+        """Start the RedwoodSDK dev server using xprocess."""
+    
+        class Starter(ProcessStarter):
+            name = "rwsdk_dev_server"
+            args = ["npm", "run", "dev"]
+            env = os.environ.copy()
+            popen_kwargs = {
+                "cwd": PROJECT_DIR,
+                "text": True,
+            }
+            timeout = 300
+            terminate_on_interrupt = True
+    
+            def startup_check(self):
+                try:
+                    with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
+                        s.settimeout(2)
+                        if s.connect_ex(("localhost", APP_PORT)) != 0:
+                            return False
+                    # Any HTTP response (even error) means the server is up.
+                    resp = requests.get(f"{BASE_URL}/", timeout=10)
+                    return resp.status_code < 600
+                except Exception:
+                    return False
+    
+>       xprocess.ensure(Starter.name, Starter)
+
+tests/test_final_state.py:46: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+usr/local/lib/python3.12/dist-packages/xprocess/xprocess.py:284: in ensure
+    if not starter.wait(log_file_handle):
+usr/local/lib/python3.12/dist-packages/xprocess/xprocess.py:413: in wait
+    callback_ok = self.wait_callback()
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <test_final_state.start_app.<locals>.Starter object at 0x7f0ef927e8a0>
+
+    def wait_callback(self):
+        """Assert that process is ready to answer queries using provided
+        callback funtion. Will raise TimeoutError if self.callback does not
+        return True before self.timeout seconds"""
+        while True:
+            sleep(0.1)
+            if self.startup_check():
+                return True
+            if datetime.now() > self._max_time:
+>               raise TimeoutError(
+                    "The provided startup callback could not assert process\
+                    responsiveness within the specified time interval of {} \
+                    seconds".format(
+                        self.timeout
+                    )
+                )
+E               TimeoutError: The provided startup callback could not assert process                    responsiveness within the specified time interval of 300                     seconds
+
+usr/local/lib/python3.12/dist-packages/xprocess/xprocess.py:391: TimeoutError
+=========================== short test summary info ============================
+ERROR tests/test_final_state.py::test_home_returns_200_with_welcome - Timeout...
+ERROR tests/test_final_state.py::test_unmatched_html_route_returns_404_custom_page
+ERROR tests/test_final_state.py::test_unmatched_html_nested_route_returns_404_custom_page
+ERROR tests/test_final_state.py::test_boom_returns_500_html_and_does_not_leak_error
+ERROR tests/test_final_state.py::test_api_unknown_path_returns_json_404 - Tim...
+ERROR tests/test_final_state.py::test_api_unknown_deep_path_returns_json_404
+ERROR tests/test_final_state.py::test_api_boom_returns_json_500_and_does_not_leak_error
+ERROR tests/test_final_state.py::test_server_remains_stable_after_throwing_routes
+======================== 8 errors in 300.65s (0:05:00) =========================

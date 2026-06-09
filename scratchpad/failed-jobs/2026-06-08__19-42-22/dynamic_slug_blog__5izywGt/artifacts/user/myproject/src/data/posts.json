@@ -1,0 +1,23 @@
+[
+  {
+    "slug": "hello-rwsdk",
+    "title": "Hello RedwoodSDK",
+    "author": "Tom Preston-Werner",
+    "publishedDate": "2024-06-01",
+    "body": "# Hello RedwoodSDK\n\nWelcome to **RedwoodSDK**. This is the first post. It shows how easy it is to render markdown! Let's write some more content to make sure it's longer than 100 characters so we can test the meta description correctly."
+  },
+  {
+    "slug": "cf-edge-tips",
+    "title": "Cloudflare Edge Tips",
+    "author": "Jane Doe",
+    "publishedDate": "2024-06-02",
+    "body": "# Cloudflare Edge Tips\n\nRunning on the edge is fast. Here are some tips for running RedwoodSDK on Cloudflare Workers. 1. Use Wrangler. 2. Profit. We need more than 100 characters again just in case."
+  },
+  {
+    "slug": "react-rsc-101",
+    "title": "React Server Components 101",
+    "author": "John Smith",
+    "publishedDate": "2024-06-03",
+    "body": "# React Server Components 101\n\nRSCs are the future. You can fetch data right in your components! This is a great feature of modern React and RedwoodSDK supports it out of the box."
+  }
+]

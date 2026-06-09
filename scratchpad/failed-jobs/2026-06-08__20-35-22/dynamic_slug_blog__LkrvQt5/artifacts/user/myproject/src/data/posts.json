@@ -1,0 +1,23 @@
+[
+  {
+    "slug": "hello-rwsdk",
+    "title": "Hello RedwoodSDK",
+    "author": "Tom Preston-Werner",
+    "published": "2026-01-15",
+    "body": "# Hello RedwoodSDK\n\nThis is our very first blog post. Welcome to the **RedwoodSDK** blog!\n\nRedwoodSDK lets you build fast, server-rendered applications on Cloudflare Workers.\n\n## Features\n\n- Server-side rendering\n- React Server Components\n- Edge-first deployment\n\n```js\nconsole.log('Hello from the edge!');\n```\n\nStay tuned for more posts."
+  },
+  {
+    "slug": "cf-edge-tips",
+    "title": "Cloudflare Edge Tips",
+    "author": "Sarah Chen",
+    "published": "2026-03-22",
+    "body": "# Cloudflare Edge Tips\n\nRunning at the edge means thinking differently about latency, data locality, and cold starts.\n\n## Tip 1: Minimize Cold Starts\n\nKeep your Worker bundle small and use minimal dependencies.\n\n## Tip 2: Cache Aggressively\n\nUse the Cache API to store responses at the edge:\n\n```js\nconst cache = caches.default;\nawait cache.put(request, response);\n```\n\n## Tip 3: Use KV for Config\n\nWorkers KV is great for read-heavy configuration data.\n\nThat's it for now — happy edge computing!"
+  },
+  {
+    "slug": "react-rsc-101",
+    "title": "React RSC 101",
+    "author": "Lee Robinson",
+    "published": "2026-05-10",
+    "body": "# React RSC 101\n\nReact Server Components (RSC) let you render components on the server, sending only the result to the client.\n\n## Why RSC?\n\n- **Less JavaScript** shipped to the browser\n- **Direct data access** from server-side databases\n- **Streaming** support out of the box\n\n## A Simple Server Component\n\n```jsx\nexport async function Post({ id }) {\n  const post = await db.post.findUnique({ where: { id } });\n  return <article>{post.content}</article>;\n}\n```\n\n## Client Boundaries\n\nUse `\"use client\"` to mark components that need interactivity.\n\nRSC is the future of React — embrace it!"
+  }
+]

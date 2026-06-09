@@ -1,0 +1,497 @@
+============================= test session starts ==============================
+platform linux -- Python 3.12.3, pytest-7.4.4, pluggy-1.4.0
+rootdir: /tests
+plugins: xprocess-1.0.2, json-ctrf-0.5.0
+collected 7 items
+
+tests/test_final_state.py EEEEEEE                                        [100%]
+
+==================================== ERRORS ====================================
+________ ERROR at setup of test_board_page_has_client_hydration_script _________
+
+xprocess = <xprocess.xprocess.XProcess object at 0x7fca221ef830>
+
+    @pytest.fixture(scope="session")
+    def start_app(xprocess):
+        """Start the RedwoodSDK dev server (Vite + miniflare) for the project."""
+    
+        class Starter(ProcessStarter):
+            name = "rwsdk_dev"
+            args = [
+                "npm",
+                "run",
+                "dev",
+                "--",
+                "--host",
+                "0.0.0.0",
+                "--port",
+                str(PORT),
+            ]
+            # CRITICAL: set `env` as a class attribute here, NEVER inside `popen_kwargs`.
+            env = os.environ.copy()
+            env.setdefault("CI", "1")
+            env.setdefault("NODE_ENV", "development")
+            popen_kwargs = {
+                "cwd": PROJECT_DIR,
+                "text": True,
+            }
+            # Generous timeout: rwsdk needs Vite + miniflare warm-up.
+            timeout = 300
+            terminate_on_interrupt = True
+    
+            def startup_check(self):
+                if not _port_open(HOST, PORT):
+                    return False
+                return _http_ok(BASE_URL + "/")
+    
+>       xprocess.ensure(Starter.name, Starter)
+
+tests/test_final_state.py:80: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+usr/local/lib/python3.12/dist-packages/xprocess/xprocess.py:284: in ensure
+    if not starter.wait(log_file_handle):
+usr/local/lib/python3.12/dist-packages/xprocess/xprocess.py:413: in wait
+    callback_ok = self.wait_callback()
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <test_final_state.start_app.<locals>.Starter object at 0x7fca216fb0b0>
+
+    def wait_callback(self):
+        """Assert that process is ready to answer queries using provided
+        callback funtion. Will raise TimeoutError if self.callback does not
+        return True before self.timeout seconds"""
+        while True:
+            sleep(0.1)
+            if self.startup_check():
+                return True
+            if datetime.now() > self._max_time:
+>               raise TimeoutError(
+                    "The provided startup callback could not assert process\
+                    responsiveness within the specified time interval of {} \
+                    seconds".format(
+                        self.timeout
+                    )
+                )
+E               TimeoutError: The provided startup callback could not assert process                    responsiveness within the specified time interval of 300                     seconds
+
+usr/local/lib/python3.12/dist-packages/xprocess/xprocess.py:391: TimeoutError
+---------------------------- Captured stdout setup -----------------------------
+/tests/.pytest_cache/d/.xprocess/rwsdk_dev$ npm run dev -- --host 0.0.0.0 --port 5173
+process 'rwsdk_dev' started pid=1066
+_____________ ERROR at setup of test_initial_board_state_is_empty ______________
+
+xprocess = <xprocess.xprocess.XProcess object at 0x7fca221ef830>
+
+    @pytest.fixture(scope="session")
+    def start_app(xprocess):
+        """Start the RedwoodSDK dev server (Vite + miniflare) for the project."""
+    
+        class Starter(ProcessStarter):
+            name = "rwsdk_dev"
+            args = [
+                "npm",
+                "run",
+                "dev",
+                "--",
+                "--host",
+                "0.0.0.0",
+                "--port",
+                str(PORT),
+            ]
+            # CRITICAL: set `env` as a class attribute here, NEVER inside `popen_kwargs`.
+            env = os.environ.copy()
+            env.setdefault("CI", "1")
+            env.setdefault("NODE_ENV", "development")
+            popen_kwargs = {
+                "cwd": PROJECT_DIR,
+                "text": True,
+            }
+            # Generous timeout: rwsdk needs Vite + miniflare warm-up.
+            timeout = 300
+            terminate_on_interrupt = True
+    
+            def startup_check(self):
+                if not _port_open(HOST, PORT):
+                    return False
+                return _http_ok(BASE_URL + "/")
+    
+>       xprocess.ensure(Starter.name, Starter)
+
+tests/test_final_state.py:80: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+usr/local/lib/python3.12/dist-packages/xprocess/xprocess.py:284: in ensure
+    if not starter.wait(log_file_handle):
+usr/local/lib/python3.12/dist-packages/xprocess/xprocess.py:413: in wait
+    callback_ok = self.wait_callback()
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <test_final_state.start_app.<locals>.Starter object at 0x7fca216fb0b0>
+
+    def wait_callback(self):
+        """Assert that process is ready to answer queries using provided
+        callback funtion. Will raise TimeoutError if self.callback does not
+        return True before self.timeout seconds"""
+        while True:
+            sleep(0.1)
+            if self.startup_check():
+                return True
+            if datetime.now() > self._max_time:
+>               raise TimeoutError(
+                    "The provided startup callback could not assert process\
+                    responsiveness within the specified time interval of {} \
+                    seconds".format(
+                        self.timeout
+                    )
+                )
+E               TimeoutError: The provided startup callback could not assert process                    responsiveness within the specified time interval of 300                     seconds
+
+usr/local/lib/python3.12/dist-packages/xprocess/xprocess.py:391: TimeoutError
+____________ ERROR at setup of test_click_adds_dots_across_two_tabs ____________
+
+xprocess = <xprocess.xprocess.XProcess object at 0x7fca221ef830>
+
+    @pytest.fixture(scope="session")
+    def start_app(xprocess):
+        """Start the RedwoodSDK dev server (Vite + miniflare) for the project."""
+    
+        class Starter(ProcessStarter):
+            name = "rwsdk_dev"
+            args = [
+                "npm",
+                "run",
+                "dev",
+                "--",
+                "--host",
+                "0.0.0.0",
+                "--port",
+                str(PORT),
+            ]
+            # CRITICAL: set `env` as a class attribute here, NEVER inside `popen_kwargs`.
+            env = os.environ.copy()
+            env.setdefault("CI", "1")
+            env.setdefault("NODE_ENV", "development")
+            popen_kwargs = {
+                "cwd": PROJECT_DIR,
+                "text": True,
+            }
+            # Generous timeout: rwsdk needs Vite + miniflare warm-up.
+            timeout = 300
+            terminate_on_interrupt = True
+    
+            def startup_check(self):
+                if not _port_open(HOST, PORT):
+                    return False
+                return _http_ok(BASE_URL + "/")
+    
+>       xprocess.ensure(Starter.name, Starter)
+
+tests/test_final_state.py:80: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+usr/local/lib/python3.12/dist-packages/xprocess/xprocess.py:284: in ensure
+    if not starter.wait(log_file_handle):
+usr/local/lib/python3.12/dist-packages/xprocess/xprocess.py:413: in wait
+    callback_ok = self.wait_callback()
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <test_final_state.start_app.<locals>.Starter object at 0x7fca216fb0b0>
+
+    def wait_callback(self):
+        """Assert that process is ready to answer queries using provided
+        callback funtion. Will raise TimeoutError if self.callback does not
+        return True before self.timeout seconds"""
+        while True:
+            sleep(0.1)
+            if self.startup_check():
+                return True
+            if datetime.now() > self._max_time:
+>               raise TimeoutError(
+                    "The provided startup callback could not assert process\
+                    responsiveness within the specified time interval of {} \
+                    seconds".format(
+                        self.timeout
+                    )
+                )
+E               TimeoutError: The provided startup callback could not assert process                    responsiveness within the specified time interval of 300                     seconds
+
+usr/local/lib/python3.12/dist-packages/xprocess/xprocess.py:391: TimeoutError
+_____________ ERROR at setup of test_api_reflects_four_added_dots ______________
+
+xprocess = <xprocess.xprocess.XProcess object at 0x7fca221ef830>
+
+    @pytest.fixture(scope="session")
+    def start_app(xprocess):
+        """Start the RedwoodSDK dev server (Vite + miniflare) for the project."""
+    
+        class Starter(ProcessStarter):
+            name = "rwsdk_dev"
+            args = [
+                "npm",
+                "run",
+                "dev",
+                "--",
+                "--host",
+                "0.0.0.0",
+                "--port",
+                str(PORT),
+            ]
+            # CRITICAL: set `env` as a class attribute here, NEVER inside `popen_kwargs`.
+            env = os.environ.copy()
+            env.setdefault("CI", "1")
+            env.setdefault("NODE_ENV", "development")
+            popen_kwargs = {
+                "cwd": PROJECT_DIR,
+                "text": True,
+            }
+            # Generous timeout: rwsdk needs Vite + miniflare warm-up.
+            timeout = 300
+            terminate_on_interrupt = True
+    
+            def startup_check(self):
+                if not _port_open(HOST, PORT):
+                    return False
+                return _http_ok(BASE_URL + "/")
+    
+>       xprocess.ensure(Starter.name, Starter)
+
+tests/test_final_state.py:80: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+usr/local/lib/python3.12/dist-packages/xprocess/xprocess.py:284: in ensure
+    if not starter.wait(log_file_handle):
+usr/local/lib/python3.12/dist-packages/xprocess/xprocess.py:413: in wait
+    callback_ok = self.wait_callback()
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <test_final_state.start_app.<locals>.Starter object at 0x7fca216fb0b0>
+
+    def wait_callback(self):
+        """Assert that process is ready to answer queries using provided
+        callback funtion. Will raise TimeoutError if self.callback does not
+        return True before self.timeout seconds"""
+        while True:
+            sleep(0.1)
+            if self.startup_check():
+                return True
+            if datetime.now() > self._max_time:
+>               raise TimeoutError(
+                    "The provided startup callback could not assert process\
+                    responsiveness within the specified time interval of {} \
+                    seconds".format(
+                        self.timeout
+                    )
+                )
+E               TimeoutError: The provided startup callback could not assert process                    responsiveness within the specified time interval of 300                     seconds
+
+usr/local/lib/python3.12/dist-packages/xprocess/xprocess.py:391: TimeoutError
+______________ ERROR at setup of test_other_board_id_is_isolated _______________
+
+xprocess = <xprocess.xprocess.XProcess object at 0x7fca221ef830>
+
+    @pytest.fixture(scope="session")
+    def start_app(xprocess):
+        """Start the RedwoodSDK dev server (Vite + miniflare) for the project."""
+    
+        class Starter(ProcessStarter):
+            name = "rwsdk_dev"
+            args = [
+                "npm",
+                "run",
+                "dev",
+                "--",
+                "--host",
+                "0.0.0.0",
+                "--port",
+                str(PORT),
+            ]
+            # CRITICAL: set `env` as a class attribute here, NEVER inside `popen_kwargs`.
+            env = os.environ.copy()
+            env.setdefault("CI", "1")
+            env.setdefault("NODE_ENV", "development")
+            popen_kwargs = {
+                "cwd": PROJECT_DIR,
+                "text": True,
+            }
+            # Generous timeout: rwsdk needs Vite + miniflare warm-up.
+            timeout = 300
+            terminate_on_interrupt = True
+    
+            def startup_check(self):
+                if not _port_open(HOST, PORT):
+                    return False
+                return _http_ok(BASE_URL + "/")
+    
+>       xprocess.ensure(Starter.name, Starter)
+
+tests/test_final_state.py:80: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+usr/local/lib/python3.12/dist-packages/xprocess/xprocess.py:284: in ensure
+    if not starter.wait(log_file_handle):
+usr/local/lib/python3.12/dist-packages/xprocess/xprocess.py:413: in wait
+    callback_ok = self.wait_callback()
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <test_final_state.start_app.<locals>.Starter object at 0x7fca216fb0b0>
+
+    def wait_callback(self):
+        """Assert that process is ready to answer queries using provided
+        callback funtion. Will raise TimeoutError if self.callback does not
+        return True before self.timeout seconds"""
+        while True:
+            sleep(0.1)
+            if self.startup_check():
+                return True
+            if datetime.now() > self._max_time:
+>               raise TimeoutError(
+                    "The provided startup callback could not assert process\
+                    responsiveness within the specified time interval of {} \
+                    seconds".format(
+                        self.timeout
+                    )
+                )
+E               TimeoutError: The provided startup callback could not assert process                    responsiveness within the specified time interval of 300                     seconds
+
+usr/local/lib/python3.12/dist-packages/xprocess/xprocess.py:391: TimeoutError
+______________ ERROR at setup of test_clear_button_empties_board _______________
+
+xprocess = <xprocess.xprocess.XProcess object at 0x7fca221ef830>
+
+    @pytest.fixture(scope="session")
+    def start_app(xprocess):
+        """Start the RedwoodSDK dev server (Vite + miniflare) for the project."""
+    
+        class Starter(ProcessStarter):
+            name = "rwsdk_dev"
+            args = [
+                "npm",
+                "run",
+                "dev",
+                "--",
+                "--host",
+                "0.0.0.0",
+                "--port",
+                str(PORT),
+            ]
+            # CRITICAL: set `env` as a class attribute here, NEVER inside `popen_kwargs`.
+            env = os.environ.copy()
+            env.setdefault("CI", "1")
+            env.setdefault("NODE_ENV", "development")
+            popen_kwargs = {
+                "cwd": PROJECT_DIR,
+                "text": True,
+            }
+            # Generous timeout: rwsdk needs Vite + miniflare warm-up.
+            timeout = 300
+            terminate_on_interrupt = True
+    
+            def startup_check(self):
+                if not _port_open(HOST, PORT):
+                    return False
+                return _http_ok(BASE_URL + "/")
+    
+>       xprocess.ensure(Starter.name, Starter)
+
+tests/test_final_state.py:80: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+usr/local/lib/python3.12/dist-packages/xprocess/xprocess.py:284: in ensure
+    if not starter.wait(log_file_handle):
+usr/local/lib/python3.12/dist-packages/xprocess/xprocess.py:413: in wait
+    callback_ok = self.wait_callback()
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <test_final_state.start_app.<locals>.Starter object at 0x7fca216fb0b0>
+
+    def wait_callback(self):
+        """Assert that process is ready to answer queries using provided
+        callback funtion. Will raise TimeoutError if self.callback does not
+        return True before self.timeout seconds"""
+        while True:
+            sleep(0.1)
+            if self.startup_check():
+                return True
+            if datetime.now() > self._max_time:
+>               raise TimeoutError(
+                    "The provided startup callback could not assert process\
+                    responsiveness within the specified time interval of {} \
+                    seconds".format(
+                        self.timeout
+                    )
+                )
+E               TimeoutError: The provided startup callback could not assert process                    responsiveness within the specified time interval of 300                     seconds
+
+usr/local/lib/python3.12/dist-packages/xprocess/xprocess.py:391: TimeoutError
+_________________ ERROR at setup of test_api_empty_after_clear _________________
+
+xprocess = <xprocess.xprocess.XProcess object at 0x7fca221ef830>
+
+    @pytest.fixture(scope="session")
+    def start_app(xprocess):
+        """Start the RedwoodSDK dev server (Vite + miniflare) for the project."""
+    
+        class Starter(ProcessStarter):
+            name = "rwsdk_dev"
+            args = [
+                "npm",
+                "run",
+                "dev",
+                "--",
+                "--host",
+                "0.0.0.0",
+                "--port",
+                str(PORT),
+            ]
+            # CRITICAL: set `env` as a class attribute here, NEVER inside `popen_kwargs`.
+            env = os.environ.copy()
+            env.setdefault("CI", "1")
+            env.setdefault("NODE_ENV", "development")
+            popen_kwargs = {
+                "cwd": PROJECT_DIR,
+                "text": True,
+            }
+            # Generous timeout: rwsdk needs Vite + miniflare warm-up.
+            timeout = 300
+            terminate_on_interrupt = True
+    
+            def startup_check(self):
+                if not _port_open(HOST, PORT):
+                    return False
+                return _http_ok(BASE_URL + "/")
+    
+>       xprocess.ensure(Starter.name, Starter)
+
+tests/test_final_state.py:80: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+usr/local/lib/python3.12/dist-packages/xprocess/xprocess.py:284: in ensure
+    if not starter.wait(log_file_handle):
+usr/local/lib/python3.12/dist-packages/xprocess/xprocess.py:413: in wait
+    callback_ok = self.wait_callback()
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <test_final_state.start_app.<locals>.Starter object at 0x7fca216fb0b0>
+
+    def wait_callback(self):
+        """Assert that process is ready to answer queries using provided
+        callback funtion. Will raise TimeoutError if self.callback does not
+        return True before self.timeout seconds"""
+        while True:
+            sleep(0.1)
+            if self.startup_check():
+                return True
+            if datetime.now() > self._max_time:
+>               raise TimeoutError(
+                    "The provided startup callback could not assert process\
+                    responsiveness within the specified time interval of {} \
+                    seconds".format(
+                        self.timeout
+                    )
+                )
+E               TimeoutError: The provided startup callback could not assert process                    responsiveness within the specified time interval of 300                     seconds
+
+usr/local/lib/python3.12/dist-packages/xprocess/xprocess.py:391: TimeoutError
+=========================== short test summary info ============================
+ERROR tests/test_final_state.py::test_board_page_has_client_hydration_script
+ERROR tests/test_final_state.py::test_initial_board_state_is_empty - TimeoutE...
+ERROR tests/test_final_state.py::test_click_adds_dots_across_two_tabs - Timeo...
+ERROR tests/test_final_state.py::test_api_reflects_four_added_dots - TimeoutE...
+ERROR tests/test_final_state.py::test_other_board_id_is_isolated - TimeoutErr...
+ERROR tests/test_final_state.py::test_clear_button_empties_board - TimeoutErr...
+ERROR tests/test_final_state.py::test_api_empty_after_clear - TimeoutError: T...
+======================== 7 errors in 300.59s (0:05:00) =========================

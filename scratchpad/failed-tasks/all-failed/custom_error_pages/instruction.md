@@ -1,0 +1,37 @@
+# Custom 404 and 500 Error Pages with RedwoodSDK
+
+## Background
+RedwoodSDK ships with a small router and a `render(Document, [...])` group for HTML pages, but it does NOT come with prebuilt error pages. Out of the box, an unmatched route or a route handler that throws will produce a generic, unhelpful response with the wrong status code (often `200`) and may even leak internal error details into the rendered HTML. Build a small RedwoodSDK app that provides proper custom HTML error pages for missed routes (`404`) and unhandled exceptions (`500`), plus a JSON API namespace at `/api/*` that returns structured JSON error responses with the same status semantics. Everything must run against the real `npm run dev` server.
+
+## Requirements
+- Use the pre-scaffolded RedwoodSDK project at the project path below (Vite plugin + `defineApp` + `rwsdk/router` + a `Document` shell).
+- Implement a normal home route `/` that returns an HTML page containing the text `Welcome` with HTTP status `200`.
+- Implement a custom HTML 404 page: any unmatched HTML route (anything that is not `/`, not `/boom`, and not under `/api/*`) must render an HTML page inside the same `Document` shell containing the heading `Page not found` and a link back to `/`. The HTTP status code MUST be `404`.
+- Implement a custom HTML 500 page: a route at `/boom` must intentionally throw, and the app must catch the thrown error and render an HTML page inside the `Document` shell containing the heading `Something broke`. The HTTP status code MUST be `500`. The rendered HTML body MUST NOT contain the original thrown error message (no error message, stack trace, or other internal details may leak into the response).
+- Implement a JSON API namespace at `/api/*`:
+  - Any unmatched `/api/*` route returns HTTP `404` with `Content-Type: application/json` and a JSON body of the form `{"error": "not_found", "path": "<request_pathname>"}` where `<request_pathname>` is the exact URL pathname of the incoming request (e.g., `/api/missing`).
+  - A route at `/api/boom` must intentionally throw, and the app must catch the thrown error and return HTTP `500` with `Content-Type: application/json` and the JSON body `{"error": "internal_server_error"}`. The JSON response body MUST NOT contain the original thrown error message.
+- Implementation runs against `npm run dev` (no mocking, no production build).
+
+## Implementation Hints
+- RedwoodSDK's router groups HTML routes with `render(Document, [...])` and treats other top-level entries (such as `route("/api/...", handler)`) as raw `Response`-returning handlers. You can mix both shapes in a single `defineApp([...])`.
+- The router supports wildcard route patterns such as `route("/api/*", handler)` and `route("*", handler)`. Wildcard segments are exposed via `params.$0`, `params.$1`, etc.
+- The framework does not auto-handle thrown errors with a friendly page; you must wrap your handlers (or share a small helper) so that exceptions are converted into either an HTML `500` response inside `Document` or a JSON `500` response, depending on the route group.
+- You can mutate the HTTP status code from inside a route handler via `requestInfo.response.status` (imported from `rwsdk/worker`), or by returning a raw `Response` with the desired status.
+- For HTML responses inside `render(Document, ...)`, return a React element (JSX) from the handler; for JSON responses, return a `new Response(JSON.stringify(...), { status, headers: { 'Content-Type': 'application/json' } })`.
+- Match order matters: more specific routes (such as `/`, `/boom`, `/api/boom`) must be declared before the matching wildcard catch-all routes.
+- The dev server listens on the default Vite port `5173`. Do not change the port.
+
+## Acceptance Criteria
+- Project path: `/home/user/myproject`
+- Start command: `npm run dev`
+- Port: `5173`
+- The app must implement these externally observable endpoints:
+  - `GET /` → HTTP `200`, `Content-Type` starts with `text/html`, HTML body contains the substring `Welcome`.
+  - `GET /boom` → HTTP `500`, `Content-Type` starts with `text/html`, HTML body contains the substring `Something broke`. The body MUST NOT contain the original thrown error message string (the exact sentinel value to be used is given in the verification plan).
+  - `GET <any other HTML path that is not under /api/*>` → HTTP `404`, `Content-Type` starts with `text/html`, HTML body contains the substring `Page not found` and a hyperlink whose `href` resolves to `/` (e.g., `<a href="/">...</a>`).
+  - `GET /api/<any unmatched path>` → HTTP `404`, `Content-Type` starts with `application/json`, JSON body equals `{"error": "not_found", "path": "<request_pathname>"}` where `<request_pathname>` is the exact incoming pathname (for example `/api/missing` or `/api/does/not/exist`).
+  - `GET /api/boom` → HTTP `500`, `Content-Type` starts with `application/json`, JSON body equals `{"error": "internal_server_error"}`. The JSON body MUST NOT contain the original thrown error message string.
+- Status codes must be the exact integers `200`, `404`, and `500` as appropriate; under no circumstances may any of these endpoints return `200` for an error response.
+- The dev server must remain stable across repeated requests to `/boom` and `/api/boom` (it must not crash, hang, or stop responding to subsequent requests).
+

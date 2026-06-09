@@ -1,0 +1,369 @@
+- Initializing MCP connections...
+You
+# CSRF-Protected Comments API with RedwoodSDK ## Background You are extending a freshly scaffolded RedwoodSDK (`rwsdk`) project. Build a small comments API protected by a real CSRF (Cross-Site Request Forgery) defense using rwsdk's request pipeline (global middleware and/or per-route interrupters). The API serves a public read endpoint and a write endpoint that requires a per-session CSRF token, plus an unauthenticated health endpoint that is always reachable. ## Requirements * The web app is a RedwoodSDK project served by `npm run dev` (Vite + Cloudflare workerd). * Mount a CSRF guard in rwsdk's request pipeline so that for any non-safe HTTP method (POST, PUT, DELETE, PATCH) the request is rejected unless an `X-CSRF-Token` header (or a `_csrf` form field) matches a token stored in a `csrf` cookie on the same request. * Provide a token issuance endpoint that mints fresh CSRF tokens, sets them in a cookie, and returns them in JSON so a client can echo them back in subsequent unsafe requests. * Provide a protected write endpoint for posting comments and a public read endpoint for listing them. Storage may be in-memory (per-process). * Provide a health endpoint that uses a safe method and is exempt from CSRF protection. ## Implementation Hints * See the RedwoodSDK docs at https://docs.rwsdk.com for `defineApp`, `route`, global middleware, and interrupters. Middleware functions are placed at the top of the `defineApp` array; interrupters are placed before the final handler in a `route(path, [interrupter, handler])` array. * A CSRF token of 32 hex characters can be produced from 16 bytes of `crypto.getRandomValues(new Uint8Array(16))`. * The CSRF cookie and the submitted token must be compared as strings; reject the request when either is missing or they do not match. Use a constant-time comparison if possible. * Cookies are read from the `Cookie` request header and set with `Set-Cookie` on the response. The framework's request object is a standard `Request`. * Keep storage trivial (a module-level array). This is an evaluation app, not production. ## Acceptance Criteria * Project path: /home/user/myproject * Start command: npm run dev * Port: 5173 * Token endpoint (always reachable, no CSRF check): * `GET /csrf` -> HTTP `200`, `Content-Type: application/json`. * Response body JSON shape: `{"token": string}` where `token` matches the regex `^[0-9a-f]{32}$` (32 lowercase hex characters). * Response MUST include a `Set-Cookie` header named `csrf` whose value equals the JSON `token` value, with attributes that include `SameSite=Strict` (case-insensitive) and `Path=/`. * Each request to `GET /csrf` MUST return a freshly generated token (two consecutive calls return different tokens). * Health endpoint (always reachable, no CSRF check): * `GET /api/health` -> HTTP `200`, `Content-Type: application/json`, response body JSON `{"status": "ok"}`. * Protected write endpoint: * `POST /api/comments` with `Content-Type: application/json`, body `{"author": string, "text": string}`: * When the request carries a `csrf` cookie AND an `X-CSRF-Token` request header whose value equals that cookie value -> HTTP `201`, `Content-Type: application/json`, response body JSON `{"id": number, "author": string, "text": string}` echoing back the submitted `author` and `text`. `id` MUST be a positive integer that is unique within the process. * When `Content-Type: application/x-www-form-urlencoded` is used and the form body contains a `_csrf` field whose value equals the `csrf` cookie value -> the request MUST be accepted with the same `201` response shape (using the `author` and `text` form fields). * When the `X-CSRF-Token` header is missing AND no `_csrf` form field is present (with or without the cookie) -> HTTP `403`, `Content-Type: application/json`, response body JSON exactly `{"error": "invalid_csrf_token"}`. No new comment may be stored. * When the `X-CSRF-Token` header is present but its value does NOT match the `csrf` cookie value (or the cookie is missing) -> HTTP `403`, `Content-Type: application/json`, response body JSON exactly `{"error": "invalid_csrf_token"}`. No new comment may be stored. * Public read endpoint: * `GET /api/comments` -> HTTP `200`, `Content-Type: application/json`, response body JSON array of comment objects in the shape `[{"id": number, "author": string, "text": string}, ...]`. The list MUST include every comment previously accepted by `POST /api/comments` in this process. * General behavior: * The CSRF check MUST only apply to non-safe HTTP methods (POST, PUT, DELETE, PATCH). Safe methods (GET, HEAD) MUST never be rejected because of CSRF. * The CSRF token MUST be generated dynamically per `GET /csrf` request; the implementation MUST NOT hardcode a constant token value.   
+
+Pochi
+💭 Thinking for 439 characters   
+📋 Updating todo list (8 items) ✔ 
+💭 Thinking for 100 characters   
+📂 Listing files in /home/user ✔ 
+💭 Thinking for 64 characters   
+📂 Listing files in /home/user/myproject recursively ✔ 
+💭 Thinking for 100 characters   
+Let me look at the main source files of the project to understand the structure.   
+📖 Reading /home/user/myproject/package.json ✔ 
+🔍 Searching for src/**/* in /home/user/myproject ✔ 
+💭 Thinking for 99 characters   
+📂 Listing files in /home/user/myproject ✔ 
+💭 Thinking for 215 characters   
+📋 Updating todo list (8 items) ✔ 
+❯ Explore rwsdk package structure and API (explore)
+| 📋 Updating todo list (0 items)
+| 📋 Updating todo list (7 items)
+| 📂 Listing files in .
+| 📂 Listing files in /home/user/myproject/node_modules/rwsdk recursively
+| 📖 Reading unknown
+| 📖 Reading /home/user/myproject/node_modules/rwsdk/package.json
+| 📖 Reading unknown
+| 📖 Reading /home/user/myproject/node_modules/rwsdk/README.md
+| 📖 Reading unknown
+| 📖 Reading /home/user/myproject/node_modules/rwsdk/dist/runtime/entries/worker.d.ts
+| 📖 Reading unknown
+| 📖 Reading /home/user/myproject/node_modules/rwsdk/dist/runtime/entries/worker.js
+| 📖 Reading unknown
+| 📖 Reading /home/user/myproject/node_modules/rwsdk/dist/runtime/entries/router.d.ts
+| 📖 Reading unknown
+| 📖 Reading /home/user/myproject/node_modules/rwsdk/dist/runtime/server.d.ts
+| 📖 Reading unknown
+| 📖 Reading /home/user/myproject/node_modules/rwsdk/dist/llms/rules/middleware.js
+| 📖 Reading unknown
+| 📖 Reading /home/user/myproject/node_modules/rwsdk/dist/llms/rules/interruptors.js
+| 📖 Reading unknown
+| 📖 Reading /home/user/myproject/node_modules/rwsdk/dist/llms/rules/request-response.js
+| 📖 Reading unknown
+| 📖 Reading /home/user/myproject/node_modules/rwsdk/dist/runtime/worker.js
+| 📖 Reading unknown
+| 📖 Reading /home/user/myproject/node_modules/rwsdk/dist/runtime/worker.d.ts
+| 📖 Reading unknown
+| 📖 Reading /home/user/myproject/node_modules/rwsdk/dist/runtime/server.js
+| 📖 Reading unknown
+| 📖 Reading /home/user/myproject/node_modules/rwsdk/dist/runtime/lib/router.js
+| 📖 Reading unknown
+| 📖 Reading /home/user/myproject/node_modules/rwsdk/dist/runtime/lib/router.d.ts
+| 📖 Reading unknown
+| 📖 Reading /home/user/myproject/node_modules/rwsdk/dist/runtime/lib/types.d.ts
+| 📖 Reading unknown
+| 📖 Reading /home/user/myproject/node_modules/rwsdk/dist/runtime/lib/types.js
+| 📖 Reading unknown
+| 📖 Reading /home/user/myproject/node_modules/rwsdk/dist/runtime/lib/links.d.ts
+| 📖 Reading unknown
+| 📖 Reading /home/user/myproject/node_modules/rwsdk/dist/runtime/requestInfo/types.d.ts
+| 📖 Reading unknown
+| 📖 Reading /home/user/myproject/node_modules/rwsdk/dist/runtime/requestInfo/types.js
+| 📖 Reading unknown
+| 📖 Reading /home/user/myproject/node_modules/rwsdk/dist/llms/rules/react.js
+| 📖 Reading unknown
+| 📖 Reading /home/user/myproject/node_modules/rwsdk/dist/llms/index.js
+| 📖 Reading unknown
+| 📖 Reading /home/user/myproject/node_modules/rwsdk/dist/runtime/lib/links.js
+| 📂 Listing files in .
+| 📂 Listing files in /home/user/myproject recursively
+| 📂 Listing files in /home/user/myproject
+| 📖 Reading unknown
+| 📖 Reading /home/user/myproject/node_modules/rwsdk/dist/runtime/requestInfo/worker.js
+| 📖 Reading unknown
+| 📖 Reading /home/user/myproject/node_modules/rwsdk/dist/runtime/requestInfo/worker.d.ts
+| 📖 Reading unknown
+| 📖 Reading /home/user/myproject/node_modules/rwsdk/dist/runtime/entries/router.js
+| 📖 Reading unknown
+| 📖 Reading /home/user/myproject/node_modules/rwsdk/dist/runtime/entries/auth.d.ts
+| 📖 Reading unknown
+| 📖 Reading /home/user/myproject/node_modules/rwsdk/dist/runtime/entries/auth.js
+| 📖 Reading unknown
+| 📖 Reading /home/user/myproject/node_modules/rwsdk/dist/runtime/script.d.ts
+| 📖 Reading unknown
+| 📖 Reading /home/user/myproject/node_modules/rwsdk/dist/runtime/error.d.ts
+| 📋 Updating todo list (0 items)
+| 📋 Updating todo list (7 items)
+| 📋 Updating todo list (0 items)
+| 📋 Updating todo list (7 items)
+✔ Explore rwsdk package structure and API (explore)
+💭 Thinking for 382 characters   
+🔍 Searching for *.{ts,tsx,js,jsx,json,html} in /home/user/myproject ✔ 
+💭 Thinking for 280 characters   
+📖 Reading /home/user/myproject/node_modules/rwsdk/package.json ✔ 
+💭 Thinking for 90 characters   
+📖 Reading /home/user/myproject/node_modules/rwsdk/dist/vite/index.d.mts ✔ 
+🔍 Searching for * in /home/user/myproject/node_modules/rwsdk/dist/vite ✔ 
+💭 Thinking for 106 characters   
+📖 Reading /home/user/myproject/node_modules/rwsdk/dist/vite/redwoodPlugin.d.mts ✔ 
+📖 Reading /home/user/myproject/node_modules/rwsdk/dist/runtime/entries/worker.d.ts ✔ 
+📖 Reading /home/user/myproject/node_modules/rwsdk/dist/runtime/worker.d.ts ✔ 
+📖 Reading /home/user/myproject/node_modules/rwsdk/dist/runtime/lib/types.d.ts ✔ 
+📖 Reading /home/user/myproject/node_modules/rwsdk/dist/runtime/requestInfo/types.d.ts ✔ 
+📖 Reading /home/user/myproject/node_modules/rwsdk/dist/runtime/entries/router.d.ts ✔ 
+📖 Reading /home/user/myproject/node_modules/rwsdk/dist/runtime/lib/router.d.ts ✔ 
+💭 Thinking for 621 characters   
+🛠️ Tool webFetch ✔ 
+🛠️ Tool webFetch ✔ 
+💭 Thinking for 197 characters   
+🛠️ Tool webFetch ✔ 
+🛠️ Tool webFetch ✔ 
+💭 Thinking for 1302 characters   
+📖 Reading /home/user/myproject/node_modules/rwsdk/dist/vite/redwoodPlugin.mjs ✔ 
+💭 Thinking for 5582 characters   
+📖 Reading /home/user/myproject/node_modules/cookie/package.json ✔ 
+📋 Updating todo list (8 items) ✔ 
+Now I'll create all the project files. Let me start with the configuration files and then the applicationcode.   
+✏️  Writing /home/user/myproject/tsconfig.json ✔ 
+✏️  Writing /home/user/myproject/vite.config.ts ✔ 
+✏️  Writing /home/user/myproject/wrangler.jsonc ✔ 
+✏️  Writing /home/user/myproject/index.html ✔ 
+Now let me create the source files:   
+✏️  Writing /home/user/myproject/src/worker.tsx ✔ 
+✏️  Writing /home/user/myproject/src/app/document.tsx ✔ 
+✏️  Writing /home/user/myproject/src/client.tsx ✔ 
+Now theCSRF middleware:   
+✏️  Writing /home/user/myproject/src/app/middleware/csrf.ts ✔ 
+Now the CSRF token endpoint:   
+✏️  Writing /home/user/myproject/src/app/routes/csrf.ts ✔ 
+✏️  Writing /home/user/myproject/src/app/routes/health.ts ✔ 
+✏️  Writing /home/user/myproject/src/app/routes/comments.ts ✔ 
+Now let me update the todo list and try running the project:   
+📋 Updating todo list (8 items) ✔ 
+💫 Executing cd /home/user/myproject && npm run dev 2>&1 & ✔ 
+💭 Thinking for 82 characters   
+📖 Reading /home/user/myproject/node_modules/rwsdk/dist/vite/index.mjs ✔ 
+💭 Thinking for 73 characters   
+✏️  Writing /home/user/myproject/vite.config.ts ✔ 
+💫 Executing cd /home/user/myproject && timeout 20 npm run dev 2>&1 || true ✔ 
+💭 Thinking for 2251 characters   
+💫 Executing cd /home/user/myproject && curl -s http://localhost:5173/api/health 2>&1 || echo "Server not responding" ✔ 
+💭 Thinking for 144 characters   
+💫 Executing pkill -f "vite dev" 2>/dev/null; sleep 1; cd /home/user/myproject && npx vite dev --port 5173 2>&1 &
+sleep 8
+curl -s http://localhost:5173/api/health 2>&1 || echo "FAILED" ✖ "Command exited with code 1"
+🛠️ Tool startBackgroundJob ✔ 
+💫 Executing sleep 10 ✔ 
+🛠️ Tool readBackgroundJobOutput ✔ 
+💭 Thinking for 324 characters   
+💫 Executing curl -s http://localhost:5173/api/health 2>&1 ✔ 
+💭 Thinking for 452 characters   
+📖 Reading /home/user/myproject/node_modules/rwsdk/dist/vite/redwoodPlugin.mjs ✔ 
+💭 Thinking for 319 characters   
+📖 Reading /home/user/myproject/node_modules/rwsdk/dist/lib/findWranglerConfig.mjs ✔ 
+🛠️ Tool killBackgroundJob ✔ 
+💭 Thinking for 2128 characters   
+📖 Reading /home/user/myproject/wrangler.jsonc ✔ 
+💫 Executing cd /home/user/myproject && npx create-rwsdk --help 2>&1 | head -30 ✔ 
+💫 Executing cd /home && npx create-rwsdk create temp-rwsdk-project --no-install 2>&1 ✖ "Command exited with code 1"
+💫 Executing cd /home && npx create-rwsdk create temp-rwsdk-project 2>&1 ✔ 
+📂 Listing files in /home/temp-rwsdk-project ✔ 
+📖 Reading /home/temp-rwsdk-project/vite.config.mts ✔ 
+📖 Reading /home/temp-rwsdk-project/package.json ✔ 
+📖 Reading /home/temp-rwsdk-project/tsconfig.json ✔ 
+📖 Reading /home/temp-rwsdk-project/wrangler.jsonc ✔ 
+💭 Thinking for 101 characters   
+📂 Listing files in /home/temp-rwsdk-project/src recursively ✔ 
+📖 Reading /home/temp-rwsdk-project/src/worker.tsx ✔ 
+📖 Reading /home/temp-rwsdk-project/src/client.tsx ✔ 
+📖 Reading /home/temp-rwsdk-project/src/app/document.tsx ✔ 
+📖 Reading /home/temp-rwsdk-project/worker-configuration.d.ts ✔ 
+📖 Reading /home/temp-rwsdk-project/src/app/headers.ts ✔ 
+🔍 Searching for * in /home/temp-rwsdk-project/types ✔ 
+📖 Reading /home/temp-rwsdk-project/types/rw.d.ts ✔ 
+📖 Reading /home/temp-rwsdk-project/types/vite.d.ts ✔ 
+📖 Reading /home/temp-rwsdk-project/types/css.d.ts ✔ 
+💭 Thinking for 2266 characters   
+Now I understand the template structure. Let me rebuild the project properly based on the template.   
+✏️  Writing /home/user/myproject/vite.config.mts ✔ 
+💫 Executing rm /home/user/myproject/vite.config.ts ✔ 
+✏️  Writing /home/user/myproject/wrangler.jsonc ✔ 
+✏️  Writing /home/user/myproject/package.json ✔ 
+✏️  Writing /home/user/myproject/tsconfig.json ✔ 
+✏️  Writing /home/user/myproject/worker-configuration.d.ts ✔ 
+✏️  Writing /home/user/myproject/types/rw.d.ts ✔ 
+✏️  Writing /home/user/myproject/types/vite.d.ts ✔ 
+✏️  Writing /home/user/myproject/types/css.d.ts ✔ 
+Now update the worker.tsx to use the proper pattern:   
+✏️  Writing /home/user/myproject/src/worker.tsx ✔ 
+✏️  Writing /home/user/myproject/src/app/document.tsx ✔ 
+✏️  Writing /home/user/myproject/src/client.tsx ✔ 
+Now the CSRF middleware - let me update it to work properly with the rwsdk RequestInfo type:   
+✏️  Writing /home/user/myproject/src/app/middleware/csrf.ts ✔ 
+Now let me install dependencies and try running:   
+💫 Executing cd /home/user/myproject && rm -rf node_modules/.vite && npm install 2>&1 | tail -20 ✔ 
+🛠️ Tool startBackgroundJob ✔ 
+💫 Executing sleep 15 ✔ 
+🛠️ Tool readBackgroundJobOutput ✔ 
+💭 Thinking for 244 characters   
+💫 Executing curl -s http://localhost:5176/api/health 2>&1 ✔ 
+The health endpoint works. Let me test the otherendpoints:   
+💫 Executing # Test GET /csrf - should return a fresh token and set a cookie
+curl -sv http://localhost:5176/csrf 2>&1 ✔ 
+CSRF token endpoint works. Let me test more:   
+💫 Executing # Test GET /api/comments - should return empty array
+curl -s http://localhost:5176/api/comments 2>&1 ✔ 
+💫 Executing # Test POST /api/comments WITHOUT CSRF token - should return 403
+curl -s -X POST http://localhost:5176/api/comments \
+  -H "Content-Type: application/json" \
+  -d '{"author":"test","text":"hello"}' 2>&1 ✔ 
+💫 Executing # Test POST /api/comments WITH valid CSRF token
+# First get a token
+RESPONSE=$(curl -s -D - http://localhost:5176/csrf 2>&1)
+echo "Full response:"
+echo "$RESPONSE"
+echo "---"
+
+# Extract token from body
+TOKEN=$(echo "$RESPONSE" | grep -o '"token":"[^"]*"' | cut -d'"' -f4)
+echo "Token: $TOKEN"
+
+# Extract csrf cookie from Set-Cookie header
+COOKIE=$(echo "$RESPONSE" | grep -i "set-cookie:" | grep -o "csrf=[^;]*" | head -1)
+echo "Cookie: $COOKIE"
+
+# Now POST with the token
+curl -s -X POST http://localhost:5176/api/comments \
+  -H "Content-Type: application/json" \
+  -H "X-CSRF-Token: $TOKEN" \
+  -H "Cookie: $COOKIE" \
+  -d '{"author":"Alice","text":"Hello world"}' 2>&1 ✔ 
+💫 Executing # Test GET /api/comments - should now have the comment
+curl -s http://localhost:5176/api/comments 2>&1 ✔ 
+💫 Executing # Test POST with wrong CSRF token (should return 403)
+curl -s -X POST http://localhost:5176/api/comments \
+  -H "Content-Type: application/json" \
+  -H "X-CSRF-Token: wrongtoken" \
+  -H "Cookie: csrf=aded0935a1e1476514e8e54a3b7ab046" \
+  -d '{"author":"Bob","text":"Should fail"}' 2>&1 ✔ 
+💫 Executing # Test POST with form-urlencoded and valid CSRF
+# First get a token
+RESPONSE=$(curl -s -D - http://localhost:5176/csrf 2>&1)
+TOKEN=$(echo "$RESPONSE" | grep -o '"token":"[^"]*"' | cut -d'"' -f4)
+COOKIE=$(echo "$RESPONSE" | grep -i "set-cookie:" | grep -o "csrf=[^;]*" | head -1)
+
+echo "Token: $TOKEN"
+echo "Cookie: $COOKIE"
+
+# POST with form-urlencoded
+curl -s -X POST http://localhost:5176/api/comments \
+  -H "Content-Type: application/x-www-form-urlencoded" \
+  -H "Cookie: $COOKIE" \
+  -d "_csrf=$TOKEN&author=Charlie&text=Form+post" 2>&1 ✔ 
+💫 Executing # Test that form-urlencoded without CSRF token fails
+curl -s -X POST http://localhost:5176/api/comments \
+  -H "Content-Type: application/x-www-form-urlencoded" \
+  -d "author=Bad&text=No+CSRF" 2>&1 ✔ 
+💫 Executing # Test that two consecutive GET /csrf return different tokens
+TOKEN1=$(curl -s http://localhost:5176/csrf | grep -o '"token":"[^"]*"' | cut -d'"' -f4)
+TOKEN2=$(curl -s http://localhost:5176/csrf | grep -o '"token":"[^"]*"' | cut -d'"' -f4)
+echo "Token 1: $TOKEN1"
+echo "Token 2: $TOKEN2"
+if [ "$TOKEN1" = "$TOKEN2" ]; then
+  echo "ERROR: Tokens are the same!"
+else
+  echo "SUCCESS: Tokens are different"
+fi ✔ 
+💫 Executing # Verify the list includes all accepted comments
+curl -s http://localhost:5176/api/comments 2>&1 ✔ 
+All endpoints are working correctly. Now let me kill the dev server running on the wrong port and restart it on port 5173:   
+🛠️ Tool killBackgroundJob ✔ 
+💫 Executing pkill -f "vite dev" 2>/dev/null; pkill -f "workerd" 2>/dev/null; sleep 2; lsof -i :5173 2>/dev/null | head -5 ✖ "Command exited with code 1"
+🛠️ Tool startBackgroundJob ✔ 
+💫 Executing sleep 15 ✔ 
+🛠️ Tool readBackgroundJobOutput ✔ 
+The server is now running on port 5173. Let me run a comprehensive test to verify all acceptance criteria:   
+💫 Executing echo "=== Test 1: GET /csrf - should return 200 with token and Set-Cookie ==="
+curl -sv http://localhost:5173/csrf 2>&1
+
+echo ""
+echo "=== Test 2: GET /api/health - should return 200 with status ok ==="
+curl -s http://localhost:5173/api/health 2>&1
+
+echo ""
+echo "=== Test 3: GET /api/comments - should return 200 with empty array ==="
+curl -s http://localhost:5173/api/comments 2>&1
+
+echo ""
+echo "=== Test 4: POST /api/comments without CSRF - should return 403 ==="
+curl -s -X POST http://localhost:5173/api/comments \
+  -H "Content-Type: application/json" \
+  -d '{"author":"test","text":"hello"}' 2>&1
+
+echo ""
+echo "=== Test 5: POST /api/comments with valid CSRF token ==="
+RESPONSE=$(curl -s -D - http://localhost:5173/csrf 2>&1)
+TOKEN=$(echo "$RESPONSE" | grep -o '"token":"[^"]*"' | cut -d'"' -f4)
+COOKIE=$(echo "$RESPONSE" | grep -i "set-cookie:" | grep -o "csrf=[^;]*" | head -1)
+echo "Token: $TOKEN"
+echo "Cookie: $COOKIE"
+curl -s -X POST http://localhost:5173/api/comments \
+  -H "Content-Type: application/json" \
+  -H "X-CSRF-Token: $TOKEN" \
+  -H "Cookie: $COOKIE" \
+  -d '{"author":"TestUser","text":"Test comment"}' 2>&1 ✔ 
+💫 Executing echo "=== Test 6: POST with wrong CSRF token value ==="
+curl -s -X POST http://localhost:5173/api/comments \
+  -H "Content-Type: application/json" \
+  -H "X-CSRF-Token: wrongtoken" \
+  -H "Cookie: csrf=0ec469f7506383b885e24675b8112742" \
+  -d '{"author":"Evil","text":"Should fail"}' 2>&1
+
+echo ""
+echo "=== Test 7: POST with CSRF header but no cookie ==="
+curl -s -X POST http://localhost:5173/api/comments \
+  -H "Content-Type: application/json" \
+  -H "X-CSRF-Token: 0ec469f7506383b885e24675b8112742" \
+  -d '{"author":"Evil","text":"Should fail"}' 2>&1
+
+echo ""
+echo "=== Test 8: Form-urlencoded with valid CSRF ==="
+RESPONSE=$(curl -s -D - http://localhost:5173/csrf 2>&1)
+TOKEN=$(echo "$RESPONSE" | grep -o '"token":"[^"]*"' | cut -d'"' -f4)
+COOKIE=$(echo "$RESPONSE" | grep -i "set-cookie:" | grep -o "csrf=[^;]*" | head -1)
+curl -s -X POST http://localhost:5173/api/comments \
+  -H "Content-Type: application/x-www-form-urlencoded" \
+  -H "Cookie: $COOKIE" \
+  -d "_csrf=$TOKEN&author=FormUser&text=Form+comment" 2>&1
+
+echo ""
+echo "=== Test 9: GET /api/comments should list all comments ==="
+curl -s http://localhost:5173/api/comments 2>&1
+
+echo ""
+echo "=== Test 10: Two consecutive GET /csrf return different tokens ==="
+T1=$(curl -s http://localhost:5173/csrf | grep -o '"token":"[^"]*"' | cut -d'"' -f4)
+T2=$(curl -s http://localhost:5173/csrf | grep -o '"token":"[^"]*"' | cut -d'"' -f4)
+echo "Token1: $T1"
+echo "Token2: $T2"
+if [ "$T1" = "$T2" ]; then echo "FAIL: same token"; else echo "PASS: different tokens"; fi ✔ 
+All tests pass. Let me also verify the HTTP status codes morecarefully:   
+💫 Executing # Test HTTP status codes explicitly
+echo "=== Status code for GET /csrf ==="
+curl -s -o /dev/null -w "%{http_code}" http://localhost:5173/csrf 2>&1
+
+echo ""
+echo "=== Status code for GET /api/health ==="
+curl -s -o /dev/null -w "%{http_code}" http://localhost:5173/api/health 2>&1
+
+echo ""
+echo "=== Status code for GET /api/comments ==="
+curl -s -o /dev/null -w "%{http_code}" http://localhost:5173/api/comments 2>&1
+
+echo ""
+echo "=== Status code for POST without CSRF ==="
+curl -s -o /dev/null -w "%{http_code}" -X POST http://localhost:5173/api/comments \
+  -H "Content-Type: application/json" \
+  -d '{"author":"test","text":"hello"}' 2>&1
+
+echo ""
+echo "=== Status code for POST with valid CSRF ==="
+RESPONSE=$(curl -s -D - http://localhost:5173/csrf 2>&1)
+TOKEN=$(echo "$RESPONSE" | grep -o '"token":"[^"]*"' | cut -d'"' -f4)
+COOKIE=$(echo "$RESPONSE" | grep -i "set-cookie:" | grep -o "csrf=[^;]*" | head -1)
+curl -s -o /dev/null -w "%{http_code}" -X POST http://localhost:5173/api/comments \
+  -H "Content-Type: application/json" \
+  -H "X-CSRF-Token: $TOKEN" \
+  -H "Cookie: $COOKIE" \
+  -d '{"author":"StatusTest","text":"Status check"}' 2>&1 ✔ 

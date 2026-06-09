@@ -1,0 +1,7 @@
+{
+  "library_name": "RedwoodSDK (rwsdk)",
+  "task_name": "rwsdk-realtime-synced-counter",
+  "complexity_level": "multi-step sequential command set",
+  "research_plan_path": "/Users/kw/code/zealt/rwsdk-benchmark/plan.md",
+  "output_dir": "/Users/kw/code/zealt/rwsdk-benchmark/scratchpad/pending-tasks/"
+}

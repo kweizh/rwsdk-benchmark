@@ -1,0 +1,131 @@
+============================= test session starts ==============================
+platform linux -- Python 3.12.3, pytest-7.4.4, pluggy-1.4.0
+rootdir: /tests
+plugins: xprocess-1.0.2, json-ctrf-0.5.0
+collected 3 items
+
+tests/test_final_state.py EEE                                            [100%]
+
+==================================== ERRORS ====================================
+_______ ERROR at setup of test_home_renders_linkfor_anchor_to_profile_42 _______
+
+xprocess = <xprocess.xprocess.XProcess object at 0x7f17f0f94230>
+
+    @pytest.fixture(scope="session")
+    def dev_server(xprocess):
+        """
+        Start the RedwoodSDK dev server (`npm run dev`) and wait until it
+        is accepting TCP connections on port 5173.
+        """
+    
+        env = os.environ.copy()
+        # Force Vite/RedwoodSDK to bind to the expected port.
+        env["PORT"] = str(PORT)
+    
+>       class Starter(ProcessStarter):
+
+tests/test_final_state.py:27: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    class Starter(ProcessStarter):
+        name = "rwsdk_dev_server"
+        # `--` forwards the host/port flags through `npm run dev` to vite.
+        args = [
+            "npm",
+            "run",
+            "dev",
+            "--",
+            "--host",
+            HOST,
+            "--port",
+            str(PORT),
+        ]
+        # IMPORTANT: env must be a class attribute, NOT inside popen_kwargs,
+        # otherwise Popen raises "got multiple values for keyword argument 'env'".
+>       env = env
+E       NameError: name 'env' is not defined
+
+tests/test_final_state.py:42: NameError
+______________ ERROR at setup of test_profile_page_renders_id_42 _______________
+
+xprocess = <xprocess.xprocess.XProcess object at 0x7f17f0f94230>
+
+    @pytest.fixture(scope="session")
+    def dev_server(xprocess):
+        """
+        Start the RedwoodSDK dev server (`npm run dev`) and wait until it
+        is accepting TCP connections on port 5173.
+        """
+    
+        env = os.environ.copy()
+        # Force Vite/RedwoodSDK to bind to the expected port.
+        env["PORT"] = str(PORT)
+    
+>       class Starter(ProcessStarter):
+
+tests/test_final_state.py:27: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    class Starter(ProcessStarter):
+        name = "rwsdk_dev_server"
+        # `--` forwards the host/port flags through `npm run dev` to vite.
+        args = [
+            "npm",
+            "run",
+            "dev",
+            "--",
+            "--host",
+            HOST,
+            "--port",
+            str(PORT),
+        ]
+        # IMPORTANT: env must be a class attribute, NOT inside popen_kwargs,
+        # otherwise Popen raises "got multiple values for keyword argument 'env'".
+>       env = env
+E       NameError: name 'env' is not defined
+
+tests/test_final_state.py:42: NameError
+___________ ERROR at setup of test_profile_page_renders_arbitrary_id ___________
+
+xprocess = <xprocess.xprocess.XProcess object at 0x7f17f0f94230>
+
+    @pytest.fixture(scope="session")
+    def dev_server(xprocess):
+        """
+        Start the RedwoodSDK dev server (`npm run dev`) and wait until it
+        is accepting TCP connections on port 5173.
+        """
+    
+        env = os.environ.copy()
+        # Force Vite/RedwoodSDK to bind to the expected port.
+        env["PORT"] = str(PORT)
+    
+>       class Starter(ProcessStarter):
+
+tests/test_final_state.py:27: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    class Starter(ProcessStarter):
+        name = "rwsdk_dev_server"
+        # `--` forwards the host/port flags through `npm run dev` to vite.
+        args = [
+            "npm",
+            "run",
+            "dev",
+            "--",
+            "--host",
+            HOST,
+            "--port",
+            str(PORT),
+        ]
+        # IMPORTANT: env must be a class attribute, NOT inside popen_kwargs,
+        # otherwise Popen raises "got multiple values for keyword argument 'env'".
+>       env = env
+E       NameError: name 'env' is not defined
+
+tests/test_final_state.py:42: NameError
+=========================== short test summary info ============================
+ERROR tests/test_final_state.py::test_home_renders_linkfor_anchor_to_profile_42
+ERROR tests/test_final_state.py::test_profile_page_renders_id_42 - NameError:...
+ERROR tests/test_final_state.py::test_profile_page_renders_arbitrary_id - Nam...
+============================== 3 errors in 0.38s ===============================

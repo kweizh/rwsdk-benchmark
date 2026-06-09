@@ -1,0 +1,8 @@
+{
+  "name": "csrf-comments-api",
+  "main": "src/worker.tsx",
+  "compatibility_date": "2024-04-03",
+  "compatibility_flags": [
+    "nodejs_compat"
+  ]
+}

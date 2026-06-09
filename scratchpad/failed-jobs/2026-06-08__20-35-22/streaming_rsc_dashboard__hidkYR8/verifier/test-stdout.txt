@@ -1,0 +1,63 @@
+============================= test session starts ==============================
+platform linux -- Python 3.12.3, pytest-7.4.4, pluggy-1.4.0
+rootdir: /tests
+plugins: xprocess-1.0.2, json-ctrf-0.5.0
+collected 3 items
+
+tests/test_final_state.py F..                                            [100%]
+
+=================================== FAILURES ===================================
+_________________ test_dashboard_streams_loading_markers_first _________________
+
+start_app = None
+
+    def test_dashboard_streams_loading_markers_first(start_app):
+        """The initial chunk of /dashboard must contain all three loading markers,
+        received before the slowest 3s panel can resolve."""
+        start = time.time()
+        chunk = b""
+        with requests.get(DASHBOARD_URL, stream=True, timeout=15) as resp:
+            assert resp.status_code == 200, (
+                f"GET {DASHBOARD_URL} returned status {resp.status_code}; expected 200."
+            )
+            # Read until we have ~32KB OR 0.8s have elapsed (well under the 3s slowest panel).
+            for raw in resp.iter_content(chunk_size=1024):
+                if raw:
+                    chunk += raw
+                if len(chunk) >= 32 * 1024:
+                    break
+                if time.time() - start > 0.8:
+                    break
+    
+        html = chunk.decode("utf-8", errors="ignore")
+    
+        for panel in PANEL_NAMES:
+            assert _panel_marker_present(html, panel, "loading"), (
+                f"Initial streamed chunk does not contain a loading marker for panel "
+                f"'{panel}' (expected an element with both data-panel=\"{panel}\" and "
+                f"data-state=\"loading\"). Got prefix: {html[:1000]!r}"
+            )
+    
+        # The final values must NOT have arrived yet in the very first chunk.
+        for panel, final_text in PANEL_FINAL_TEXT.items():
+>           assert final_text not in html, (
+                f"Initial streamed chunk already contains final value '{final_text}' for "
+                f"panel '{panel}'; the page does not appear to be streaming progressively."
+            )
+E           AssertionError: Initial streamed chunk already contains final value '$12,345' for panel 'revenue'; the page does not appear to be streaming progressively.
+E           assert '$12,345' not in '<!DOCTYPE h...n")</script>'
+E             '$12,345' is contained here:
+E               dren\":\"$$12,345\"},null,\"$2a\",1]\n")</script>
+E             ?           +++++++
+
+tests/test_final_state.py:126: AssertionError
+---------------------------- Captured stdout setup -----------------------------
+/tests/.pytest_cache/d/.xprocess/start_app$ npm run dev -- --host 0.0.0.0 --port 5173
+process 'start_app' started pid=1218
+start_app process startup detected
+==================================== PASSES ====================================
+=========================== short test summary info ============================
+PASSED tests/test_final_state.py::test_dashboard_full_response_contains_final_values
+PASSED tests/test_final_state.py::test_dashboard_browser_verification
+FAILED tests/test_final_state.py::test_dashboard_streams_loading_markers_first
+==================== 1 failed, 2 passed in 87.54s (0:01:27) ====================

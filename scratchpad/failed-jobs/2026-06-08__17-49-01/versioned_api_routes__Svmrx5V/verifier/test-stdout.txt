@@ -1,0 +1,27 @@
+============================= test session starts ==============================
+platform linux -- Python 3.12.3, pytest-7.4.4, pluggy-1.4.0
+rootdir: /tests
+plugins: xprocess-1.0.2, json-ctrf-0.5.0
+collected 11 items
+
+tests/test_final_state.py ...........                                    [100%]
+
+==================================== PASSES ====================================
+___________________ test_v1_users_list_returns_id_name_only ____________________
+---------------------------- Captured stdout setup -----------------------------
+/tests/.pytest_cache/d/.xprocess/rwsdk_dev_server$ npm run dev -- --host 0.0.0.0 --port 5173
+process 'rwsdk_dev_server' started pid=1690
+rwsdk_dev_server process startup detected
+=========================== short test summary info ============================
+PASSED tests/test_final_state.py::test_v1_users_list_returns_id_name_only
+PASSED tests/test_final_state.py::test_v1_user_detail_returns_id_name_only[u1]
+PASSED tests/test_final_state.py::test_v1_user_detail_returns_id_name_only[u2]
+PASSED tests/test_final_state.py::test_v1_user_detail_returns_id_name_only[u3]
+PASSED tests/test_final_state.py::test_v1_unknown_user_returns_404
+PASSED tests/test_final_state.py::test_v2_users_list_includes_email
+PASSED tests/test_final_state.py::test_v2_user_detail_includes_email[u1]
+PASSED tests/test_final_state.py::test_v2_user_detail_includes_email[u2]
+PASSED tests/test_final_state.py::test_v2_user_detail_includes_email[u3]
+PASSED tests/test_final_state.py::test_v2_unknown_user_returns_404
+PASSED tests/test_final_state.py::test_version_headers_are_isolated
+============================== 11 passed in 0.76s ==============================
